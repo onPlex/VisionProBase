@@ -17,8 +17,8 @@ namespace PolySpatial.Template
         {
             m_Spawner = GetComponent<ObjectSpawner>();
             m_Spawner.spawnAsChildren = true;
-            OnObjectSelectorDropdownValueChanged(m_ObjectSelectorDropDown.CurrentAssetIndex);
-            m_ObjectSelectorDropDown.DropDownValueChangedEvent.AddListener(OnObjectSelectorDropdownValueChanged);
+            // OnObjectSelectorDropdownValueChanged(m_ObjectSelectorDropDown.CurrentAssetIndex);
+            // m_ObjectSelectorDropDown.DropDownValueChangedEvent.AddListener(OnObjectSelectorDropdownValueChanged);
             m_DestroyObjectsButton.PressEndEvent.AddListener(OnDestroyObjectsButtonClicked);
         }
 
