@@ -28,7 +28,8 @@ namespace PolySpatial.Samples
                 if (activeTouches[0].phase == TouchPhase.Began)
                 {
                     // allow balloons to be popped with a poke or indirect pinch
-                    if (primaryTouchData.Kind == SpatialPointerKind.IndirectPinch || primaryTouchData.Kind == SpatialPointerKind.Touch)
+                    if (primaryTouchData.Kind == SpatialPointerKind.IndirectPinch ||
+                     primaryTouchData.Kind == SpatialPointerKind.Touch)
                     {
                         var balloonObject = primaryTouchData.targetObject;
                         if (balloonObject != null)
