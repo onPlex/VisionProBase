@@ -1,7 +1,6 @@
 using Unity.PolySpatial.InputDevices;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
-using UnityEngine.InputSystem.LowLevel;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 
@@ -12,7 +11,7 @@ namespace Jun
         // TouchPhase m_LastTouchPhase;
         ShellBehavior m_SelectedObject;
 
-        // bool _toggleValue = false;
+        bool _toggleValue = false;
 
         void OnEnable()
         {
@@ -26,23 +25,30 @@ namespace Jun
             if (activeTouches.Count > 0)
             {
                 var primaryTouchData = EnhancedSpatialPointerSupport.GetPointerState(activeTouches[0]);
-                if (activeTouches[0].phase == TouchPhase.Began)
+                if (activeTouches[0].phase == TouchPhase.Began && primaryTouchData.targetObject != null && primaryTouchData.targetObject.scene == gameObject.scene)
                 {
-                    if (primaryTouchData.Kind == SpatialPointerKind.IndirectPinch || primaryTouchData.Kind == SpatialPointerKind.Touch)
+                    if (primaryTouchData.targetObject.TryGetComponent(out ShellBehavior shellObject))
                     {
-                        if (primaryTouchData.targetObject != null)
+                        m_SelectedObject = shellObject;
+                        if (!_toggleValue)
                         {
-                            if (primaryTouchData.targetObject.TryGetComponent(out ShellBehavior shellObject))
-                            {
-                                Debug.Log("Touch");
-                                m_SelectedObject = shellObject;
-                                // _toggleValue = !_toggleValue;
-                                m_SelectedObject.Select(true);
-                            }
+                            _toggleValue = true;
+                            m_SelectedObject.Select(true);
+                            EnableCollider(false);
+                        }
+                        else
+                        {
+                            m_SelectedObject.Select(false);
                         }
                     }
                 }
             }
+        }
+
+        public void EnableCollider(bool enabled)
+        {
+            if (m_SelectedObject != null)
+                m_SelectedObject.GetComponent<BoxCollider>().enabled = enabled;
         }
     }
 }
