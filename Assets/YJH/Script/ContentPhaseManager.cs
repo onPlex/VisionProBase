@@ -35,7 +35,7 @@ namespace YJH
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            eContent_Phase = EContent_Phase.Title;
+            InitPhase();
         }
 
         public void OnGameStart()
@@ -70,6 +70,14 @@ namespace YJH
             {
                 Debug.LogWarning("Need To Check EContent_Phase");
             }
+        }
+
+        private void InitPhase()
+        {
+            eContent_Phase = EContent_Phase.Title;
+            Title.SetActive(true);
+            Prologue.SetActive(false);
+            MainContent.SetActive(false);
         }
     }
 }
