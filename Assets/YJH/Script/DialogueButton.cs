@@ -11,6 +11,7 @@ namespace YJH
         [TextArea]
         public string DialogueText; // Text content for dialogue
         public AudioClip DialogueAudio; // Corresponding audio clip
+        public bool TriggerEvent; // Flag to trigger an event before moving to the next dialogue
     }
 
     public class DialogueButton : MonoBehaviour
@@ -26,6 +27,13 @@ namespace YJH
 
         // Current dialogue index
         private int currentDialogueIndex = 0;
+
+        [SerializeField]
+        private ContentPhaseManager contentPhaseManager;
+
+        // Event to trigger during specific dialogues
+        public delegate void DialogueEvent();
+        public event DialogueEvent OnTriggerDialogueEvent;
 
         void Awake()
         {
@@ -61,6 +69,12 @@ namespace YJH
                 audioSource.Stop();
                 audioSource.clip = dialoguePairs[index].DialogueAudio;
                 audioSource.Play();
+
+                // Check if an event should be triggered
+                if (dialoguePairs[index].TriggerEvent && OnTriggerDialogueEvent != null)
+                {
+                    OnTriggerDialogueEvent.Invoke();
+                }
             }
             else
             {
@@ -73,6 +87,43 @@ namespace YJH
         /// </summary>
         public void OnButtonClick()
         {
+            if (currentDialogueIndex >= dialoguePairs.Count)
+            {
+                Debug.LogWarning("No more dialogues to proceed.");
+                return; // Prevent further execution if out of range
+            }
+
+            if (dialoguePairs[currentDialogueIndex].TriggerEvent)
+            {
+                StartCoroutine(WaitForEventAndProceed());
+            }
+            else
+            {
+                ProceedToNextDialogue();
+            }
+        }
+
+        /// <summary>
+        /// Waits for the event to complete before proceeding.
+        /// </summary>
+        private IEnumerator WaitForEventAndProceed()
+        {
+            bool eventCompleted = false;
+
+            // Subscribe to the event to mark completion
+            OnTriggerDialogueEvent += () => { eventCompleted = true; };
+
+            // Wait until the event is completed
+            yield return new WaitUntil(() => eventCompleted);
+
+            ProceedToNextDialogue();
+        }
+
+        /// <summary>
+        /// Proceeds to the next dialogue.
+        /// </summary>
+        private void ProceedToNextDialogue()
+        {
             currentDialogueIndex++;
 
             if (currentDialogueIndex < dialoguePairs.Count)
@@ -82,7 +133,14 @@ namespace YJH
             else
             {
                 Debug.Log("End of dialogues.");
-                currentDialogueIndex = 0; // Optionally loop to the start
+                if (contentPhaseManager != null)
+                {
+                    contentPhaseManager.OnGamePrologueEnd();
+                }
+                else
+                {
+                    Debug.LogError("ContentPhaseManager is not assigned.");
+                }
             }
         }
     }

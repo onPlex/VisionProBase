@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace YJH
 {
@@ -6,7 +7,6 @@ namespace YJH
     {
         Title,
         Prologue,
-        Tutorial,
         MainContent,
         ContentEnd,
         Result
@@ -18,12 +18,19 @@ namespace YJH
     {
 
         EContent_Phase eContent_Phase;
-
+        [Header("Title")]
         [SerializeField]
         GameObject Title;
 
+        [Header("Prologue")]
         [SerializeField]
         GameObject Prologue;
+        [SerializeField]
+        GameObject MainContentStartButton;
+
+        [Header("MainContent")]
+        [SerializeField]
+        GameObject MainContent;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -44,6 +51,25 @@ namespace YJH
                 Debug.LogWarning("Need To Check EContent_Phase");
             }
 
+        }
+
+        public void OnGamePrologueEnd()
+        {
+            MainContentStartButton.SetActive(true);
+        }
+
+        public void OnGameMainContentStart()
+        {
+            if (eContent_Phase == EContent_Phase.Prologue)
+            {
+                eContent_Phase = EContent_Phase.MainContent;
+                Prologue.SetActive(false);
+                MainContent.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("Need To Check EContent_Phase");
+            }
         }
     }
 }
