@@ -324,9 +324,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7457263268506934152, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3962743676725959073}
-    - targetCorrespondingSourceObject: {fileID: 7457263268506934152, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 29025552684871155}
   m_SourcePrefab: {fileID: 100100000, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
 --- !u!4 &1098953522611571992 stripped
 Transform:
@@ -427,8 +424,7 @@ MonoBehaviour:
     - 65
     TriggerSpecialEvent: 1
     SpecialEvents:
-    - EventName: Stage1Finish
-      EventScript: {fileID: 29025552684871155}
+    - EventScript: {fileID: 0}
       MethodName: Stage1Finish
   optionButtons:
   - {fileID: 1524607758480144804}
@@ -437,18 +433,6 @@ MonoBehaviour:
   - {fileID: 7337237163383691349}
   - {fileID: 9000164540433806004}
   questionText: {fileID: 2276737169576009073}
---- !u!114 &29025552684871155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6713657678251306520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c64dfd79890040c5bce9e8b55960452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4961921989825692567
 PrefabInstance:
   m_ObjectHideFlags: 0

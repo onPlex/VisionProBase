@@ -17,8 +17,8 @@ namespace YJH
     [System.Serializable]
     public class SpecialEvent
     {
-        public string EventName; // Name of the event (for identification/debugging)
-        public MonoBehaviour EventScript; // Script containing the special event logic
+        //public string EventName; // Name of the event (for identification/debugging)
+        public ContentPhaseManager EventPhase; // Script containing the special event logic
         public string MethodName; // Name of the method to invoke
     }
 
@@ -124,13 +124,13 @@ namespace YJH
         {
             foreach (var specialEvent in specialEvents)
             {
-                if (specialEvent.EventScript != null && !string.IsNullOrEmpty(specialEvent.MethodName))
+                if (specialEvent.EventPhase != null && !string.IsNullOrEmpty(specialEvent.MethodName))
                 {
-                    var method = specialEvent.EventScript.GetType().GetMethod(specialEvent.MethodName);
+                    var method = specialEvent.EventPhase.GetType().GetMethod(specialEvent.MethodName);
                     if (method != null)
                     {
-                        Debug.Log($"Triggering special event: {specialEvent.EventName}");
-                        var result = method.Invoke(specialEvent.EventScript, null) as IEnumerator;
+                        //Debug.Log($"Triggering special event: {specialEvent.EventName}");
+                        var result = method.Invoke(specialEvent.EventPhase, null) as IEnumerator;
                         if (result != null)
                         {
                             yield return StartCoroutine(result);
@@ -138,7 +138,7 @@ namespace YJH
                     }
                     else
                     {
-                        Debug.LogError($"Method {specialEvent.MethodName} not found on {specialEvent.EventScript.GetType().Name}.");
+                        Debug.LogError($"Method {specialEvent.MethodName} not found on {specialEvent.EventPhase.GetType().Name}.");
                     }
                 }
             }
