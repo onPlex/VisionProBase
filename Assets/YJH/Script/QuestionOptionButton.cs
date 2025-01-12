@@ -36,17 +36,24 @@ namespace YJH
 
         private bool hasPressed = false;
 
-        public override void Press()
+       public override void Press()
         {
             if (hasPressed) return;
+
+            if (!gameObject.activeInHierarchy)
+            {
+                Debug.LogWarning("Button is inactive but Press was called. Proceeding to handle input.");
+            }
+
             hasPressed = true;
 
-            // 실제 실행
+            // Trigger the action
             OnOptionSelected?.Invoke(optionIndex);
 
-            // 예: 0.2초 후 다시 눌릴 수 있게 허용
+            // Allow pressing again after a short delay
             StartCoroutine(ResetPressDelay(0.2f));
         }
+
 
         private IEnumerator ResetPressDelay(float delay)
         {
