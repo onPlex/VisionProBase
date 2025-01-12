@@ -1,14 +1,22 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace YJH
 {
     public enum EContent_Phase
     {
         Title,
-        Prologue,
-        MainContent,
-        ContentEnd,
+        Prologue,  //(Stage1 Start)
+        Stage1,
+        Stage1End,
+        Stage2Start,
+        Stage2,
+        Stage2End,
+        Stage3Start,
+        Stage3,
+        Stage3End,
+        Stage4Start,
+        Stage4,
+        Stage4End,
         Result
 
     }
@@ -38,6 +46,9 @@ namespace YJH
             InitPhase();
         }
 
+  /// <summary>
+  ///Prologue
+  /// </summary>
         public void OnGameStart()
         {
             if (eContent_Phase == EContent_Phase.Title)
@@ -58,11 +69,14 @@ namespace YJH
             MainContentStartButton.SetActive(true);
         }
 
-        public void OnGameMainContentStart()
+/// <summary>
+/// Stage1
+/// </summary>
+        public void OnStage1Start()
         {
             if (eContent_Phase == EContent_Phase.Prologue)
             {
-                eContent_Phase = EContent_Phase.MainContent;
+                eContent_Phase = EContent_Phase.Stage1;
                 Prologue.SetActive(false);
                 MainContent.SetActive(true);
             }
