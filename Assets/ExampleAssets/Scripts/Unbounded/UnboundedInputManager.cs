@@ -29,7 +29,7 @@ namespace PolySpatial.Template
                 {
                     if (primaryTouchData.targetObject != null)
                     {
-                        if(primaryTouchData.targetObject.TryGetComponent(out UnboundedObjectBehavior unboundedObject))
+                        if (primaryTouchData.targetObject.TryGetComponent(out UnboundedObjectBehavior unboundedObject))
                         {
                             m_SelectedObject = unboundedObject;
                             m_SelectedObject.Select(true);
