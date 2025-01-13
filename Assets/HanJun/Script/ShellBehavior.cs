@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Jun
 {
-    // [RequireComponent(typeof(MeshRenderer))]
     public class ShellBehavior : MonoBehaviour
     {
         [SerializeField] private Animator _anim;
@@ -32,7 +31,7 @@ namespace Jun
             else
             {
                 _textDesc.SetActive(false);
-                yield return new WaitForSeconds(0.67f);
+                yield return new WaitForSeconds(1f);
                 _shellCount.text = "1/6";
                 _textInfo.SetActive(true);
                 this.gameObject.SetActive(false);

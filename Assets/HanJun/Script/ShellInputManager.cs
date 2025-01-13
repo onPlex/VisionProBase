@@ -29,6 +29,7 @@ namespace Jun
                 {
                     if (primaryTouchData.targetObject.TryGetComponent(out ShellBehavior shellObject))
                     {
+                        Debug.Log("touch");
                         m_SelectedObject = shellObject;
                         if (!_toggleValue)
                         {
