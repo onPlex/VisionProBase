@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2378387
 Transform:
   m_ObjectHideFlags: 0
@@ -4754,7 +4754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[7].SpecialEvents.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[0].SpecialEvents.Array.data[0].EventPhase
@@ -4770,7 +4770,7 @@ PrefabInstance:
       objectReference: {fileID: 1044930383}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[7].SpecialEvents.Array.data[0].MethodName
-      value: OnStageFinishEvent1
+      value: OnStage2
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[7].SpecialEvents.Array.data[1].EventPhase
@@ -4907,31 +4907,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 727411495141603920, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9091414860138444235, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8746206609569206552, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3566761671485438395, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7676598572067946653, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2733567554295816433, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4338058823903848715, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 6195172861897609152, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
 --- !u!4 &969908678 stripped
 Transform:

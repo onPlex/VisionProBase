@@ -35,54 +35,64 @@ namespace YJH
 
         public override void OnStage2()
         {
-            Debug.Log("OnStage2");
-            Stage1Obj.SetActive(false);
-            Stage2Obj.SetActive(true);
+            StartCoroutine(IStageFinishEvent1());
         }
 
         public override void OnStage3()
         {
-            Debug.Log("OnStage3");
-            Stage2Obj.SetActive(false);
-            Stage3Obj.SetActive(true);
+             StartCoroutine(IStageFinishEvent2());
         }
 
         public override void OnStage4()
         {
-            Debug.Log("OnStage4");
-            Stage3Obj.SetActive(false);
-            Stage4Obj.SetActive(true);
+            StartCoroutine(IStageFinishEvent3());
         }
 
         //TutorialEnd1
-        public void OnStageFinishEvent1()
+        public IEnumerator IStageFinishEvent1()
         {
             AudioManager.Instance.PlaySFX("TutorialEnd1");
-            new WaitForSecondsRealtime(10f);
+            yield return new WaitForSecondsRealtime(10f);
+
+            Debug.Log("OnStage2");
+            Stage1Obj.SetActive(false);
+            Stage2Obj.SetActive(true);
+            yield return null;
         }
 
         //TutorialEnd2
-        public void OnStageFinishEvent2()
+        public IEnumerator IStageFinishEvent2()
         {
             AudioManager.Instance.PlaySFX("TutorialEnd2");
-            new WaitForSecondsRealtime(10f);
+            yield return new WaitForSecondsRealtime(10f);
+
+            Debug.Log("OnStage3");
+            Stage2Obj.SetActive(false);
+            Stage3Obj.SetActive(true);
+            yield return null;
         }
+
+
 
         //TutorialEnd3
-        public void OnStageFinishEvent3()
+        public IEnumerator IStageFinishEvent3()
         {
             AudioManager.Instance.PlaySFX("TutorialEnd3");
-            new WaitForSecondsRealtime(10f);
+            yield return new WaitForSecondsRealtime(10f);
+
+            Debug.Log("OnStage4");
+            Stage3Obj.SetActive(false);
+            Stage4Obj.SetActive(true);
+            yield return null;
         }
+
 
         //TutorialEnd4
-        public void OnStageFinishEvent4()
+        public IEnumerator IStageFinishEvent4()
         {
-            AudioManager.Instance.PlaySFX("TutorialEnd4");
-            new WaitForSecondsRealtime(10f);
+            //TODO :: On Working
+            yield return null;
         }
-
-
         public override void OnResult()
         {
             Debug.Log("OnResult");
