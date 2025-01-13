@@ -32,6 +32,13 @@ namespace Jun
             OnPress.AddListener(action);
         }
 
+        public void AllResetEvent()
+        {
+            EnabeldDescObject(false);
+            EnabeldTitleObject(false);
+            EnabledCollider(false);
+        }
+
         public void RemoveListener(UnityAction action)
         {
             OnPress.RemoveListener(action);
