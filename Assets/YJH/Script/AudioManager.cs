@@ -3,56 +3,67 @@ using System.Collections.Generic;
 
 namespace YJH
 {
+    /// <summary>
+    /// Inspector에 표시할 AudioClip 정보용 구조체
+    /// </summary>
+    [System.Serializable]
+    public struct AudioClipInfo
+    {
+        public string clipName;      // Inspector에서 편집할 키 이름
+        public AudioClip audioClip;  // Inspector에서 등록할 실제 사운드 파일
+    }
+
     public class AudioManager : MonoBehaviour
     {
-        // Singleton instance
         public static AudioManager Instance { get; private set; }
 
+        [Header("Inspector에서 등록할 오디오 리스트")]
         [SerializeField]
-        // Dictionary to store audio clips
+        private List<AudioClipInfo> audioClipInfos = new List<AudioClipInfo>();
+
+        // 런타임 접근용 Dictionary
         private Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
 
-        // AudioSource for playing sound effects
+        // BGM, SFX용 AudioSource
         private AudioSource sfxSource;
-
-        // AudioSource for background music
         private AudioSource bgmSource;
 
         void Awake()
         {
-            // Enforce singleton pattern
+            // Singleton 패턴
             if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
                 return;
             }
-
             Instance = this;
             //DontDestroyOnLoad(gameObject);
 
-            // Initialize audio sources
+            // AudioSource 초기화
             sfxSource = gameObject.AddComponent<AudioSource>();
             bgmSource = gameObject.AddComponent<AudioSource>();
-            bgmSource.loop = true; // Background music loops by default
-        }
+            bgmSource.loop = true;
 
-        /// <summary>
-        /// Loads an audio clip into the manager.
-        /// </summary>
-        /// <param name="clipName">The name used to identify the audio clip.</param>
-        /// <param name="clip">The AudioClip to load.</param>
-        public void LoadAudioClip(string clipName, AudioClip clip)
-        {
-            if (!audioClips.ContainsKey(clipName))
+            // List -> Dictionary 로드
+            foreach (var info in audioClipInfos)
             {
-                audioClips.Add(clipName, clip);
+                if (!string.IsNullOrEmpty(info.clipName) && info.audioClip != null)
+                {
+                    if (!audioClips.ContainsKey(info.clipName))
+                    {
+                        audioClips.Add(info.clipName, info.audioClip);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"중복된 clipName이 있습니다: {info.clipName}");
+                    }
+                }
             }
         }
 
         /// <summary>
-        /// Plays a sound effect.
+        /// SFX 재생
         /// </summary>
-        /// <param name="clipName">The name of the audio clip to play.</param>
         public void PlaySFX(string clipName)
         {
             if (audioClips.TryGetValue(clipName, out AudioClip clip))
@@ -66,13 +77,13 @@ namespace YJH
         }
 
         /// <summary>
-        /// Plays background music.
+        /// BGM 재생
         /// </summary>
-        /// <param name="clipName">The name of the audio clip to play.</param>
         public void PlayBGM(string clipName)
         {
             if (audioClips.TryGetValue(clipName, out AudioClip clip))
             {
+                // 이미 다른 BGM이 재생 중이거나, 재생 요청된 clip이 다를 경우에만 교체
                 if (bgmSource.clip != clip)
                 {
                     bgmSource.clip = clip;
@@ -86,7 +97,7 @@ namespace YJH
         }
 
         /// <summary>
-        /// Stops the background music.
+        /// BGM 정지
         /// </summary>
         public void StopBGM()
         {
@@ -94,25 +105,23 @@ namespace YJH
         }
 
         /// <summary>
-        /// Sets the volume for sound effects.
+        /// SFX 볼륨 설정
         /// </summary>
-        /// <param name="volume">Volume value (0.0 to 1.0).</param>
         public void SetSFXVolume(float volume)
         {
             sfxSource.volume = Mathf.Clamp01(volume);
         }
 
         /// <summary>
-        /// Sets the volume for background music.
+        /// BGM 볼륨 설정
         /// </summary>
-        /// <param name="volume">Volume value (0.0 to 1.0).</param>
         public void SetBGMVolume(float volume)
         {
             bgmSource.volume = Mathf.Clamp01(volume);
         }
 
         /// <summary>
-        /// Stops all audio and clears loaded clips. Useful when changing scenes.
+        /// 모든 오디오 정지 및 딕셔너리 초기화
         /// </summary>
         public void ClearAudio()
         {

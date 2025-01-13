@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -52,6 +53,36 @@ namespace YJH
             Stage3Obj.SetActive(false);
             Stage4Obj.SetActive(true);
         }
+
+        //TutorialEnd1
+        public void OnStageFinishEvent1()
+        {
+            AudioManager.Instance.PlaySFX("TutorialEnd1");
+            new WaitForSecondsRealtime(10f);
+        }
+
+        //TutorialEnd2
+        public void OnStageFinishEvent2()
+        {
+            AudioManager.Instance.PlaySFX("TutorialEnd2");
+            new WaitForSecondsRealtime(10f);
+        }
+
+        //TutorialEnd3
+        public void OnStageFinishEvent3()
+        {
+            AudioManager.Instance.PlaySFX("TutorialEnd3");
+            new WaitForSecondsRealtime(10f);
+        }
+
+        //TutorialEnd4
+        public void OnStageFinishEvent4()
+        {
+            AudioManager.Instance.PlaySFX("TutorialEnd4");
+            new WaitForSecondsRealtime(10f);
+        }
+
+
         public override void OnResult()
         {
             Debug.Log("OnResult");
