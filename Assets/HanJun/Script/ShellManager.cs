@@ -1,15 +1,17 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using UnityEngine.Events;
 
 namespace Jun
 {
     public class ShellManager : MonoBehaviour
     {
+        public GameObject _resultCanvas;
         public TMP_Text _countText;
         public GameObject[] objects; // 6개의 오브젝트 (고정)
         public TextMeshPro[] texts;
         public ShellBehavior[] _shellObjects;
-        // public ShellThrow[] _shellThrow;
 
         private int currentStartIndex = 0; // 현재 텍스트 시작 인덱스
         private const int TEXT_COUNT_PER_CYCLE = 6; // 한 번에 보여줄 텍스트 데이터 개수
@@ -23,6 +25,8 @@ namespace Jun
         "고치기", "관찰", "창작", "단체활동", "토론", "규칙",
         "고치기", "관찰", "자유", "협동", "목표", "규칙",
         "키우기", "분석", "상상", "대화", "관심", "안정"};
+
+        private string[] descTextData = { };
 
         void Start()
         {
@@ -41,16 +45,16 @@ namespace Jun
             UpdateTextData(); // 초기 텍스트 설정
         }
 
-        int tempNumber = 0;
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                SelectObject(tempNumber);
-                tempNumber++;
-                if (tempNumber >= 6) tempNumber = 0;
-            }
-        }
+        // int tempNumber = 0;
+        // private void Update()
+        // {
+        //     if (Input.GetKeyDown(KeyCode.Q))
+        //     {
+        //         SelectObject(tempNumber);
+        //         tempNumber++;
+        //         if (tempNumber >= 6) tempNumber = 0;
+        //     }
+        // }
 
         /// <summary>
         /// 조개 선택시 이벤트
@@ -59,9 +63,7 @@ namespace Jun
         public void SelectShellEvent(int index)
         {
             ResetShellButtonEvent();
-            // 조개 선택시 바구니로 이동 후 바구니 카운트 업
-            _SelectShellNumber++;
-            _countText.text = $"{_SelectShellNumber}/6";
+
             _shellObjects[index].SetAnimationEvent(false, () => MoveToBasket(index));
         }
 
@@ -91,8 +93,36 @@ namespace Jun
         private void MoveToBasket(int index)
         {
             _shellObjects[index].EnabeldTitleObject(false);
-            _shellObjects[index].GetComponent<ShellThrow>().Throw(() => _shellObjects[index].gameObject.SetActive(false));
-            // SelectObject(_SelectShellNumber);
+            _shellObjects[index].GetComponent<ShellThrow>().ThrowToTarget(() =>
+            {
+                // 조개 선택시 바구니로 이동 후 바구니 카운트 업
+                _shellObjects[index].gameObject.SetActive(false);
+                _SelectShellNumber++;
+                _countText.text = $"{_SelectShellNumber}/6";
+            }, 0.1f);
+
+
+            DelayFunc(0.1f, () =>
+            {
+                /// Reset Shell Object
+                foreach (var objs in _shellObjects)
+                {
+                    objs.gameObject.SetActive(true);
+                    objs.EnabeldTitleObject(true);
+                }
+                _isToggleDescButtonEvent = false;
+                _shellObjects[index].GetComponent<ShellThrow>().ReturnToOriginal();
+
+                Debug.Log(_SelectShellNumber);
+                if (_SelectShellNumber >= 6)
+                {
+                    Debug.Log("End Contents and Show ResultPopup");
+                    ResetShellButtonEvent();
+                    _resultCanvas.SetActive(true);
+                    return;
+                }
+                else SelectObject(_SelectShellNumber);
+            });
         }
 
         private void ResetShellButtonEvent()
@@ -105,10 +135,28 @@ namespace Jun
             }
         }
 
+        /// <summary>
+        /// 조개 UI선택 시 애니메이션 재생 후 실행되는 이벤트
+        /// 조개 콜리더 켜지고 설명 팝업 실행
+        /// </summary>
+        /// <param name="index"></param>
         private void CompleteEvent(int index)
         {
             _shellObjects[index].EnabledCollider(true);
             _shellObjects[index].EnabeldDescObject(true);
+        }
+
+        private Coroutine delayCoroutine = null;
+        private void DelayFunc(float time, UnityAction onComplete)
+        {
+            if (delayCoroutine == null) StartCoroutine(DelayFuncCoroutine(time, onComplete));
+            else StopCoroutine(delayCoroutine);
+        }
+
+        private IEnumerator DelayFuncCoroutine(float time, UnityAction onComplete)
+        {
+            yield return new WaitForSeconds(time);
+            onComplete?.Invoke();
         }
 
         // 오브젝트 선택 시 호출
@@ -120,11 +168,7 @@ namespace Jun
                 return;
             }
 
-            foreach (var objs in _shellObjects)
-            {
-                objs.gameObject.SetActive(true);
-                objs.EnabeldTitleObject(true);
-            }
+
 
             // 텍스트 갱신 후 인덱스 업데이트
             currentStartIndex = (currentStartIndex + TEXT_COUNT_PER_CYCLE) % titleTextData.Length;
