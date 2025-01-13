@@ -15,7 +15,6 @@ namespace Jun
         {
             if (m_AudioSource != null)
                 PlayAudioPinchStart();
-
         }
 
         void PlayAudioPinchStart()

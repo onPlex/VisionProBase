@@ -6,8 +6,7 @@ namespace Jun
     public class SpatialUI : SpatialUIButton
     {
         // UnityEvent를 선언하여 Inspector에서 이벤트를 등록 가능
-        [SerializeField]
-        private UnityEvent onPress;
+        [SerializeField] private UnityEvent onPress;
 
         public override void Press()
         {

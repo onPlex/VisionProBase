@@ -1,41 +1,69 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 namespace Jun
 {
-    public class ShellBehavior : MonoBehaviour
+    public class ShellBehavior : SpatialUIButton
     {
-        [SerializeField] private Animator _anim;
-        [SerializeField] private GameObject _textTitle;
-        [SerializeField] private GameObject _buttonMake;
-        [SerializeField] private GameObject _textDesc;
-        [SerializeField] private GameObject _textInfo;
+        public UnityEvent OnPress;
+        [SerializeField] GameObject _descObject;
+        [SerializeField] GameObject _titleObject;
+        private Animator _anim;
+        private BoxCollider _boxCollider;
 
-        [SerializeField] TMP_Text _shellCount;
+        private void Awake()
+        {
+            _anim = GetComponent<Animator>();
+            _boxCollider = GetComponent<BoxCollider>();
+        }
 
-        public void Select(bool isSelected)
+        public override void Press()
+        {
+            base.Press();
+            OnPress?.Invoke();
+        }
+
+        // 외부에서 이벤트를 동적으로 등록할 수 있는 메서드
+        public void AddListener(UnityAction action)
+        {
+            OnPress.AddListener(action);
+        }
+
+        public void RemoveListener(UnityAction action)
+        {
+            OnPress.RemoveListener(action);
+        }
+
+        public void EnabeldDescObject(bool enabled)
+        {
+            _descObject.gameObject.SetActive(enabled);
+        }
+
+        public void EnabeldTitleObject(bool enabled)
+        {
+            _titleObject.gameObject.SetActive(enabled);
+        }
+
+        public void EnabledCollider(bool enabled)
+        {
+            _boxCollider.enabled = enabled;
+        }
+
+        public void SetAnimationEvent(bool isSelected, UnityAction OnComplete = null)
         {
             _anim.SetBool("isOpen", isSelected);
-            StartCoroutine(DelayEvent(isSelected));
+
+            StartCoroutine(DelayFunc(OnComplete));
         }
 
-        private IEnumerator DelayEvent(bool isSelected)
+        private IEnumerator DelayFunc(UnityAction OnComplete)
         {
-            if (isSelected)
-            {
-                _textTitle.SetActive(false);
-                yield return new WaitForSeconds(0.67f);
-                _buttonMake.SetActive(true);
-            }
-            else
-            {
-                _textDesc.SetActive(false);
-                yield return new WaitForSeconds(1f);
-                _shellCount.text = "1/6";
-                _textInfo.SetActive(true);
-                this.gameObject.SetActive(false);
-            }
+            yield return new WaitForSeconds(1f);
+            OnComplete?.Invoke();
         }
+
     }
 }

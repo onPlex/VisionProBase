@@ -5,12 +5,16 @@ namespace Jun
 {
     public class ShellManager : MonoBehaviour
     {
+        public TMP_Text _countText;
         public GameObject[] objects; // 6개의 오브젝트 (고정)
         public TextMeshPro[] texts;
-        // public string[] allTextData; // 36개의 텍스트 데이터
-        private int currentStartIndex = 0; // 현재 텍스트 시작 인덱스
+        public ShellBehavior[] _shellObjects;
+        // public ShellThrow[] _shellThrow;
 
+        private int currentStartIndex = 0; // 현재 텍스트 시작 인덱스
         private const int TEXT_COUNT_PER_CYCLE = 6; // 한 번에 보여줄 텍스트 데이터 개수
+
+        private int _SelectShellNumber = 0;
 
         private string[] titleTextData = {
         "만들기", "탐구", "아이디어", "공감", "발표", "정리",
@@ -48,6 +52,65 @@ namespace Jun
             }
         }
 
+        /// <summary>
+        /// 조개 선택시 이벤트
+        /// </summary>
+        /// <param name="index"></param> <summary>
+        public void SelectShellEvent(int index)
+        {
+            ResetShellButtonEvent();
+            // 조개 선택시 바구니로 이동 후 바구니 카운트 업
+            _SelectShellNumber++;
+            _countText.text = $"{_SelectShellNumber}/6";
+            _shellObjects[index].SetAnimationEvent(false, () => MoveToBasket(index));
+        }
+
+        /// <summary>
+        /// 조개 아래 UI버튼 이벤트
+        /// </summary>
+        /// <param name="index"></param>
+        bool _isToggleDescButtonEvent = false;
+        public void SelectButtonEvent(int index)
+        {
+            _isToggleDescButtonEvent = !_isToggleDescButtonEvent;
+            if (_isToggleDescButtonEvent)
+            {
+                ResetShellButtonEvent();
+                _shellObjects[index].SetAnimationEvent(true, () => CompleteEvent(index));
+            }
+            else
+            {
+                ResetShellButtonEvent();
+            }
+        }
+
+        /// <summary>
+        /// 바구니로 조개 이동 연출 구현
+        /// </summary>
+        /// <param name="index"></param>
+        private void MoveToBasket(int index)
+        {
+            _shellObjects[index].EnabeldTitleObject(false);
+            _shellObjects[index].GetComponent<ShellThrow>().Throw(() => _shellObjects[index].gameObject.SetActive(false));
+            // SelectObject(_SelectShellNumber);
+        }
+
+        private void ResetShellButtonEvent()
+        {
+            foreach (var desc in _shellObjects)
+            {
+                desc.SetAnimationEvent(false);
+                desc.EnabeldDescObject(false);
+                desc.EnabledCollider(false);
+            }
+        }
+
+        private void CompleteEvent(int index)
+        {
+            _shellObjects[index].EnabledCollider(true);
+            _shellObjects[index].EnabeldDescObject(true);
+        }
+
         // 오브젝트 선택 시 호출
         public void SelectObject(int objectIndex)
         {
@@ -55,6 +118,12 @@ namespace Jun
             {
                 Debug.LogError("잘못된 오브젝트 인덱스입니다.");
                 return;
+            }
+
+            foreach (var objs in _shellObjects)
+            {
+                objs.gameObject.SetActive(true);
+                objs.EnabeldTitleObject(true);
             }
 
             // 텍스트 갱신 후 인덱스 업데이트
