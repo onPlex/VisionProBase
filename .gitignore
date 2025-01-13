@@ -71,3 +71,5 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/YJH/Font/BMHANNA_11yrs_ttf SDF.asset
+Assets/YJH/Font/NotoSansKR-VariableFont_wght SDF.asset
