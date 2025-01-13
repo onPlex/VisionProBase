@@ -18,7 +18,7 @@ namespace YJH
     public class SpecialEvent
     {
         //public string EventName; // Name of the event (for identification/debugging)
-        public ContentPhaseManager EventPhase; // Script containing the special event logic
+        public MonoBehaviour EventPhase; // Script containing the special event logic
         public string MethodName; // Name of the method to invoke
     }
 
@@ -30,6 +30,10 @@ namespace YJH
 
         private int currentQuestionIndex = 0;
         private Dictionary<int, int> playerResponses = new Dictionary<int, int>(); // Stores question index and player's selected option
+
+         // ▼ 응답 딕셔너리, 질문 리스트에 접근할 수 있도록 public Getter 추가
+        public Dictionary<int, int> PlayerResponses => playerResponses;      // 응답 Dictionary
+        public List<SurveyQuestion> SurveyQuestions => surveyQuestions;      // 질문 리스트
 
         void Start()
         {
@@ -89,14 +93,14 @@ namespace YJH
             // 우선 currentQuestionIndex도 유효한지 확인
             if (currentQuestionIndex < 0 || currentQuestionIndex >= surveyQuestions.Count)
             {
-                Debug.LogError($"Invalid currentQuestionIndex: {currentQuestionIndex}");
+                Debug.LogWarning($"Invalid currentQuestionIndex: {currentQuestionIndex}");
                 return;
             }
 
             // 여기서 'Options' 접근 전, selectedOptionIndex 범위 체크
             if (selectedOptionIndex < 0 || selectedOptionIndex >= surveyQuestions[currentQuestionIndex].Options.Count)
             {
-                Debug.LogError($"Invalid option index {selectedOptionIndex} for question {currentQuestionIndex}. " +
+                Debug.LogWarning($"Invalid option index {selectedOptionIndex} for question {currentQuestionIndex}. " +
                                $"Options.Count={surveyQuestions[currentQuestionIndex].Options.Count}");
                 return;
             }

@@ -51,7 +51,7 @@ namespace YJH
             OnOptionSelected?.Invoke(optionIndex);
 
             // Allow pressing again after a short delay
-            StartCoroutine(ResetPressDelay(0.2f));
+            if(gameObject.activeInHierarchy)StartCoroutine(ResetPressDelay(0.2f));
         }
 
 

@@ -28,77 +28,76 @@ namespace YJH
         //EContent_Phase eContent_Phase;
         [Header("Title")]
         [SerializeField]
-        GameObject TitleObj;
+        protected GameObject TitleObj;
 
         [Header("Prologue")]
         [SerializeField]
-        GameObject PrologueObj;
+        protected GameObject PrologueObj;
         [SerializeField]
-        GameObject Stage1StartButton;
+        protected GameObject Stage1StartButton;
 
         [Header("Stage1")]
         [SerializeField]
-        GameObject Stage1Obj;
+        protected GameObject Stage1Obj;
 
         [Header("Stage1End")]
         [SerializeField]
-        GameObject Stage1EndObj;
+        protected GameObject Stage1EndObj;
 
         [Header("Stage2Start")]
         [SerializeField]
-        GameObject Stage2StartObj;
+        protected GameObject Stage2StartObj;
 
         [Header("Stage2")]
         [SerializeField]
-        GameObject Stage2Obj;
+        protected GameObject Stage2Obj;
 
         [Header("Stage2End")]
         [SerializeField]
-        GameObject Stage2EndObj;
+        protected GameObject Stage2EndObj;
 
         [Header("Stage3Start")]
         [SerializeField]
-        GameObject Stage3StartObj;
+        protected GameObject Stage3StartObj;
 
         [Header("Stage3")]
         [SerializeField]
-        GameObject Stage3Obj;
+        protected GameObject Stage3Obj;
 
         [Header("Stage3End")]
         [SerializeField]
-        GameObject Stage3EndObj;
+        protected GameObject Stage3EndObj;
 
 
         [Header("Stage4Start")]
         [SerializeField]
-        GameObject Stage4StartObj;
+        protected GameObject Stage4StartObj;
 
         [Header("Stage4")]
         [SerializeField]
-        GameObject Stage4Obj;
+        protected GameObject Stage4Obj;
 
         [Header("Stage4End")]
         [SerializeField]
-        GameObject Stage4EndObj;
+        protected GameObject Stage4EndObj;
 
-
+        [Header("Result")]
+        [SerializeField]
+        protected GameObject ResultObj;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             InitPhase();
         }
-
-        /// <summary>
-        ///Prologue
-        /// </summary>
-        public void OnGameStart()
+    
+        public virtual void OnGameStart() // == OnPrologueStart
         {
             TitleObj.SetActive(false);
             PrologueObj.SetActive(true);
         }
 
-        public void OnGamePrologueEnd()
+        public virtual void OnGamePrologueEnd()
         {
             Stage1StartButton.SetActive(true);
         }
@@ -106,13 +105,13 @@ namespace YJH
         /// <summary>
         /// Stage1
         /// </summary>
-        public void OnStage1Start()
+        public virtual void OnStage1Start()
         {
             PrologueObj.SetActive(false);
             Stage1Obj.SetActive(true);
         }
 
-        public void OnStage1End()
+        public virtual void OnStage1End()
         {
             Debug.Log("OnStage1Finish");
 
@@ -128,11 +127,11 @@ namespace YJH
             // 씨앗이 구덩이에 심어지는 연출​ - '빛 파티클 연출' - 나무 자라는 연출 진행​
         }
 
-        public void OnStage2Start()
+        public virtual void OnStage2Start()
         {
             Debug.Log("OnStage2Start");
 
-              Stage1EndObj.SetActive(false);
+            Stage1EndObj.SetActive(false);
             Stage2StartObj.SetActive(true);
             //플루트 내래이션 연출​
             //안내 메시지 생성​ - 6가지 문항에 답변하여 아이템을 획득하세요. ​
@@ -140,7 +139,7 @@ namespace YJH
             // 
         }
 
-        public void OnStage2()
+        public virtual void OnStage2()
         {
             Debug.Log("OnStage2");
             Stage2StartObj.SetActive(false);
@@ -148,10 +147,10 @@ namespace YJH
 
         }
 
-        public void OnStage2End()
+        public virtual void OnStage2End()
         {
             Debug.Log("OnStage2End");
-             Stage2Obj.SetActive(false);
+            Stage2Obj.SetActive(false);
             Stage2EndObj.SetActive(true);
             //[물뿌리개] 아이콘이 생성
             //안내 메시지 생성​  - 마법 정원에 해가 뜰 때, 물뿌리개를 들어 땅 쪽으로 기울여 보세요!​
@@ -161,7 +160,7 @@ namespace YJH
             // 연출 완료시 Stage 3 시작
         }
 
-        public void OnStage3Start()
+        public virtual void OnStage3Start()
         {
             Debug.Log("OnStage3Start");
             Stage2EndObj.SetActive(false);
@@ -172,7 +171,7 @@ namespace YJH
 
         }
 
-        public void OnStage3()
+        public virtual void OnStage3()
         {
             Debug.Log("OnStage3");
             Stage3StartObj.SetActive(false);
@@ -180,10 +179,10 @@ namespace YJH
 
         }
 
-        public void OnStage3End()
+        public virtual void OnStage3End()
         {
             Debug.Log("OnStage3End");
-             Stage3Obj.SetActive(false);
+            Stage3Obj.SetActive(false);
             Stage3EndObj.SetActive(true);
 
             //제초 가위​ 아이콘 생성​
@@ -193,7 +192,7 @@ namespace YJH
             // 연출 완료시 Stage 4 시작
         }
 
-        public void OnStage4Start()
+        public virtual void OnStage4Start()
         {
             Debug.Log("OnStage4Start");
             Stage3EndObj.SetActive(false);
@@ -204,26 +203,44 @@ namespace YJH
             // 
         }
 
-        public void OnStage4()
+        public virtual void OnStage4()
         {
             Debug.Log("OnStage4");
             Stage4StartObj.SetActive(false);
             Stage4Obj.SetActive(true);
         }
 
-        public void OnStage4End()
+        public virtual void OnStage4End()
         {
             Debug.Log("OnStage4End");
             Stage4Obj.SetActive(false);
             Stage4EndObj.SetActive(true);
         }
 
-        private void InitPhase()
+        public virtual void OnResult()
+        {
+            Debug.Log("OnResult");
+            Stage4EndObj.SetActive(false);
+            ResultObj.SetActive(true);
+        }
+
+        protected void InitPhase()
         {
             // eContent_Phase = EContent_Phase.Title;
-            TitleObj.SetActive(true);
-            PrologueObj.SetActive(false);
-            Stage1Obj.SetActive(false);
+            if(TitleObj)TitleObj.SetActive(true);
+            if(PrologueObj)PrologueObj.SetActive(false);
+            if(Stage1Obj)Stage1Obj.SetActive(false);
+            if(Stage1EndObj)Stage1EndObj.SetActive(false);
+            if(Stage2StartObj)Stage2StartObj.SetActive(false);
+            if(Stage2Obj)Stage2Obj.SetActive(false);
+            if(Stage2EndObj)Stage2EndObj.SetActive(false);
+            if(Stage3StartObj)Stage3StartObj.SetActive(false);
+            if(Stage3Obj)Stage3Obj.SetActive(false);
+            if(Stage3EndObj)Stage3EndObj.SetActive(false);
+            if(Stage4StartObj)Stage4StartObj.SetActive(false);
+            if(Stage4Obj)Stage4Obj.SetActive(false);
+            if(Stage4EndObj)Stage4EndObj.SetActive(false);
+            if(ResultObj)ResultObj.SetActive(false);
         }
     }
 }
