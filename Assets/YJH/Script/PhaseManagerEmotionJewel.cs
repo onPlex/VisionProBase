@@ -116,6 +116,7 @@ namespace YJH
         public override void OnResult()
         {
             Debug.Log("OnResult");
+            StartCoroutine(IStageFinishEvent4());
         }
     }
 }
