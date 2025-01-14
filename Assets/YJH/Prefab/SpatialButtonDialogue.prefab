@@ -95,9 +95,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 997482010281790066, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 997482010281790066, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: -7760090361713864024, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
+      objectReference: {fileID: 9150809819370001663, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
+    - target: {fileID: 1984316302571666662, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2169906426513211166, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -217,12 +225,13 @@ PrefabInstance:
     - target: {fileID: 7818306257993313966, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -7760090361713864024, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
+      objectReference: {fileID: 9150809819370001663, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
     - target: {fileID: 8196778831379364002, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_Name
       value: SpatialButtonDialogue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3476395485657021072, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2169906426513211166, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
@@ -265,10 +274,14 @@ MonoBehaviour:
   dialoguePairs:
   - DialogueText: "\uD504\uB864\uB85C\uADF8 1 \uD14C\uC2A4\uD2B8\n"
     DialogueAudio: {fileID: 8300000, guid: f6a9bbb2a35c34a4c8f88b4104a3a14a, type: 3}
+    TriggerEvent: 0
   - DialogueText: "\uD504\uB864\uB85C\uADF8 2 \uD14C\uC2A4\uD2B8\n"
     DialogueAudio: {fileID: 8300000, guid: f6a9bbb2a35c34a4c8f88b4104a3a14a, type: 3}
+    TriggerEvent: 0
   - DialogueText: "\uD504\uB864\uB85C\uADF8 3 \uD14C\uC2A4\uD2B8\n"
     DialogueAudio: {fileID: 8300000, guid: f6a9bbb2a35c34a4c8f88b4104a3a14a, type: 3}
+    TriggerEvent: 0
+  contentPhaseManager: {fileID: 0}
 --- !u!224 &8181918044007324859 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2169906426513211166, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}

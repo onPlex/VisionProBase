@@ -11,22 +11,13 @@ namespace Jun
         public TMP_Text _countText;
         public GameObject[] objects; // 6개의 오브젝트 (고정)
         public TextMeshPro[] texts;
+        public TextMeshPro[] desces;
         public ShellBehavior[] _shellObjects;
 
         private int currentStartIndex = 0; // 현재 텍스트 시작 인덱스
         private const int TEXT_COUNT_PER_CYCLE = 6; // 한 번에 보여줄 텍스트 데이터 개수
 
         private int _SelectShellNumber = 0;
-
-        private string[] titleTextData = {
-        "만들기", "탐구", "아이디어", "공감", "발표", "정리",
-        "기계", "운동", "예술", "봉사", "리더십", "기록",
-        "요리", "호기심", "표현", "도움", "경쟁", "계획",
-        "고치기", "관찰", "창작", "단체활동", "토론", "규칙",
-        "고치기", "관찰", "자유", "협동", "목표", "규칙",
-        "키우기", "분석", "상상", "대화", "관심", "안정"};
-
-        private string[] descTextData = { };
 
         void Start()
         {
@@ -99,10 +90,10 @@ namespace Jun
                 _shellObjects[index].gameObject.SetActive(false);
                 _SelectShellNumber++;
                 _countText.text = $"{_SelectShellNumber}/6";
-            }, 0.1f);
+            }, 1f);
 
 
-            DelayFunc(0.1f, () =>
+            DelayFunc(2f, () =>
             {
                 /// Reset Shell Object
                 foreach (var objs in _shellObjects)
@@ -117,7 +108,7 @@ namespace Jun
                 if (_SelectShellNumber >= 6)
                 {
                     Debug.Log("End Contents and Show ResultPopup");
-                    ResetShellButtonEvent();
+                    AllResetEvent();
                     _resultCanvas.SetActive(true);
                     return;
                 }
@@ -133,6 +124,12 @@ namespace Jun
                 desc.EnabeldDescObject(false);
                 desc.EnabledCollider(false);
             }
+        }
+
+        private void AllResetEvent()
+        {
+            foreach (var item in _shellObjects)
+                item.AllResetEvent();
         }
 
         /// <summary>
@@ -182,6 +179,7 @@ namespace Jun
             {
                 // 텍스트를 설정할 오브젝트의 TextMeshPro 컴포넌트 찾기
                 TextMeshPro textComponent = texts[i]; //objects[i].GetComponentInChildren<TextMeshPro>();
+                TextMeshPro descComponent = desces[i];
                 if (textComponent == null)
                 {
                     Debug.LogError($"오브젝트 {i}에 TextMeshPro가 없습니다.");
@@ -191,7 +189,54 @@ namespace Jun
                 // 새로운 텍스트 할당
                 int textIndex = (currentStartIndex + i) % titleTextData.Length;
                 textComponent.text = titleTextData[textIndex];
+                descComponent.text = descTextData[textIndex];
             }
         }
+        private string[] titleTextData = {
+        "만들기", "탐구", "아이디어", "공감", "발표", "정리",
+        "기계", "운동", "예술", "봉사", "리더십", "기록",
+        "요리", "호기심", "표현", "도움", "경쟁", "계획",
+        "고치기", "관찰", "창작", "단체활동", "토론", "규칙",
+        "고치기", "관찰", "자유", "협동", "목표", "규칙",
+        "키우기", "분석", "상상", "대화", "관심", "안정"};
+
+        private string[] descTextData ={
+    "나는 손으로 조립하거나 만드는 것을 좋아해!",
+    "나는 새로운 물건이나 현상을 다양한 방법으로 알아보는 것을 좋아해!",
+    "나는 항상 새로운 아이디어를 떠올리는 것을 좋아해!",
+    "나는 친구의 고민이나 어려움이 내 일처럼 느껴져!",
+    "나는 여러 사람 앞에서 발표하는 것을 좋아해!",
+    "나는 사물함이나 책상 정돈을 좋아해!",
+    "나는 컴퓨터, 기차 등이 어떻게 작동하는지 알고 싶어!",
+    "나는 몸을 활발하게 움직이는 활동을 좋아해!",
+    "나는 문학, 미술, 연극, 영화 같은 예술 작품 감상을 좋아해!",
+    "나는 어려운 처지에 있는 사람들을 돕고 싶어!",
+    "나는 사람들을 이끄는 역할을 좋아해!",
+    "나는 사소한 일들도 메모하는 것을 좋아해!",
+    "나는 맛있는 음식 만드는 것을 좋아해!",
+    "나는 미스테리나 수수께끼를 보면 스스로 풀어보고 싶어!",
+    "나는 생각과 느낌을 말이나 몸짓으로 나타내는 것을 좋아해!",
+    "나는 친구에게 힘든 일이 생겼을 때 꼭 도와주고 싶어!",
+    "나는 경쟁에서 이기고 싶은 마음이 강해!",
+    "나는 무엇을 할지 미리 정하고 차근차근 실천하는 것을 좋아해!",
+    "고장난 게임기나 장난감을 보면 스스로 고쳐보고 싶어!",
+    "나는 무엇이든 자세히 살펴보는 것을 좋아해!",
+    "나는 예술 활동을 통해 새로운 것을 만드는 과정을 좋아해!",
+    "나는 다른 사람들과 즐겁게 어울리는 것을 좋아해!",
+    "나는 다른 사람에게 내 의견을 잘 이야기할 수 있어!",
+    "나는 약속이나 질서를 잘 지키려고 노력해!",
+    "고장난 게임기나 장난감을 보면 스스로 고쳐보고 싶어!",
+    "나는 무엇이든 자세히 살펴보는 것을 좋아해!",
+    "나는 정해진 방법보다 내 마음에 드는 방법을 찾고 싶어!",
+    "나는 문제를 혼자보다 함께 해결하는 것을 좋아해!",
+    "나는 내가 원하는 것을 이루기 위해 항상 노력해!",
+    "나는 약속이나 질서를 잘 지키려고 노력해!",
+    "나는 식물이나 동물을 보살피기를 좋아해!",
+    "나는 어떤 문제를 틀렸을 때, 틀린 이유를 분명히 알고 싶어!",
+    "나는 재미있고 독특한 생각이 머릿속에 자주 펼쳐져!",
+    "나는 사람들과 이야기를 주고 받으며 소통하는 것을 좋아해!",
+    "나는 주변 사람에게 주목받는 것을 좋아해!",
+    "나는 새로운 변화보다 익숙한 환경을 좋아해!"
+};
     }
 }
