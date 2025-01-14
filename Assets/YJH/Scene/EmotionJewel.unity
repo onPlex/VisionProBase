@@ -1873,7 +1873,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[7].QuestionText
-      value: "--\uAE30\uD68D \uBBF8\uC218\uB839 --"
+      value: "--\uAE30\uD68D \uBBF8\uC218\uB839 \uB05D\uBB38\uC81C--"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: surveyQuestions.Array.data[8].QuestionText
+      value: "--\uAE30\uD68D \uBBF8\uC218\uB839 \uB05D\uBB38\uC81C--"
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[0].Options.Array.size
@@ -1908,11 +1912,19 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: surveyQuestions.Array.data[8].Options.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[0].TriggerSpecialEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[7].TriggerSpecialEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: surveyQuestions.Array.data[8].TriggerSpecialEvent
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
@@ -2076,11 +2088,35 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: 'surveyQuestions.Array.data[8].Options.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: 'surveyQuestions.Array.data[8].Options.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: 'surveyQuestions.Array.data[8].Options.Array.data[2]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: 'surveyQuestions.Array.data[8].Options.Array.data[3]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: 'surveyQuestions.Array.data[8].Options.Array.data[4]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[0].SpecialEvents.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[7].SpecialEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: surveyQuestions.Array.data[8].SpecialEvents.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
@@ -2106,6 +2142,14 @@ PrefabInstance:
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.data[7].SpecialEvents.Array.data[1].MethodName
       value: OnStage2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: surveyQuestions.Array.data[8].SpecialEvents.Array.data[0].EventPhase
+      value: 
+      objectReference: {fileID: 1044930383}
+    - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
+      propertyPath: surveyQuestions.Array.data[8].SpecialEvents.Array.data[0].MethodName
+      value: OnResult
       objectReference: {fileID: 0}
     - target: {fileID: 2724300763736254689, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_fontAsset
@@ -4146,7 +4190,7 @@ PrefabInstance:
       objectReference: {fileID: -1531432145763841545, guid: d9a960e1a394d4deb957a98a53a21671, type: 2}
     - target: {fileID: 885357656459750331, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2377039804829336396, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: surveyQuestions.Array.size
@@ -4435,7 +4479,7 @@ PrefabInstance:
       objectReference: {fileID: -1531432145763841545, guid: d9a960e1a394d4deb957a98a53a21671, type: 2}
     - target: {fileID: 2724300763736254689, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3690701300772185318, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_fontAsset
@@ -4447,7 +4491,7 @@ PrefabInstance:
       objectReference: {fileID: -1531432145763841545, guid: d9a960e1a394d4deb957a98a53a21671, type: 2}
     - target: {fileID: 3690701300772185318, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4271403033167581202, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4463,7 +4507,7 @@ PrefabInstance:
       objectReference: {fileID: -1531432145763841545, guid: d9a960e1a394d4deb957a98a53a21671, type: 2}
     - target: {fileID: 4840868869524474839, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5427167113966206755, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4483,7 +4527,7 @@ PrefabInstance:
       objectReference: {fileID: -1531432145763841545, guid: d9a960e1a394d4deb957a98a53a21671, type: 2}
     - target: {fileID: 6322494724234744477, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6553384141161529901, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_fontAsset
@@ -4495,7 +4539,7 @@ PrefabInstance:
       objectReference: {fileID: -1531432145763841545, guid: d9a960e1a394d4deb957a98a53a21671, type: 2}
     - target: {fileID: 6553384141161529901, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6899814103320684137, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4523,7 +4567,7 @@ PrefabInstance:
       objectReference: {fileID: -1531432145763841545, guid: d9a960e1a394d4deb957a98a53a21671, type: 2}
     - target: {fileID: 7754436484973561523, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7842666709975835232, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_fontAsset
@@ -4535,7 +4579,7 @@ PrefabInstance:
       objectReference: {fileID: -1531432145763841545, guid: d9a960e1a394d4deb957a98a53a21671, type: 2}
     - target: {fileID: 7842666709975835232, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8469723958941141133, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4577,7 +4621,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1949261214627756074, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -4673,6 +4718,7 @@ GameObject:
   - component: {fileID: 1044930383}
   - component: {fileID: 1044930381}
   - component: {fileID: 1044930384}
+  - component: {fileID: 1044930385}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -4758,6 +4804,18 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: ca5385dfa3bd0412aa42b2c07e50d054, type: 3}
   - clipName: TutorialEnd4
     audioClip: {fileID: 8300000, guid: ca5385dfa3bd0412aa42b2c07e50d054, type: 3}
+--- !u!114 &1044930385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044930380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c53cdbdd298e4aa1913d09acdbe35eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1068553363
 GameObject:
   m_ObjectHideFlags: 0
@@ -5169,11 +5227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8663426514577986154, guid: 81dfb0b2707204f4fb8cd3062f9f1c6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 8663426514577986154, guid: 81dfb0b2707204f4fb8cd3062f9f1c6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 8663426514577986154, guid: 81dfb0b2707204f4fb8cd3062f9f1c6c, type: 3}
       propertyPath: m_LocalPosition.z
