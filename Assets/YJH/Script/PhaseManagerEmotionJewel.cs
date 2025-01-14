@@ -1,14 +1,21 @@
 using System.Collections;
 using UnityEngine;
-
+using TMPro;
 
 namespace YJH
 {
     public class PhaseManagerEmotionJewel : ContentPhaseManager
     {
+        [Header("DebugTEXT")]
+        [SerializeField]
+        TMP_Text resultDebugText;
+        [SerializeField]
+        private GameObject ResultDebugTextRootGameObj;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             InitPhase();
         }
 
@@ -40,7 +47,7 @@ namespace YJH
 
         public override void OnStage3()
         {
-             StartCoroutine(IStageFinishEvent2());
+            StartCoroutine(IStageFinishEvent2());
         }
 
         public override void OnStage4()
@@ -51,11 +58,13 @@ namespace YJH
         //TutorialEnd1
         public IEnumerator IStageFinishEvent1()
         {
+            Stage1Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd1");
+            ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
             yield return new WaitForSecondsRealtime(10f);
 
             Debug.Log("OnStage2");
-            Stage1Obj.SetActive(false);
+            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage2Obj.SetActive(true);
             yield return null;
         }
@@ -63,11 +72,13 @@ namespace YJH
         //TutorialEnd2
         public IEnumerator IStageFinishEvent2()
         {
+            Stage2Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd2");
+            ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
             yield return new WaitForSecondsRealtime(10f);
 
             Debug.Log("OnStage3");
-            Stage2Obj.SetActive(false);
+            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage3Obj.SetActive(true);
             yield return null;
         }
@@ -77,11 +88,13 @@ namespace YJH
         //TutorialEnd3
         public IEnumerator IStageFinishEvent3()
         {
+            Stage3Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd3");
+            ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
             yield return new WaitForSecondsRealtime(10f);
 
             Debug.Log("OnStage4");
-            Stage3Obj.SetActive(false);
+            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage4Obj.SetActive(true);
             yield return null;
         }
@@ -90,14 +103,19 @@ namespace YJH
         //TutorialEnd4
         public IEnumerator IStageFinishEvent4()
         {
-            //TODO :: On Working
+            Stage4Obj.SetActive(false);
+            AudioManager.Instance.PlaySFX("TutorialEnd4");
+            ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
+            yield return new WaitForSecondsRealtime(10f);
+
+            Debug.Log("OnStage4");
+            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
+            ResultObj.SetActive(true);
             yield return null;
         }
         public override void OnResult()
         {
             Debug.Log("OnResult");
-            Stage4EndObj.SetActive(false);
-            ResultObj.SetActive(true);
         }
     }
 }
