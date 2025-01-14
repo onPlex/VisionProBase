@@ -1,0 +1,32 @@
+using System.Collections;
+using UnityEngine;
+
+namespace Jun
+{
+    public class ShearsEvent : ProductionEvent
+    {
+        [SerializeField] private GameObject[] shears;
+        [SerializeField] private GameObject[] grass;
+        [SerializeField] private Animator[] animator;
+
+        public void PlayAnimation()
+        {
+            StartCoroutine(DelayEvent());
+        }
+
+        private IEnumerator DelayEvent()
+        {
+            shears[0].SetActive(true);
+            yield return new WaitForSeconds(GetAnimationClipLength(animator[0], "gardening_shears_ani_cut_Notmove"));
+            shears[0].SetActive(false);
+            shears[1].SetActive(true);
+            grass[0].SetActive(false);
+            yield return new WaitForSeconds(GetAnimationClipLength(animator[1], "gardening_shears_ani_cut_Notmove"));
+            grass[1].SetActive(false);
+            shears[1].SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+
+            onComplete?.Invoke();
+        }
+    }
+}

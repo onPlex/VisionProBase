@@ -5,9 +5,8 @@ using System.Collections;
 
 namespace Jun
 {
-    public class TrowelEvent : MonoBehaviour
+    public class TrowelEvent : ProductionEvent
     {
-        [SerializeField] UnityEvent onComplete;
         private Animator animator;
 
         private Coroutine playAnim = null;
@@ -33,7 +32,7 @@ namespace Jun
         private IEnumerator PlayAnimationCoroutine()
         {
             animator.SetBool("IsPlay", true);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(GetAnimationClipLength(animator, "gardening_trowel_ani_digging") * 3);
             animator.SetBool("IsPlay", false);
             onComplete?.Invoke();
         }

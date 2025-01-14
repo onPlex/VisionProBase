@@ -4,9 +4,8 @@ using UnityEngine.Events;
 
 namespace Jun
 {
-    public class SeedEvent : MonoBehaviour
+    public class SeedEvent : ProductionEvent
     {
-        [SerializeField] private UnityEvent onComplete;
         [SerializeField] private ParticleSystem particle;
         public float tiltDuration = 2f; // 기울어지는 데 걸리는 시간
         private float maxTiltAngle = -90f; // 최대 기울기 각도
