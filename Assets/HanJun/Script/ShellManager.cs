@@ -7,9 +7,12 @@ namespace Jun
 {
     public class ShellManager : MonoBehaviour
     {
-        public GameObject _resultCanvas;
+        public GameObject dolphin;
         public TMP_Text _countText;
+        public GameObject shellCountUI;
+
         public GameObject[] objects; // 6개의 오브젝트 (고정)
+
         public TextMeshPro[] texts;
         public TextMeshPro[] desces;
         public ShellBehavior[] _shellObjects;
@@ -36,16 +39,6 @@ namespace Jun
             UpdateTextData(); // 초기 텍스트 설정
         }
 
-        // int tempNumber = 0;
-        // private void Update()
-        // {
-        //     if (Input.GetKeyDown(KeyCode.Q))
-        //     {
-        //         SelectObject(tempNumber);
-        //         tempNumber++;
-        //         if (tempNumber >= 6) tempNumber = 0;
-        //     }
-        // }
 
         /// <summary>
         /// 조개 선택시 이벤트
@@ -107,9 +100,11 @@ namespace Jun
                 Debug.Log(_SelectShellNumber);
                 if (_SelectShellNumber >= 6)
                 {
-                    Debug.Log("End Contents and Show ResultPopup");
+                    Debug.Log("End Contents and Show Dolphine");
                     AllResetEvent();
-                    _resultCanvas.SetActive(true);
+                    shellCountUI.SetActive(false);
+                    dolphin.SetActive(true);
+                    dolphin.GetComponent<Dolphin>().PlayAnimation();
                     return;
                 }
                 else SelectObject(_SelectShellNumber);
