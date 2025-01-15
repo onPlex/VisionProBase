@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ProjectSelect.unity
-    guid: a499d08d1f72b4df6976f43e07365b7c
+    path: Assets/Scenes/TrialCode/TrialCodeInput.unity
+    guid: 03b6db8cd369744b8b740d47f29daf6f
   - enabled: 1
     path: Assets/HanJun/Scene/00_Shell_Login.unity
     guid: df6b51219271d4162b4fb9496fb8f016
   - enabled: 1
-    path: Assets/HanJun/Scene/01_Shell_Title.unity
+    path: Assets/HanJun/Scene/InterestingShell.unity
     guid: 47bf050a5a02c48b0a58f4c733f4402c
   - enabled: 1
     path: Assets/HanJun/Scene/02_Shell_Tutorial.unity

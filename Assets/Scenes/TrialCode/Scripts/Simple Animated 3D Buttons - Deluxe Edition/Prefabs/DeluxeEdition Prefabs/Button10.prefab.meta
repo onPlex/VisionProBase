@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 547e95b3f11e4da4082d9c92718b80f5
+timeCreated: 1517426088
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110457
+  packageName: 'Simple Animated Functional 3D Buttons - Deluxe Edition [Mobile, AR
+    & PC Ready]'
+  packageVersion: 2.1
+  assetPath: Assets/Simple Animated 3D Buttons - Deluxe Edition/Prefabs/DeluxeEdition
+    Prefabs/Button10.prefab
+  uploadId: 230151

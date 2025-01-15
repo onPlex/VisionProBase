@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: New visionOS Profile
+  m_Name: EmotionJewel
   m_EditorClassIdentifier: 
   m_AssetVersion: 1
   m_BuildTarget: 47
@@ -18,8 +18,12 @@ MonoBehaviour:
   m_PlatformId: 53916e6f1f7240d992977ffa2322b047
   m_PlatformBuildProfile:
     rid: 184962192145907785
-  m_OverrideGlobalSceneList: 0
-  m_Scenes: []
+  m_OverrideGlobalSceneList: 1
+  m_Scenes:
+  - m_enabled: 1
+    m_path: Assets/Scenes/TrialCode/TrialCodeInput.unity
+  - m_enabled: 1
+    m_path: Assets/YJH/Scene/EmotionJewel.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -34,8 +38,8 @@ MonoBehaviour:
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
-    - line: '|   companyName: DefaultCompany'
-    - line: '|   productName: PolySpatial Project Template'
+    - line: '|   companyName: GMW'
+    - line: '|   productName: EmotionJewel'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b:
@@ -161,9 +165,9 @@ MonoBehaviour:
     - line: '|   vulkanEnableLateAcquireNextImage: 0'
     - line: '|   vulkanEnableCommandBufferRecycling: 1'
     - line: '|   loadStoreDebugModeEnabled: 0'
-    - line: '|   visionOSBundleVersion: 1.0'
+    - line: '|   visionOSBundleVersion: 0.3'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 0.1'
+    - line: '|   bundleVersion: 0.3'
     - line: '|   preloadedAssets: []'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
@@ -186,14 +190,14 @@ MonoBehaviour:
     - line: '|   androidMaxAspectRatio: 2.1'
     - line: '|   androidMinAspectRatio: 1'
     - line: '|   applicationIdentifier:'
-    - line: '|     VisionOS: com.DefaultCompany.PolySpatial-Project-Template'
+    - line: '|     VisionOS: com.GMW.EmotionJewel'
     - line: '|     iPhone: com.DefaultCompany.PolySpatial-Project-Template'
     - line: '|   buildNumber:'
     - line: '|     Standalone: 0'
-    - line: '|     VisionOS: 0'
+    - line: '|     VisionOS: 1'
     - line: '|     iPhone: 0'
     - line: '|     tvOS: 0'
-    - line: '|   overrideDefaultApplicationIdentifier: 1'
+    - line: '|   overrideDefaultApplicationIdentifier: 0'
     - line: '|   AndroidBundleVersionCode: 1'
     - line: '|   AndroidMinSdkVersion: 23'
     - line: '|   AndroidTargetSdkVersion: 0'
@@ -310,7 +314,15 @@ MonoBehaviour:
     - line: '|   AndroidAppBundleSizeToValidate: 150'
     - line: '|   AndroidReportGooglePlayAppDependencies: 1'
     - line: '|   androidSymbolsSizeThreshold: 800'
-    - line: '|   m_BuildTargetIcons: []'
+    - line: '|   m_BuildTargetIcons:'
+    - line: '|   - m_BuildTarget: '
+    - line: '|     m_Icons:'
+    - line: '|     - serializedVersion: 2'
+    - line: '|       m_Icon: {fileID: 2800000, guid: 953ba51f69a984f50beedf695e15c8e0,
+        type: 3}'
+    - line: '|       m_Width: 128'
+    - line: '|       m_Height: 128'
+    - line: '|       m_Kind: 0'
     - line: '|   m_BuildTargetPlatformIcons:'
     - line: '|   - m_BuildTarget: iPhone'
     - line: '|     m_Icons:'
@@ -411,7 +423,13 @@ MonoBehaviour:
     - line: '|       m_SubKind: App Store'
     - line: '|   - m_BuildTarget: VisionOS'
     - line: '|     m_Icons:'
-    - line: '|     - m_Textures: []'
+    - line: '|     - m_Textures:'
+    - line: '|       - {fileID: 2800000, guid: 953ba51f69a984f50beedf695e15c8e0,
+        type: 3}'
+    - line: '|       - {fileID: 2800000, guid: 953ba51f69a984f50beedf695e15c8e0,
+        type: 3}'
+    - line: '|       - {fileID: 2800000, guid: 953ba51f69a984f50beedf695e15c8e0,
+        type: 3}'
     - line: '|       m_Width: 1024'
     - line: '|       m_Height: 1024'
     - line: '|       m_Kind: 0'
@@ -990,7 +1008,13 @@ MonoBehaviour:
     - line: '|   windowsGamepadBackendHint: 0'
     - line: '|   cloudProjectId: '
     - line: '|   framebufferDepthMemorylessMode: 0'
-    - line: '|   qualitySettingsNames: []'
+    - line: '|   qualitySettingsNames:'
+    - line: '|   - Very Low'
+    - line: '|   - Low'
+    - line: '|   - Medium'
+    - line: '|   - High'
+    - line: '|   - Very High'
+    - line: '|   - Ultra'
     - line: '|   projectName: '
     - line: '|   organizationId: '
     - line: '|   cloudEnabled: 0'

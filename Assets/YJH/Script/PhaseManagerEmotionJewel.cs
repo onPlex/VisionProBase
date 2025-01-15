@@ -60,11 +60,11 @@ namespace YJH
         {
             Stage1Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd1");
-            ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
+           // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
             yield return new WaitForSecondsRealtime(10f);
 
             Debug.Log("OnStage2");
-            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
+          //  ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage2Obj.SetActive(true);
             yield return null;
         }
@@ -74,11 +74,11 @@ namespace YJH
         {
             Stage2Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd2");
-            ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
+           // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
             yield return new WaitForSecondsRealtime(10f);
 
             Debug.Log("OnStage3");
-            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
+           // ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage3Obj.SetActive(true);
             yield return null;
         }
@@ -90,11 +90,11 @@ namespace YJH
         {
             Stage3Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd3");
-            ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
+           // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
             yield return new WaitForSecondsRealtime(10f);
 
             Debug.Log("OnStage4");
-            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
+            //ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage4Obj.SetActive(true);
             yield return null;
         }
@@ -105,11 +105,11 @@ namespace YJH
         {
             Stage4Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd4");
-            ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
+           // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
             yield return new WaitForSecondsRealtime(10f);
 
             Debug.Log("OnStage4");
-            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
+           // ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             ResultObj.SetActive(true);
             yield return null;
         }

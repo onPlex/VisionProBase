@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: f79d087bfcba0e54f82399a5152f08ce
+timeCreated: 1517074900
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ButtonMeshes01
+    100004: ButtonMeshes02
+    100006: ButtonMeshes03
+    100008: ButtonMeshes04
+    100010: ButtonMeshes05
+    100012: ButtonMeshes06
+    100014: ButtonMeshes07
+    100016: ButtonMeshes08
+    100018: ButtonMeshes09
+    100020: ButtonMeshes10
+    100022: ButtonMeshes11
+    100024: ButtonMeshes12
+    100026: ButtonMeshes13
+    100028: ButtonMeshes14
+    100030: ButtonMeshes15
+    100032: ButtonMeshes16
+    100034: ButtonMeshes17
+    100036: ButtonMeshes18
+    100038: ButtonMeshes19
+    100040: ButtonMeshes20
+    100042: ButtonMeshes21
+    100044: ButtonMeshes22
+    100046: ButtonMeshes23
+    100048: ButtonMeshes24
+    100050: ButtonMeshes25
+    100052: ButtonMeshes26
+    100054: ButtonMeshes27
+    100056: ButtonMeshes28
+    100058: ButtonMeshes29
+    100060: ButtonMeshes30
+    100062: ButtonMeshes31
+    100064: ButtonMeshes32
+    100066: ButtonMeshes33
+    400000: //RootNode
+    400002: ButtonMeshes01
+    400004: ButtonMeshes02
+    400006: ButtonMeshes03
+    400008: ButtonMeshes04
+    400010: ButtonMeshes05
+    400012: ButtonMeshes06
+    400014: ButtonMeshes07
+    400016: ButtonMeshes08
+    400018: ButtonMeshes09
+    400020: ButtonMeshes10
+    400022: ButtonMeshes11
+    400024: ButtonMeshes12
+    400026: ButtonMeshes13
+    400028: ButtonMeshes14
+    400030: ButtonMeshes15
+    400032: ButtonMeshes16
+    400034: ButtonMeshes17
+    400036: ButtonMeshes18
+    400038: ButtonMeshes19
+    400040: ButtonMeshes20
+    400042: ButtonMeshes21
+    400044: ButtonMeshes22
+    400046: ButtonMeshes23
+    400048: ButtonMeshes24
+    400050: ButtonMeshes25
+    400052: ButtonMeshes26
+    400054: ButtonMeshes27
+    400056: ButtonMeshes28
+    400058: ButtonMeshes29
+    400060: ButtonMeshes30
+    400062: ButtonMeshes31
+    400064: ButtonMeshes32
+    400066: ButtonMeshes33
+    2100000: 01 - Default
+    2100002: blueSteel
+    2300000: ButtonMeshes01
+    2300002: ButtonMeshes02
+    2300004: ButtonMeshes03
+    2300006: ButtonMeshes04
+    2300008: ButtonMeshes05
+    2300010: ButtonMeshes06
+    2300012: ButtonMeshes07
+    2300014: ButtonMeshes08
+    2300016: ButtonMeshes09
+    2300018: ButtonMeshes10
+    2300020: ButtonMeshes11
+    2300022: ButtonMeshes12
+    2300024: ButtonMeshes13
+    2300026: ButtonMeshes14
+    2300028: ButtonMeshes15
+    2300030: ButtonMeshes16
+    2300032: ButtonMeshes17
+    2300034: ButtonMeshes18
+    2300036: ButtonMeshes19
+    2300038: ButtonMeshes20
+    2300040: ButtonMeshes21
+    2300042: ButtonMeshes22
+    2300044: ButtonMeshes23
+    2300046: ButtonMeshes24
+    2300048: ButtonMeshes25
+    2300050: ButtonMeshes26
+    2300052: ButtonMeshes27
+    2300054: ButtonMeshes28
+    2300056: ButtonMeshes29
+    2300058: ButtonMeshes30
+    2300060: ButtonMeshes31
+    2300062: ButtonMeshes32
+    2300064: ButtonMeshes33
+    3300000: ButtonMeshes01
+    3300002: ButtonMeshes02
+    3300004: ButtonMeshes03
+    3300006: ButtonMeshes04
+    3300008: ButtonMeshes05
+    3300010: ButtonMeshes06
+    3300012: ButtonMeshes07
+    3300014: ButtonMeshes08
+    3300016: ButtonMeshes09
+    3300018: ButtonMeshes10
+    3300020: ButtonMeshes11
+    3300022: ButtonMeshes12
+    3300024: ButtonMeshes13
+    3300026: ButtonMeshes14
+    3300028: ButtonMeshes15
+    3300030: ButtonMeshes16
+    3300032: ButtonMeshes17
+    3300034: ButtonMeshes18
+    3300036: ButtonMeshes19
+    3300038: ButtonMeshes20
+    3300040: ButtonMeshes21
+    3300042: ButtonMeshes22
+    3300044: ButtonMeshes23
+    3300046: ButtonMeshes24
+    3300048: ButtonMeshes25
+    3300050: ButtonMeshes26
+    3300052: ButtonMeshes27
+    3300054: ButtonMeshes28
+    3300056: ButtonMeshes29
+    3300058: ButtonMeshes30
+    3300060: ButtonMeshes31
+    3300062: ButtonMeshes32
+    3300064: ButtonMeshes33
+    4300000: ButtonMeshes01
+    4300002: ButtonMeshes02
+    4300004: ButtonMeshes03
+    4300006: ButtonMeshes04
+    4300008: ButtonMeshes05
+    4300010: ButtonMeshes06
+    4300012: ButtonMeshes07
+    4300014: ButtonMeshes08
+    4300016: ButtonMeshes09
+    4300018: ButtonMeshes10
+    4300020: ButtonMeshes11
+    4300022: ButtonMeshes12
+    4300024: ButtonMeshes13
+    4300026: ButtonMeshes14
+    4300028: ButtonMeshes15
+    4300030: ButtonMeshes16
+    4300032: ButtonMeshes17
+    4300034: ButtonMeshes18
+    4300036: ButtonMeshes19
+    4300038: ButtonMeshes20
+    4300040: ButtonMeshes21
+    4300042: ButtonMeshes22
+    4300044: ButtonMeshes23
+    4300046: ButtonMeshes24
+    4300048: ButtonMeshes25
+    4300050: ButtonMeshes26
+    4300052: ButtonMeshes27
+    4300054: ButtonMeshes28
+    4300056: ButtonMeshes29
+    4300058: ButtonMeshes30
+    4300060: ButtonMeshes31
+    4300062: ButtonMeshes32
+    4300064: ButtonMeshes33
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110457
+  packageName: 'Simple Animated Functional 3D Buttons - Deluxe Edition [Mobile, AR
+    & PC Ready]'
+  packageVersion: 2.1
+  assetPath: Assets/Simple Animated 3D Buttons - Deluxe Edition/Example/Assets/buttons/meshes/ButtonDeluxeExport.FBX
+  uploadId: 230151

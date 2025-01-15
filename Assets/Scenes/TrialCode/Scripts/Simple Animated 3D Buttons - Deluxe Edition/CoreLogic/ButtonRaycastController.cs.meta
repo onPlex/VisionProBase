@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 0647581960ea34ef295d435b8b37cc1f
+timeCreated: 1501772847
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110457
+  packageName: 'Simple Animated Functional 3D Buttons - Deluxe Edition [Mobile, AR
+    & PC Ready]'
+  packageVersion: 2.1
+  assetPath: Assets/Simple Animated 3D Buttons - Deluxe Edition/CoreLogic/ButtonRaycastController.cs
+  uploadId: 230151

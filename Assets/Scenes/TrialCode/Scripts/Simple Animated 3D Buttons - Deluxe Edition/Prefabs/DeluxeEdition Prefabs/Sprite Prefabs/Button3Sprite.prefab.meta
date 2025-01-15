@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d3ac2fc967c817f4aab26511cc26101e
+timeCreated: 1517431507
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 110457
+  packageName: 'Simple Animated Functional 3D Buttons - Deluxe Edition [Mobile, AR
+    & PC Ready]'
+  packageVersion: 2.1
+  assetPath: Assets/Simple Animated 3D Buttons - Deluxe Edition/Prefabs/DeluxeEdition
+    Prefabs/Sprite Prefabs/Button3Sprite.prefab
+  uploadId: 230151
