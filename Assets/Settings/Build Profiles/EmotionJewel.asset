@@ -194,7 +194,7 @@ MonoBehaviour:
     - line: '|     iPhone: com.DefaultCompany.PolySpatial-Project-Template'
     - line: '|   buildNumber:'
     - line: '|     Standalone: 0'
-    - line: '|     VisionOS: 1'
+    - line: '|     VisionOS: 2'
     - line: '|     iPhone: 0'
     - line: '|     tvOS: 0'
     - line: '|   overrideDefaultApplicationIdentifier: 0'

@@ -177,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 84472082}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1775,31 +1775,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 727411495141603920, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9091414860138444235, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8746206609569206552, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3566761671485438395, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7676598572067946653, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2733567554295816433, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4338058823903848715, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 6195172861897609152, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
 --- !u!4 &464998114 stripped
 Transform:
@@ -3404,10 +3380,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7851935432661582283, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
 --- !u!224 &943444543 stripped
 RectTransform:
@@ -3879,31 +3852,7 @@ PrefabInstance:
     - {fileID: 1949261214627756074, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 727411495141603920, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9091414860138444235, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8746206609569206552, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3566761671485438395, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7676598572067946653, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2733567554295816433, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4338058823903848715, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 6195172861897609152, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d330aab7f9ee4d36972a3bcdd49cc0f, type: 3}
 --- !u!4 &969908678 stripped
 Transform:
@@ -4863,10 +4812,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JewelName
+  m_text: "\uB178\uBCA8\uB77C \uB2E4\uC774\uC544"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -4181814465789243211, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4934,7 +4883,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1148500466}
   m_maskType: 0
 --- !u!23 &1148500466
@@ -4960,7 +4909,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -4181814465789243211, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5136,10 +5085,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: StrengthName
+  m_text: "\uC5B8\uC5B4\uC9C0\uB2A5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -4181814465789243211, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5207,7 +5156,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1227627577}
   m_maskType: 0
 --- !u!23 &1227627577
@@ -5233,7 +5182,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -4181814465789243211, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7723,7 +7672,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -4181814465789243211, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7894,10 +7843,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button_Base
+  m_text: "\uBCF4\uC778\uB2E4, \uBBF8\uB798\uC758 \uC5B8\uC5B4\uCC9C\uC7AC! \uB9D0\uACFC
+    \uAE00\uC744 \uD1B5\uD574 \uC0DD\uAC01\uC744 \uD6A8\uACFC\uC801\uC73C\uB85C \uD45C\uD604\uD558\uACE0,
+    \uC0AC\uB78C\uB4E4\uACFC \uC18C\uD1B5\uD558\uB294 \uC5B8\uC5B4\uB2A5\uB825\uC744
+    \uAC00\uC84C\uAD70\uC694!\r\n\uC5B8\uC5B4\uC758 \uC758\uBBF8, \uB9AC\uB4EC\uACFC
+    \uC18C\uB9AC\uB97C \uC798 \uD30C\uC545\uD558\uACE0, \uCC3D\uC758\uC801\uC73C\uB85C
+    \uD45C\uD604\uD558\uB294 \uB370 \uAC15\uC810\uC774 \uC788\uC5B4\uC694.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -4181814465789243211, guid: 6faa2ea0ab04e4531992ae9f1fed86d1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7921,12 +7875,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
+  m_fontSize: 12.3
   m_fontSizeBase: 16
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
+  m_fontSizeMax: 15
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -7965,7 +7919,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2657180824214817469}
   m_maskType: 0
 --- !u!223 &5375125231995821662
