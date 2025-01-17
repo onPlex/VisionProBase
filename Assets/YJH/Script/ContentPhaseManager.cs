@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace YJH
@@ -85,12 +86,15 @@ namespace YJH
         [SerializeField]
         protected GameObject ResultObj;
 
+        [SerializeField]
+        private MagicalGardenResult magicalGardenResult;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             InitPhase();
         }
-    
+
         public virtual void OnGameStart() // == OnPrologueStart
         {
             TitleObj.SetActive(false);
@@ -113,24 +117,24 @@ namespace YJH
 
         public virtual void OnStage1End()
         {
+            StartCoroutine(IOnStage1End());
+        }
+
+        IEnumerator IOnStage1End()
+        {
             Debug.Log("OnStage1Finish");
+
+            magicalGardenResult.StoreBoardResult(0);
+            magicalGardenResult.CalculateFinalResult();
 
             Stage1Obj.SetActive(false);
             Stage1EndObj.SetActive(true);
-
-            //씨앗&모종삽​ 아이콘 생성​
-            //안내 메시지 생성​
-            // {} => 모종삽​ 아이콘 터치​  ~ - > 모종삽이 구덩이를 파는 연출​
-
-            //안내 메시지 생성
-            //씨앗​ 아이콘 터치​
-            // 씨앗이 구덩이에 심어지는 연출​ - '빛 파티클 연출' - 나무 자라는 연출 진행​
+            yield return null;
         }
 
         public virtual void OnStage2Start()
         {
             Debug.Log("OnStage2Start");
-
             Stage1EndObj.SetActive(false);
             Stage2StartObj.SetActive(true);
             //플루트 내래이션 연출​
@@ -142,6 +146,7 @@ namespace YJH
         public virtual void OnStage2()
         {
             Debug.Log("OnStage2");
+
             Stage2StartObj.SetActive(false);
             Stage2Obj.SetActive(true);
 
@@ -149,7 +154,14 @@ namespace YJH
 
         public virtual void OnStage2End()
         {
+            StartCoroutine(IOnStage2End());
+        }
+
+        IEnumerator IOnStage2End()
+        {
             Debug.Log("OnStage2End");
+            magicalGardenResult.StoreBoardResult(1);
+            magicalGardenResult.CalculateFinalResult();
             Stage2Obj.SetActive(false);
             Stage2EndObj.SetActive(true);
             //[물뿌리개] 아이콘이 생성
@@ -158,6 +170,7 @@ namespace YJH
             //빛 파티클 연출​ + 어린 나무가 자라서 작은 나무가 되는 연출 진행​ + 주변에 잡초(풀)도 같이 자람​
             // 나무 자람 연출​
             // 연출 완료시 Stage 3 시작
+            yield return null;
         }
 
         public virtual void OnStage3Start()
@@ -181,7 +194,14 @@ namespace YJH
 
         public virtual void OnStage3End()
         {
+            StartCoroutine(IOnStage3End());
+        }
+
+        IEnumerator IOnStage3End()
+        {
             Debug.Log("OnStage3End");
+            magicalGardenResult.StoreBoardResult(2);
+            magicalGardenResult.CalculateFinalResult();
             Stage3Obj.SetActive(false);
             Stage3EndObj.SetActive(true);
 
@@ -190,6 +210,7 @@ namespace YJH
             // 제초 가위​  애니메이션 생성​ (나무 주변으로 풀이 자란 상태에서 나무 빼고 나머지를제거하는 연출​ ) + (나무 주변으로 풀이 자란 상태에서 나무 빼고 나머지를제거하는 연출​)
             //빛 파티클 연출
             // 연출 완료시 Stage 4 시작
+            yield return null;
         }
 
         public virtual void OnStage4Start()
@@ -212,10 +233,19 @@ namespace YJH
 
         public virtual void OnStage4End()
         {
+            StartCoroutine(IOnStage4End());
+        }
+
+        IEnumerator IOnStage4End()
+        {
             Debug.Log("OnStage4End");
+            magicalGardenResult.StoreBoardResult(3);
+            magicalGardenResult.CalculateFinalResult();
             Stage4Obj.SetActive(false);
             Stage4EndObj.SetActive(true);
+            yield return null;
         }
+
 
         public virtual void OnResult()
         {
@@ -227,20 +257,20 @@ namespace YJH
         protected void InitPhase()
         {
             // eContent_Phase = EContent_Phase.Title;
-            if(TitleObj)TitleObj.SetActive(true);
-            if(PrologueObj)PrologueObj.SetActive(false);
-            if(Stage1Obj)Stage1Obj.SetActive(false);
-            if(Stage1EndObj)Stage1EndObj.SetActive(false);
-            if(Stage2StartObj)Stage2StartObj.SetActive(false);
-            if(Stage2Obj)Stage2Obj.SetActive(false);
-            if(Stage2EndObj)Stage2EndObj.SetActive(false);
-            if(Stage3StartObj)Stage3StartObj.SetActive(false);
-            if(Stage3Obj)Stage3Obj.SetActive(false);
-            if(Stage3EndObj)Stage3EndObj.SetActive(false);
-            if(Stage4StartObj)Stage4StartObj.SetActive(false);
-            if(Stage4Obj)Stage4Obj.SetActive(false);
-            if(Stage4EndObj)Stage4EndObj.SetActive(false);
-            if(ResultObj)ResultObj.SetActive(false);
+            if (TitleObj) TitleObj.SetActive(true);
+            if (PrologueObj) PrologueObj.SetActive(false);
+            if (Stage1Obj) Stage1Obj.SetActive(false);
+            if (Stage1EndObj) Stage1EndObj.SetActive(false);
+            if (Stage2StartObj) Stage2StartObj.SetActive(false);
+            if (Stage2Obj) Stage2Obj.SetActive(false);
+            if (Stage2EndObj) Stage2EndObj.SetActive(false);
+            if (Stage3StartObj) Stage3StartObj.SetActive(false);
+            if (Stage3Obj) Stage3Obj.SetActive(false);
+            if (Stage3EndObj) Stage3EndObj.SetActive(false);
+            if (Stage4StartObj) Stage4StartObj.SetActive(false);
+            if (Stage4Obj) Stage4Obj.SetActive(false);
+            if (Stage4EndObj) Stage4EndObj.SetActive(false);
+            if (ResultObj) ResultObj.SetActive(false);
         }
     }
 }
