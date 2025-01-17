@@ -9,13 +9,13 @@ namespace YJH
         [Header("DebugTEXT")]
         [SerializeField]
         TMP_Text resultDebugText;
-        [SerializeField]
-        private GameObject ResultDebugTextRootGameObj;
+        //[SerializeField]
+        //private GameObject ResultDebugTextRootGameObj;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
+           // ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             InitPhase();
         }
 

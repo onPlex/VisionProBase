@@ -12,7 +12,7 @@ public class AppDevSystem : MonoBehaviour
             if (instance == null)
             {
                 // 혹시 에디터에서 미리 존재할 수도 있으니 먼저 찾음
-                instance = FindObjectOfType<AppDevSystem>();
+                instance = FindFirstObjectByType<AppDevSystem>();
 
                 // 만약 없으면 직접 오브젝트를 생성
                 if (instance == null)
