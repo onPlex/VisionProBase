@@ -12,6 +12,9 @@ namespace YJH
         //[SerializeField]
         //private GameObject ResultDebugTextRootGameObj;
 
+        [SerializeField]
+        EmotionJewelResult emotionJewelResult;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -58,6 +61,7 @@ namespace YJH
         //TutorialEnd1
         public IEnumerator IStageFinishEvent1()
         {
+            emotionJewelResult.StoreBoardResult(0);       
             Stage1Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd1");
            // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
@@ -66,12 +70,14 @@ namespace YJH
             Debug.Log("OnStage2");
           //  ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage2Obj.SetActive(true);
+            emotionJewelResult.CalculateFinalResult();
             yield return null;
         }
 
         //TutorialEnd2
         public IEnumerator IStageFinishEvent2()
         {
+            emotionJewelResult.StoreBoardResult(1);  
             Stage2Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd2");
            // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
@@ -80,6 +86,7 @@ namespace YJH
             Debug.Log("OnStage3");
            // ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage3Obj.SetActive(true);
+             emotionJewelResult.CalculateFinalResult();
             yield return null;
         }
 
@@ -88,6 +95,7 @@ namespace YJH
         //TutorialEnd3
         public IEnumerator IStageFinishEvent3()
         {
+            emotionJewelResult.StoreBoardResult(2);  
             Stage3Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd3");
            // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
@@ -96,6 +104,7 @@ namespace YJH
             Debug.Log("OnStage4");
             //ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             Stage4Obj.SetActive(true);
+              emotionJewelResult.CalculateFinalResult();
             yield return null;
         }
 
@@ -103,6 +112,7 @@ namespace YJH
         //TutorialEnd4
         public IEnumerator IStageFinishEvent4()
         {
+            emotionJewelResult.StoreBoardResult(3);  
             Stage4Obj.SetActive(false);
             AudioManager.Instance.PlaySFX("TutorialEnd4");
            // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
@@ -111,6 +121,7 @@ namespace YJH
             Debug.Log("OnStage4");
            // ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
             ResultObj.SetActive(true);
+             emotionJewelResult.CalculateFinalResult();
             yield return null;
         }
         public override void OnResult()
