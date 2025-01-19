@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System.Linq;
+using System;
 
 namespace Jun
 {
@@ -56,6 +57,7 @@ namespace Jun
             }
 
             _buttonExecutionCounts = new int[6];
+            _lastClickTimes = new DateTime[6];
 
             UpdateTextData(); // 초기 텍스트 설정
         }
@@ -94,13 +96,24 @@ namespace Jun
             });
         }
 
+
+        private DateTime[] _lastClickTimes; // 버튼 마지막 클릭 시점 추적
         private void UpdateMostClickedButton(int index)
         {
             _buttonExecutionCounts[index]++; // 실행 횟수 증가
 
             // 가장 많이 눌린 버튼의 번호를 업데이트
-            int maxCount = _buttonExecutionCounts.Max();
-            _mostClickedButton = System.Array.IndexOf(_buttonExecutionCounts, maxCount);
+            // int maxCount = _buttonExecutionCounts.Max();
+            // _mostClickedButton = System.Array.IndexOf(_buttonExecutionCounts, maxCount);
+
+
+            int maxClickCount = _buttonExecutionCounts.Max(); // 가장 높은 클릭 횟수
+            // 동일한 클릭 횟수를 가진 버튼 중 가장 최근에 눌린 버튼 찾기
+            _mostClickedButton = Enumerable
+                .Range(0, 6)
+                .Where(i => _buttonExecutionCounts[i] == maxClickCount) // 최대 클릭 횟수를 가진 버튼 필터링
+                .OrderByDescending(i => _lastClickTimes[i]) // 마지막 클릭 시간을 기준으로 정렬
+                .First(); // 가장 최근 버튼 선택
 
             // _mostClickedButton 값을 CareerType 열거형으로 매핑
             if (_mostClickedButton >= 0 && _mostClickedButton < System.Enum.GetValues(typeof(CareerType)).Length)

@@ -16,7 +16,6 @@ namespace Jun
         private IEnumerator DelayEvent()
         {
             yield return new WaitForSeconds(GetAnimationClipLength(animator, "TreasureBox_ani_open"));
-            //yield return new WaitForSeconds(2f);
             onComplete?.Invoke();
         }
     }
