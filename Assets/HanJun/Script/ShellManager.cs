@@ -1,10 +1,22 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Events;
+using System.Linq;
 
 namespace Jun
 {
+    public enum CareerType
+    {
+        Realistic,    // 현실형
+        Investigative, // 탐구형
+        Artistic,     // 예술형
+        Social,       // 사회형
+        Enterprising, // 기업형
+        Conventional  // 관습형
+    }
+
     public class ShellManager : MonoBehaviour
     {
         public GameObject dolphin;
@@ -20,7 +32,13 @@ namespace Jun
         private int currentStartIndex = 0; // 현재 텍스트 시작 인덱스
         private const int TEXT_COUNT_PER_CYCLE = 6; // 한 번에 보여줄 텍스트 데이터 개수
 
+        private int[] _buttonExecutionCounts; // 버튼별 실행 횟수 저장
+        private int _mostClickedButton = -1;  // 가장 많이 눌린 버튼 번호
+
         private int _SelectShellNumber = 0;
+
+        private CareerType careerType;
+        public CareerType CareerType { get => careerType; set => careerType = value; }
 
         void Start()
         {
@@ -36,6 +54,8 @@ namespace Jun
                 return;
             }
 
+            _buttonExecutionCounts = new int[6];
+
             UpdateTextData(); // 초기 텍스트 설정
         }
 
@@ -48,7 +68,32 @@ namespace Jun
         {
             ResetShellButtonEvent();
 
-            _shellObjects[index].SetAnimationEvent(false, () => MoveToBasket(index));
+            _shellObjects[index].SetAnimationEvent(false, () =>
+            {
+                MoveToBasket(index);
+                UpdateMostClickedButton(index);// 가장 많이 눌린 버튼 업데이트
+            });
+        }
+
+        private void UpdateMostClickedButton(int index)
+        {
+            _buttonExecutionCounts[index]++; // 실행 횟수 증가
+
+            // 가장 많이 눌린 버튼의 번호를 업데이트
+            int maxCount = _buttonExecutionCounts.Max();
+            _mostClickedButton = System.Array.IndexOf(_buttonExecutionCounts, maxCount);
+
+            // _mostClickedButton 값을 CareerType 열거형으로 매핑
+            if (_mostClickedButton >= 0 && _mostClickedButton < System.Enum.GetValues(typeof(CareerType)).Length)
+            {
+                CareerType = (CareerType)_mostClickedButton;
+            }
+            else
+            {
+                Debug.LogWarning("유효하지 않은 CareerType 매핑");
+            }
+
+            Debug.Log($"가장 많이 눌린 버튼: {_mostClickedButton} (누름 횟수: {_buttonExecutionCounts[_mostClickedButton]})");
         }
 
         /// <summary>
@@ -58,7 +103,14 @@ namespace Jun
         bool _isToggleDescButtonEvent = false;
         public void SelectButtonEvent(int index)
         {
+            if (index < 0 || index >= _shellObjects.Length)
+            {
+                Debug.LogWarning("유효하지 않은 인덱스입니다.");
+                return;
+            }
+
             _isToggleDescButtonEvent = !_isToggleDescButtonEvent;
+
             if (_isToggleDescButtonEvent)
             {
                 ResetShellButtonEvent();
@@ -97,7 +149,7 @@ namespace Jun
                 _isToggleDescButtonEvent = false;
                 _shellObjects[index].GetComponent<ShellThrow>().ReturnToOriginal();
 
-                Debug.Log(_SelectShellNumber);
+                // Debug.Log(_SelectShellNumber);
                 if (_SelectShellNumber >= 6)
                 {
                     Debug.Log("End Contents and Show Dolphine");
@@ -233,5 +285,6 @@ namespace Jun
     "나는 주변 사람에게 주목받는 것을 좋아해!",
     "나는 새로운 변화보다 익숙한 환경을 좋아해!"
 };
+
     }
 }
