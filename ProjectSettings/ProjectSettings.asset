@@ -138,13 +138,10 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  visionOSBundleVersion: 0.0002
+  visionOSBundleVersion: 0.0003
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.0002
-  preloadedAssets:
-  - {fileID: 11400000, guid: d1b44b12dbc12554c862e577406554bd, type: 2}
-  - {fileID: 11400000, guid: ac517bd71f33e472fa5c25448bc7a703, type: 2}
-  - {fileID: -374473393521292908, guid: 91384b14c79fa804d924648a4e81b07c, type: 2}
+  bundleVersion: 0.0003
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -169,7 +166,7 @@ PlayerSettings:
     VisionOS: com.GMWStudio.VisionProBase
   buildNumber:
     Standalone: 0
-    VisionOS: 4
+    VisionOS: 2
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
@@ -196,7 +193,7 @@ PlayerSettings:
   tvOSSimulatorArchitecture: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 13.0
-  VisionOSSdkVersion: 1
+  VisionOSSdkVersion: 0
   VisionOSTargetOSVersionString: 1.0
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
@@ -815,7 +812,7 @@ PlayerSettings:
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
-  platformRequiresReadableAssets: 1
+  platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
   insecureHttpOption: 0
   androidVulkanDenyFilterList: []

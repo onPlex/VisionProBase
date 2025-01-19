@@ -1727,7 +1727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299125285198611732, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 01_Shell_Title
+      value: InterestingShell
       objectReference: {fileID: 0}
     - target: {fileID: 5299125285198611732, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2034,6 +2034,7 @@ GameObject:
   - component: {fileID: 1992914960}
   - component: {fileID: 1992914962}
   - component: {fileID: 1992914963}
+  - component: {fileID: 1992914964}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2078,6 +2079,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ba9aeeeb0184e61b312c36b023c309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1992914964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992914958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c53cdbdd298e4aa1913d09acdbe35eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2028159497

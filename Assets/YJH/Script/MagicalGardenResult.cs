@@ -8,12 +8,20 @@ namespace YJH
     public class MagicalGardenResult : MonoBehaviour
     {
         [SerializeField]
-        TMP_Text tMP_Text;
-        // 복수의 QuestionBoard를 Inspector에서 할당 가능하도록
+        private TMP_Text tMP_Text;
+
         [SerializeField]
         private List<QuestionBoard> questionBoards;
 
-        // 평가 결과 저장
+        // (1) 응답을 전부 모아두는 딕셔너리 (key: "전역 질문 인덱스", value: 선택 옵션)
+        private Dictionary<int, int> combinedResponses = new Dictionary<int, int>();
+
+        [Header("Mesh & Material")]
+        [SerializeField] private MeshRenderer targetMeshRenderer;
+        // 두 번째 Material을 가리키므로 보통 인덱스는 1
+        [SerializeField] private int materialIndex = 1;
+
+        // (2) R, I, A, S, E, C 점수를 저장
         private readonly Dictionary<string, int> resultScores = new Dictionary<string, int>
         {
             { "R", 0 },
@@ -24,7 +32,7 @@ namespace YJH
             { "C", 0 }
         };
 
-        // 각 문항이 어떤 평가에 해당하는지 매핑
+        // (3) 각 문항이 어떤 항목에 해당하는지 매핑
         private readonly string[] questionMappings = new string[]
         {
             "R", "I", "A", "S", "E", "C", // 1-6
@@ -33,84 +41,164 @@ namespace YJH
             "E", "A", "R", "I", "S", "C"  // 19-24
         };
 
-        private void OnEnable()
+        /// <summary>
+        /// 모든 점수 및 응답을 초기화(재설문 또는 새로 시작하기 전 호출)
+        /// </summary>
+        public void ResetAllScores()
         {
-            DisplayAllResponses();
+            combinedResponses.Clear();
+            foreach (var key in resultScores.Keys)
+            {
+                resultScores[key] = 0;
+            }
+
+            Debug.Log("[ResetAllScores] 점수 및 응답 초기화 완료");
         }
 
         /// <summary>
-        /// 모든 QuestionBoard의 playerResponses를 순회하여 결과를 텍스트로 표시하고,
-        /// R, I, A, S, E, C 점수를 계산하여 가장 높은 결과를 표시합니다.
+        /// 특정 QuestionBoard(인덱스로 식별)의 점수를 부분적으로 누적
         /// </summary>
-        public void DisplayAllResponses()
+        public void StoreBoardResult(int boardIndex)
+        {
+            // 범위 체크
+            if (boardIndex < 0 || boardIndex >= questionBoards.Count)
+            {
+                Debug.LogWarning($"StoreBoardResult: 잘못된 boardIndex {boardIndex}");
+                return;
+            }
+
+            var board = questionBoards[boardIndex];
+            if (board == null)
+            {
+                Debug.LogWarning($"StoreBoardResult: questionBoards[{boardIndex}]가 null입니다.");
+                return;
+            }
+
+            // 원본 Dictionary -> 사본으로 복사 (순회 중 수정 예외 방지)
+            var responsesCopy = new Dictionary<int, int>(board.PlayerResponses);
+
+            // 해당 보드 응답을 combinedResponses와 resultScores에 누적
+            foreach (var pair in responsesCopy)
+            {
+                int questionIndex = pair.Key;      // 문항 인덱스
+                int selectedOptionIndex = pair.Value; // (0~4)
+                int globalIndex = questionIndex + boardIndex * questionMappings.Length;
+
+                // 1) combinedResponses에 저장
+                combinedResponses[globalIndex] = selectedOptionIndex;
+
+                // 2) resultScores에 반영 (questionMappings에 따라)
+                if (questionIndex >= 0 && questionIndex < questionMappings.Length)
+                {
+                    string category = questionMappings[questionIndex];
+                    // 실제 점수 = 선택 인덱스(0~4) + 1 → (1~5)
+                    resultScores[category] += (selectedOptionIndex + 1);
+                }
+            }
+
+            Debug.Log($"[StoreBoardResult] QuestionBoard[{boardIndex}] 응답 누적 완료");
+        }
+
+        /// <summary>
+        /// 최종 결과를 계산하고, tMP_Text에 출력 (가장 높은 항목에 대한 "나무 설명")
+        /// </summary>
+        public void CalculateFinalResult()
         {
             if (tMP_Text == null)
             {
-                Debug.LogWarning("tMP_Text is not assigned in MagicalGardenResult.");
+                Debug.LogWarning("MagicalGardenResult: tMP_Text가 할당되지 않았습니다.");
                 return;
             }
 
-            if (questionBoards == null || questionBoards.Count == 0)
-            {
-                Debug.LogWarning("No QuestionBoards assigned to MagicalGardenResult.");
-                tMP_Text.text = "No QuestionBoards assigned.";
-                return;
-            }
+            DisplayHighestCategory();  // 최고 점수 카테고리를 찾아 UI 표시
+        }
 
-            StringBuilder sb = new StringBuilder();
-
-            // 점수 초기화
-            var updatedScores = new Dictionary<string, int>(resultScores);
-
-            // QuestionBoard들을 차례대로 순회
-            foreach (var qb in questionBoards)
-            {
-                if (qb == null) continue;
-
-                // 각 QuestionBoard의 Dictionary (응답들)
-                Dictionary<int, int> responses = qb.PlayerResponses;
-
-                // 응답 딕셔너리 순회
-                foreach (var pair in responses)
-                {
-                    int questionIndex = pair.Key;
-                    int selectedOptionIndex = pair.Value;
-
-                    // 안전 범위 체크
-                    if (questionIndex >= 0 && questionIndex < questionMappings.Length)
-                    {
-                        string category = questionMappings[questionIndex];
-                        // 선택된 옵션의 값을 점수에 합산 (1~5)
-                        updatedScores[category] += selectedOptionIndex + 1;
-                    }
-                }
-            }
-
-            // 결과 출력
+        /// <summary>
+        /// 가장 높은 점수의 카테고리를 찾아, 해당 설명을 tMP_Text에 표시
+        /// </summary>
+        private void DisplayHighestCategory()
+        {
+            // 최고점 찾기
             string highestCategory = "";
             int highestScore = int.MinValue;
 
-            foreach (var pair in updatedScores)
+            foreach (var kvp in resultScores)
             {
-                if (pair.Value > highestScore)
+                if (kvp.Value > highestScore)
                 {
-                    highestCategory = pair.Key;
-                    highestScore = pair.Value;
+                    highestCategory = kvp.Key;
+                    highestScore = kvp.Value;
                 }
             }
 
-            string cont = highestCategory switch
+            // 매칭되는 설명문을 가져옴
+            string resultDescription = GetCategoryDescription(highestCategory);
+            tMP_Text.text = resultDescription;
+
+               // (추가) 머티리얼 색상 변경
+            ApplyMaterialColorForCategory(highestCategory);
+
+            Debug.Log($"[DisplayHighestCategory] 최고점: {highestCategory} ({highestScore}점)");
+        }
+
+        /// <summary>
+        /// R, I, A, S, E, C 각각에 대한 설명 문자열을 반환
+        /// </summary>
+        private string GetCategoryDescription(string category)
+        {
+            return category switch
             {
-                "R" => "결과로 대지의 나무, 가이아가 나왔군요! 광활한 땅의 힘을 상징하는 이 나무는 어떤 환경에서도 흔들리지 않을 만큼 깊게 내린 뿌리와 튼튼한 줄기, 넓게 뻗은 잎사귀로 신뢰감을 줍니다. 현실적이고 실용적이며 성실하게 목표를 이루어 가는 성향을 가진 사람들에게 어울리는 나무죠. 가이아는 모든 이들에게 든든한 존재가 되어주는 아주 매력적인 나무랍니다.",
-                "I" => "결과로 천체의 나무, 아스트룸이 나왔군요! 밤하늘의 신비로운 별빛을 담은 이 나무는 호기심 가득한 가지들이 하늘에 닿을 듯이 끝없이 뻗어 나갑니다. 논리적이고 창의적이며 지식을 탐구하기 좋아하는 성향을 가진 사람들에게 어울리는 나무죠. 아스트룸은 매일 조금씩 달라지는 별빛을 뿜어내며 사람들에게 지적 영감을 주는 아주 매력적인 나무랍니다.",
-                "A" => "결과로 새벽의 나무, 오로라가 나왔군요! 새벽의 별처럼 형형색색의 빛을 띄고 있는 가지와, 창의적인 아이디어가 샘솟듯 잎사귀가 풍성하게 피어오른 이 나무는 예술적 영감을 줍니다. 상상력과 감수성이 풍부하며 새로운 시도를 즐기는 성향을 가진 사람들에게 어울리는 나무죠. 오로라는 사람들에게 예술적 영감을 주는 아주 매력적인 나무랍니다.",
-                "S" => "결과로 온기의 나무, 아미카가 나왔군요! 따스한 봄날의 햇살처럼 은은한 빛이 흘러넘치며 풍성한 잎사귀로 주변을 감싸는 이 나무는 포근함을 줍니다. 타인과의 유대감을 소중히 여기고, 사람들에게 위로와 편안함을 제공하는 성향을 가진 사람들에게 어울리는 나무죠. 아미카는 언제나 온화하고 친근한 에너지를 주며, 주변 환경을 밝게 물들이는 아주 매력적인 나무입니다.",
-                "E" => "결과로 용기의 나무, 비르투스가 나왔군요! 힘찬 기운으로 높이 솟아오르는 줄기와 강인한 잎사귀, 단단한 뿌리는 굳센 용기와 의지를 내비칩니다. 도전적이고, 리더십이 있으며, 목표를 향해 멈추지 않고 나아가는 사람들에게 어울리는 나무죠. 비르투스는 빛나는 성취의 길로 사람들을 이끄는 아주 매력적인 나무입니다.",
-                "C" => "결과로 질서의 나무, 오르도가 나왔군요! 질서를 바탕으로 대칭적으로 뻗어나가는 가지와 강인한 뿌리와 잎사귀가 완벽한 조화를 이루는 이 나무는 평온함과 안정감을 줍니다. 늘 미리 준비하고 대비하며, 맡은 일을 꼼꼼하고 성실하게 수행하는 사람들에게 어울리는 나무죠. 오르도는 강한 책임감과 신뢰를 바탕으로 사람들에게 든든한 지원군이 되어주는 아주 매력적인 나무입니다.",
-                _ => "결과 없음"
+                "R" => "결과로 대지의 나무, 가이아가 나왔군요! ...",
+                "I" => "결과로 천체의 나무, 아스트룸이 나왔군요! ...",
+                "A" => "결과로 새벽의 나무, 오로라가 나왔군요! ...",
+                "S" => "결과로 온기의 나무, 아미카가 나왔군요! ...",
+                "E" => "결과로 용기의 나무, 비르투스가 나왔군요! ...",
+                "C" => "결과로 질서의 나무, 오르도가 나왔군요! ...",
+                _   => "결과 없음"
+            };
+        }
+
+               /// <summary>
+        /// 최고점 카테고리에 따라 Material의 BaseColor 변경
+        /// - MeshRenderer의 2번째(materialIndex=1) 머티리얼에 적용
+        /// </summary>
+        private void ApplyMaterialColorForCategory(string category)
+        {
+            // targetMeshRenderer가 할당되어 있지 않으면 무시
+            if (targetMeshRenderer == null)
+            {
+                Debug.LogWarning("ApplyMaterialColorForCategory: targetMeshRenderer가 할당되지 않았습니다.");
+                return;
+            }
+
+            // 머티리얼 배열 획득 (인스턴스화)
+            Material[] mats = targetMeshRenderer.materials; 
+            if (materialIndex < 0 || materialIndex >= mats.Length)
+            {
+                Debug.LogWarning($"ApplyMaterialColorForCategory: materialIndex({materialIndex})가 범위를 벗어났습니다.");
+                return;
+            }
+
+            // 카테고리별 색상
+            Color color = category switch
+            {
+                "R" => Color.red,                               // 빨강
+                "I" => Color.green,                             // 초록
+                "A" => Color.blue,                              // 파랑
+                "S" => Color.yellow,                            // 노랑
+                "E" => new Color(0.5f, 0.0f, 0.5f, 1.0f),       // 보라
+                "C" => new Color(1.0f, 0.5f, 0.75f, 1.0f),      // 핑크
+                _   => Color.white
             };
 
-            tMP_Text.text = cont;
+            // 2번째 머티리얼의 BaseColor 세팅
+            // (URP/HDRP인 경우 "_BaseColor", Built-in Legacy인 경우 "_Color"일 수도 있으니 Shader에 맞춰 조정)
+            mats[materialIndex].SetColor("_BaseColor", color);
+
+            // 변경된 머티리얼 배열 다시 할당
+            targetMeshRenderer.materials = mats;
+
+            Debug.Log($"[ApplyMaterialColorForCategory] 카테고리={category}, 색상={color}");
         }
     }
 }
