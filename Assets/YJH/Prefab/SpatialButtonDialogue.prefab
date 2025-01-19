@@ -101,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 997482010281790066, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 9150809819370001663, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
+      objectReference: {fileID: -8001386963232807324, guid: 320cd1cd842844a8fba850a899c2eaef, type: 2}
     - target: {fileID: 1984316302571666662, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -172,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2169906426513211166, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.15
+      value: 1.1500244
       objectReference: {fileID: 0}
     - target: {fileID: 2169906426513211166, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -221,11 +221,15 @@ PrefabInstance:
     - target: {fileID: 7818306257993313966, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
+      objectReference: {fileID: 11400000, guid: 320cd1cd842844a8fba850a899c2eaef, type: 2}
     - target: {fileID: 7818306257993313966, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 9150809819370001663, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
+      objectReference: {fileID: -8001386963232807324, guid: 320cd1cd842844a8fba850a899c2eaef, type: 2}
+    - target: {fileID: 7818306257993313966, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8196778831379364002, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       propertyPath: m_Name
       value: SpatialButtonDialogue

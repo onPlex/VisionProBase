@@ -202,7 +202,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _shellDescObj: {fileID: 4218004087074003027}
-  shellBehavior: {fileID: 3879414566707187606}
+  tutorial2View: {fileID: 0}
+  _shellBehavior: {fileID: 0}
 --- !u!1 &1852124375644134206
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +892,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9f71d31ad914e898361be3fcc638a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anim: {fileID: 5754499712273773565}
+  m_AudioSource: {fileID: 0}
+  OnPress:
+    m_PersistentCalls:
+      m_Calls: []
+  _descObject: {fileID: 0}
+  _titleObject: {fileID: 0}
 --- !u!1 &5109881906792487229
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,7 +958,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7760090361713864024, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
+  - {fileID: 1590602897327658482, guid: afa968a6efd5f46c4ad055aec52e74fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -996,8 +1002,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uB9CC\uB4E4\uAE30"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
-  m_sharedMaterial: {fileID: -7760090361713864024, guid: d6aa9daf6488e44e7a0298b91304100f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afa968a6efd5f46c4ad055aec52e74fe, type: 2}
+  m_sharedMaterial: {fileID: 1590602897327658482, guid: afa968a6efd5f46c4ad055aec52e74fe, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
