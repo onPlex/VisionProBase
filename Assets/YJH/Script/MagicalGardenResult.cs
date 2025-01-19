@@ -7,8 +7,19 @@ namespace YJH
 {
     public class MagicalGardenResult : MonoBehaviour
     {
-        [SerializeField]
-        private TMP_Text tMP_Text;
+        //[SerializeField]
+        //private TMP_Text tMP_Text;
+
+        [Header("TMP")]
+        // (추가) 나무 이름/특징용 TMP_Text
+        [SerializeField] private TMP_Text treeNameText;
+        [SerializeField] private TMP_Text treeFeatureText;
+
+        // (추가) 흥미열매 6개의 "이름" 표기를 위한 TMP_Text 배열
+        [SerializeField] private TMP_Text[] fruitNameTexts;
+
+        // (추가) 흥미열매 6개의 "설명" 표기를 위한 TMP_Text 배열
+        [SerializeField] private TMP_Text[] fruitDescTexts;
 
         [SerializeField]
         private List<QuestionBoard> questionBoards;
@@ -40,6 +51,89 @@ namespace YJH
             "C", "E", "S", "A", "I", "R", // 13-18
             "E", "A", "R", "I", "S", "C"  // 19-24
         };
+
+        // (3) [추가] 카테고리별 흥미열매 데이터
+        //  - 한 카테고리에 6개씩 (여기서는 예시로 6개를 넣어둠)
+        private readonly Dictionary<string, List<(string fruitName, string fruitDesc)>> fruitDataByCategory
+            = new Dictionary<string, List<(string, string)>>
+            {
+                ["R"] = new List<(string, string)>
+            {
+                ("척척 열매",   "이 열매를 먹으면 지금 바로 눈앞에 필요한 일을 척척 알아차릴 수 있어요."),
+                ("튼튼 열매",   "이 열매를 먹으면 몸이 강해지고 운동도 더 잘하게 돼요."),
+                ("꼼꼼 열매",   "이 열매를 먹으면 작은 부분까지 잘 보고 꼼꼼하게 할 수 있어요."),
+                ("자연 열매", "이 열매를 먹으면 동물과 나무 같은 자연과 더 친해질 수 있어요."),
+                ("손재주 열매", "이 열매를 먹으면 손으로 무언가를 잘 만들고 다룰 수 있어요."),
+                ("뚝딱 열매",   "이 열매를 먹으면 로봇이나 기계를 더 잘 이해하고, 고칠 수 있게 돼요."),
+            },
+                ["I"] = new List<(string, string)>
+            {
+                ("생각 열매",      "이 열매를 먹으면 생각을 또렷하게 정리할 수 있어요."),
+                ("판단 열매",      "이 열매를 먹으면 중요한 결정을 똑똑하게 내릴 수 있어요."),
+                ("궁금 열매",    "이 열매를 먹으면 '이건 왜 그럴까?'하는 궁금한 마음이 자꾸 생겨요."),
+                ("탐구 열매",  "이 열매를 먹으면 궁금한 것을 깊이 파고들어 알아내는 힘이 생겨요."),
+                ("분석 열매",      "이 열매를 먹으면 복잡한 문제도 쉽게 이해할 수 있어요."),
+                ("똑똑 열매",      "이 열매를 먹으면 공부하는 게 더 재미있고 쉬워져요."),
+            },
+                ["A"] = new List<(string, string)>
+            {
+                ("예술 열매",    "이 열매를 먹으면 그림이나 음악 같은 예술이 더 멋져 보여요."),
+                ("번뜩 열매",    "이 열매를 먹으면 새로운 아이디어가 쏙쏙 떠올라요."),
+                ("느낌 열매",    "이 열매를 먹으면 마음이 더 따뜻해지고 예쁜 것에 감동하게 돼요."),
+                ("직감 열매",    "이 열매를 먹으면 영감이 쏙 떠올라 무언가를 바로 표현할 수 있어요."),
+                ("표현 열매",    "이 열매를 먹으면 내가 느낀 것을 그림이나 글로 잘 표현할 수 있어요."),
+                ("상상 열매",    "이 열매를 먹으면 머릿속에서 멋진 상상이 펼쳐져요."),
+            },
+                ["S"] = new List<(string, string)>
+            {
+                ("친구 열매",    "이 열매를 먹으면 친구들과 잘 어울리고 쉽게 친해질 수 있어요."),
+                ("배려 열매",    "이 열매를 먹으면 다른 사람을 더 잘 챙기고 이해할 수 있어요."),
+                ("마음 열매",    "이 열매를 먹으면 다른 사람의 생각과 기분을 더 잘 알 수 있어요."),
+                ("봉사 열매",    "이 열매를 먹으면 남을 돕는 일이 더 즐거워져요."),
+                ("가르침 열매",  "이 열매를 먹으면 친구나 동생에게 무언가를 가르쳐 주는 게 더 재미있어져요."),
+                ("관계 열매",    "이 열매를 먹으면 다른 사람들과 친해지고 신뢰를 쌓는 데 도움이 돼요."),
+            },
+                ["E"] = new List<(string, string)>
+            {
+                ("리더 열매",     "이 열매를 먹으면 친구들을 이끄는 힘이 생겨요."),
+                ("설득 열매",     "이 열매를 먹으면 다른 사람을 내 생각에 동의하게 만드는 능력이 생겨요."),
+                ("도전 열매",   "이 열매를 먹으면 어려운 일에도 용감하게 도전할 수 있어요."),
+                ("목표 열매", "이 열매를 먹으면 내가 세운 목표를 열심히 이루고 싶어져요."),
+                ("승부 열매",     "이 열매를 먹으면 다른 사람과 경쟁하면서 더 열심히 하게 돼요."),
+                ("성취 열매",     "이 열매를 먹으면 무언가를 계획하고 이루는 능력이 좋아져요."),
+            },
+                ["C"] = new List<(string, string)>
+            {
+                ("책임 열매",    "이 열매를 먹으면 맡은 일을 끝까지 해내려는 마음이 생겨요."),
+                ("계획 열매",    "이 열매를 먹으면 하고 싶은 일들을 잘 계획할 수 있어요."),
+                ("성실 열매",    "이 열매를 먹으면 꾸준히 노력하는 성실한 마음이 생겨요."),
+                ("맞춤 열매",    "이 열매를 먹으면 주변 상황에 맞춰 잘 적응하고 협력할 수 있어요."),
+                ("안정 열매",    "이 열매를 먹으면 안정적이고 편안하게 행동하고 싶어져요."),
+                ("정리 열매",    "이 열매를 먹으면 서류나 정리 같은 일을 잘할 수 있어요."),
+            },
+            };
+
+        // 나무 이름/특징만 반환하는 예시(튜플 활용)
+        private (string treeName, string treeFeature) GetTreeInfo(string category)
+        {
+            switch (category)
+            {
+                case "R":
+                    return ("대지의 나무, 가이아", "광활한 땅의 힘을 상징하는 이 나무는 어떤 환경에서도 흔들리지 않을 만큼 깊게 내린 뿌리와 튼튼한 줄기, 넓게 뻗은 잎사귀로 신뢰감을 줍니다. 현실적이고 실용적이며 성실하게 목표를 이루어 가는 성향을 가진 사람들에게 어울리는 나무죠. 가이아는 모든 이들에게 든든한 존재가 되어주는 아주 매력적인 나무랍니다.");
+                case "I":
+                    return ("천체의 나무, 아스트룸", "밤하늘의 신비로운 별빛을 담은 이 나무는 호기심 가득한 가지들이 하늘에 닿을 듯이 끝없이 뻗어나갑니다. 논리적이고 창의적이며 지식을 탐구하기 좋아하는 성향을 가진 사람들에게 어울리는 나무죠. 아스트룸은 매일 조금씩 달라지는 별빛을 뿜어내며 사람들에게 지적 영감을 주는 아주 매력적인 나무랍니다.");
+                case "A":
+                    return ("새벽의 나무, 오로라", "새벽의 별처럼 형형색색의 빛을 띄고 있는 가지와, 창의적인 아이디어가 샘솟듯 잎사귀가 풍성하게 피어오른 이 나무는 예술적 영감을 줍니다. 상상력과 감수성이 풍부하며 새로운 시도를 즐기는 성향을 가진 사람들에게 어울리는 나무죠. 오로라는 사람들에게 예술적 영감을 주는 아주 매력적인 나무랍니다.");
+                case "S":
+                    return ("온기의 나무, 아미카", "따스한 봄날의 햇살처럼 은은한 빛이 흘러넘치며 풍성한 잎사귀로 주변을 감싸는 이 나무는 포근함을 줍니다. 타인과의 유대감을 소중히 여기고, 사람들에게 위로와 편안함을 제공하는 성향을 가진 사람들에게 어울리는 나무죠. 아미카는 언제나 온화하고 친근한 에너지를 주며, 주변 환경을 밝게 물들이는 아주 매력적인 나무입니다.");
+                case "E":
+                    return ("용기의 나무, 비르투스", "힘찬 기운으로 높이 솟아오르는 줄기와 강인한 잎사귀, 단단한 뿌리는 굳센 용기와 의지를 내비칩니다. 도전적이고, 리더십이 있으며, 목표를 향해 멈추지 않고 나아가는 사람들에게 어울리는 나무죠. 비르투스는 빛나는 성취의 길로 사람들을 이끄는 아주 매력적인 나무입니다.");
+                case "C":
+                    return ("질서의 나무, 오르도", "질서를 바탕으로 대칭적으로 뻗어나가는 가지와 강인한 뿌리와 잎사귀가 완벽한 조화를 이루는 이 나무는 평온함과 안정감을 줍니다. 늘 미리 준비하고 대비하며, 맡은 일을 꼼꼼하고 성실하게 수행하는 사람들에게 어울리는 나무죠. 오르도는 강한 책임감과 신뢰를 바탕으로 사람들에게 든든한 지원군이 되어주는 아주 매력적인 나무입니다");
+                default:
+                    return ("결과 없음", "해당 결과의 나무 특징 설명 없음");
+            }
+        }
 
         /// <summary>
         /// 모든 점수 및 응답을 초기화(재설문 또는 새로 시작하기 전 호출)
@@ -104,11 +198,11 @@ namespace YJH
         /// </summary>
         public void CalculateFinalResult()
         {
-            if (tMP_Text == null)
-            {
-                Debug.LogWarning("MagicalGardenResult: tMP_Text가 할당되지 않았습니다.");
-                return;
-            }
+            // if (tMP_Text == null)
+            // {
+            //     Debug.LogWarning("MagicalGardenResult: tMP_Text가 할당되지 않았습니다.");
+            //     return;
+            // }
 
             DisplayHighestCategory();  // 최고 점수 카테고리를 찾아 UI 표시
         }
@@ -131,34 +225,61 @@ namespace YJH
                 }
             }
 
-            // 매칭되는 설명문을 가져옴
-            string resultDescription = GetCategoryDescription(highestCategory);
-            tMP_Text.text = resultDescription;
+            // (1) 먼저 "나무 이름/특징" 가져오기
+            var (treeName, treeFeature) = GetTreeInfo(highestCategory);
 
-               // (추가) 머티리얼 색상 변경
+            // (2) 흥미열매 6개 가져오기
+            List<(string fruitName, string fruitDesc)> fruits;
+            if (!fruitDataByCategory.TryGetValue(highestCategory, out fruits))
+            {
+                // 만약 매핑되지 않은 카테고리일 경우 빈 리스트 할당
+                fruits = new List<(string, string)>();
+            }
+
+            // (3) 각각의 TMP_Text에 대입
+            treeNameText.text = treeName;       // 나무 이름
+            treeFeatureText.text = treeFeature; // 나무 특징
+
+            // 흥미열매 (이름, 설명) 6개를 각각 대입
+            for (int i = 0; i < fruits.Count && i < fruitNameTexts.Length; i++)
+            {
+                fruitNameTexts[i].text = fruits[i].fruitName;
+                fruitDescTexts[i].text = fruits[i].fruitDesc;
+            }
+            // 남은 Text가 있다면 빈 칸 처리 (예: 결과가 6개 미만이거나, Text가 더 많을 경우)
+            for (int i = fruits.Count; i < fruitNameTexts.Length; i++)
+            {
+                fruitNameTexts[i].text = "";
+                fruitDescTexts[i].text = "";
+            }
+
+
+            // (추가) 머티리얼 색상 변경
             ApplyMaterialColorForCategory(highestCategory);
 
             Debug.Log($"[DisplayHighestCategory] 최고점: {highestCategory} ({highestScore}점)");
         }
 
+
         /// <summary>
-        /// R, I, A, S, E, C 각각에 대한 설명 문자열을 반환
+        /// 특정 열매(fruitIndex)를 클릭했을 때,
+        /// treeFeatureText 에 해당 열매의 '설명'을 표시한다.
         /// </summary>
-        private string GetCategoryDescription(string category)
+        public void ShowFruitDescription(int fruitIndex)
         {
-            return category switch
+            // 안전 검사
+            if (fruitDescTexts == null || fruitIndex < 0 || fruitIndex >= fruitDescTexts.Length)
             {
-                "R" => "결과로 대지의 나무, 가이아가 나왔군요! ...",
-                "I" => "결과로 천체의 나무, 아스트룸이 나왔군요! ...",
-                "A" => "결과로 새벽의 나무, 오로라가 나왔군요! ...",
-                "S" => "결과로 온기의 나무, 아미카가 나왔군요! ...",
-                "E" => "결과로 용기의 나무, 비르투스가 나왔군요! ...",
-                "C" => "결과로 질서의 나무, 오르도가 나왔군요! ...",
-                _   => "결과 없음"
-            };
+                Debug.LogWarning($"ShowFruitDescription: 유효하지 않은 fruitIndex {fruitIndex}");
+                return;
+            }
+
+            // 열매 설명을 treeFeatureText 영역에 표시
+            treeFeatureText.text = fruitDescTexts[fruitIndex].text;
         }
 
-               /// <summary>
+
+        /// <summary>
         /// 최고점 카테고리에 따라 Material의 BaseColor 변경
         /// - MeshRenderer의 2번째(materialIndex=1) 머티리얼에 적용
         /// </summary>
@@ -172,7 +293,7 @@ namespace YJH
             }
 
             // 머티리얼 배열 획득 (인스턴스화)
-            Material[] mats = targetMeshRenderer.materials; 
+            Material[] mats = targetMeshRenderer.materials;
             if (materialIndex < 0 || materialIndex >= mats.Length)
             {
                 Debug.LogWarning($"ApplyMaterialColorForCategory: materialIndex({materialIndex})가 범위를 벗어났습니다.");
@@ -188,7 +309,7 @@ namespace YJH
                 "S" => Color.yellow,                            // 노랑
                 "E" => new Color(0.5f, 0.0f, 0.5f, 1.0f),       // 보라
                 "C" => new Color(1.0f, 0.5f, 0.75f, 1.0f),      // 핑크
-                _   => Color.white
+                _ => Color.white
             };
 
             // 2번째 머티리얼의 BaseColor 세팅
