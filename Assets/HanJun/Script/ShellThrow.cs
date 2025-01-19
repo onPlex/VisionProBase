@@ -8,6 +8,7 @@ namespace Jun
     {
         [SerializeField] private Transform _target;
         [SerializeField] private float _height = 5f;
+        [SerializeField] private GameObject particale = null;
         // [SerializeField] private float _duration = 1.5f;
 
         private Vector3 originalPosition; // 조개의 원래 위치
@@ -40,6 +41,7 @@ namespace Jun
         {
             if (!isMoving)
             {
+                if (particale != null) particale?.SetActive(false);
                 if (returnCoroutine != null)
                 {
                     StopCoroutine(returnCoroutine);
@@ -72,6 +74,7 @@ namespace Jun
             // 이동 완료 후 정확한 위치 설정
             transform.position = endPoint;
             isMoving = false;
+            if (particale != null) particale?.SetActive(true);
             onComplete?.Invoke();
         }
 
