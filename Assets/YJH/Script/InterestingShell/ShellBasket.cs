@@ -9,8 +9,10 @@ public class ShellBasket : MonoBehaviour
     [SerializeField]
     GameObject TutorialPhase4;
 
-     [SerializeField]
+    [SerializeField]
     GameObject TutorialShell;
+
+    [SerializeField] private MainContentManager mainManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,7 +25,14 @@ public class ShellBasket : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Shell"))
         {
-            Debug.Log("Shell Enter");
+            ShellInfo shell = other.GetComponent<ShellInfo>();
+            if (shell != null)
+            {
+                // ShellInfo.Career → int 변환
+                int cIndex = (int)shell.Career;
+                mainManager.RegisterShellSelection(cIndex);
+            }
         }
     }
+
 }

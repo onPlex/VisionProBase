@@ -1011,6 +1011,7 @@ GameObject:
   - component: {fileID: 7636359248813651199}
   - component: {fileID: 2634768763466385057}
   - component: {fileID: 3785815780092876934}
+  - component: {fileID: 2346121261320934064}
   m_Layer: 0
   m_Name: ManipulationVerSeaShell
   m_TagString: Untagged
@@ -1097,6 +1098,23 @@ MonoBehaviour:
   m_MeshRenderer: {fileID: 5315331339203661295}
   m_DefaultMat: {fileID: 2100000, guid: 6cbf4b2a5acfc40bebd09a01b5db563d, type: 2}
   m_SelectedMat: {fileID: 2100000, guid: abd7571a4274645bb8af324da1723330, type: 2}
+--- !u!114 &2346121261320934064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7831797441459849598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652307050425a4a26ba799d8a892b27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WordTMP: {fileID: 6151565334286093118}
+  WordDescTMP: {fileID: 6987862249141948921}
+  wordText: 
+  wordDesc: 
+  careerType: 0
 --- !u!1 &8471410817486516188
 GameObject:
   m_ObjectHideFlags: 0
