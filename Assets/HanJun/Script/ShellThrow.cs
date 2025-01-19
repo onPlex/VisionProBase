@@ -16,7 +16,7 @@ namespace Jun
         private Coroutine throwCoroutine = null;
         private Coroutine returnCoroutine = null;
 
-        void Start()
+        void Awake()
         {
             originalPosition = transform.position; // 초기 위치 저장
         }

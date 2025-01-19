@@ -3,16 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// public enum CareerType
-// {
-//     Realistic,    // 현실형
-//     Investigative, // 탐구형
-//     Artistic,     // 예술형
-//     Social,       // 사회형
-//     Enterprising, // 기업형
-//     Conventional  // 관습형
-// }
-
 namespace Jun
 {
     public class ResultUI : MonoBehaviour

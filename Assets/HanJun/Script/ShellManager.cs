@@ -22,6 +22,7 @@ namespace Jun
         public GameObject dolphin;
         public TMP_Text _countText;
         public GameObject shellCountUI;
+        public GameObject basket;
 
         public GameObject[] objects; // 6개의 오브젝트 (고정)
 
@@ -57,6 +58,24 @@ namespace Jun
             _buttonExecutionCounts = new int[6];
 
             UpdateTextData(); // 초기 텍스트 설정
+        }
+
+        private void OnEnable()
+        {
+            foreach (var obj in objects)
+                obj.SetActive(false);
+
+            shellCountUI.SetActive(false);
+
+            basket.SetActive(false);
+        }
+
+        public void GameStart()
+        {
+            foreach (var obj in objects)
+                obj.SetActive(true);
+
+            shellCountUI.SetActive(true);
         }
 
 
