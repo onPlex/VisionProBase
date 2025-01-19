@@ -22,12 +22,6 @@ MonoBehaviour:
   m_Scenes:
   - m_enabled: 1
     m_path: Assets/Scenes/TrialCode/TrialCodeInput.unity
-  - m_enabled: 1
-    m_path: Assets/HanJun/Scene/InterestingShell.unity
-  - m_enabled: 1
-    m_path: Assets/HanJun/Scene/02_Shell_Tutorial.unity
-  - m_enabled: 1
-    m_path: Assets/HanJun/Scene/03_Shell_Main.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
