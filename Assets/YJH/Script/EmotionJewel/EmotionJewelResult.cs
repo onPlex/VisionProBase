@@ -44,6 +44,9 @@ namespace YJH
         [SerializeField] private TMP_Text RecommendJobText;
         #endregion
 
+        [Header("3DOBJ")]
+        [SerializeField] private MeshRenderer DescBoardObj;
+
         [Header("Category")]
         [SerializeField] private GameObject CoreContent;
         [SerializeField] private GameObject LevelUpContent;
@@ -226,13 +229,22 @@ namespace YJH
             JewelRawImage.texture = JewelResultTypes[index].JewelRawImage;
             JewelCategoryText.text = JewelResultTypes[index].JewelCategoryText;
             JewelNameText.text = JewelResultTypes[index].JewelNameText;
+            JewelNameText.color = JewelResultTypes[index].JwewlColor;
+
 
             CoreTitleText.text = JewelResultTypes[index].CorePowerTextTitle;
+            CoreTitleText.color = JewelResultTypes[index].JwewlColor;
             CoreText.text = JewelResultTypes[index].CorePowerText;
 
             LevelUpTextTitle.text = JewelResultTypes[index].LevelUpText1Title;
             LevelUpText.text = JewelResultTypes[index].LevelUpText1;
             RecommendJobText.text = JewelResultTypes[index].RecommendJob;
+
+
+            Material[] mats = DescBoardObj.materials;
+            // URP의 기본 쉐이더라면 "_BaseColor" 키를, Built-in Pipeline이라면 "_Color"를 사용
+            mats[0].SetColor("_BaseColor", JewelResultTypes[index].JwewlColor);
+            DescBoardObj.materials = mats;
         }
 
 
