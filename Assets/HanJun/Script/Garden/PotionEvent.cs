@@ -1,10 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using DG.Tweening;
+using NUnit.Framework.Constraints;
 
 namespace Jun
 {
     public class PotionEvent : ProductionEvent
     {
+        [SerializeField] private GameObject particle;
         private Animator animator;
 
         public void PlayAnimation()
@@ -15,8 +18,13 @@ namespace Jun
 
         private IEnumerator DelayEvent()
         {
-            yield return new WaitForSeconds(2f);
-            // yield return new WaitForSeconds(GetAnimationClipLength(animator, ""));
+            var tween = transform.DORotate(new Vector3(0, 0, 90), 2f);
+            yield return tween.WaitForCompletion();
+            particle.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            particle.SetActive(false);
+            tween = transform.DORotate(new Vector3(0, 0, 0), 1.5f);
+            yield return tween.WaitForCompletion();
 
             this.gameObject.SetActive(false);
 

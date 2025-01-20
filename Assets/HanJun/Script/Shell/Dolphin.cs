@@ -16,6 +16,7 @@ namespace Jun
 
         public void PlayAnimation()
         {
+            SoundManager.Instance.PlayNarration("38_dolphin");
             if (coroutine != null)
             {
                 StopCoroutine(coroutine);
