@@ -1,11 +1,11 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Jun
 {
     public class ResultUI : MonoBehaviour
     {
+        [SerializeField]  private MainContentManager mainContentManager;
         [SerializeField] private ShellManager shellManager;
         [SerializeField] private GameObject[] resultViews;
         [SerializeField] private UnityEngine.UI.Image pearlImage;
@@ -28,8 +28,12 @@ namespace Jun
         private void ResultCareerEvent()
         {
             // 열거형 값을 기반으로 이미지, 텍스트 업데이트
-            SetImage((int)shellManager.CareerType);
-            SetText((int)shellManager.CareerType);
+            // SetImage((int)shellManager.CareerType);
+            // SetText((int)shellManager.CareerType);
+
+             // 열거형 값을 기반으로 이미지, 텍스트 업데이트
+            SetImage((int)mainContentManager.finalCareer);
+            SetText((int)mainContentManager.finalCareer);
         }
 
         private void SetImage(int index)
@@ -48,14 +52,16 @@ namespace Jun
         {
             resultViews[0].SetActive(false);
             resultViews[1].SetActive(true);
-            text_Activiies.text = activities[(int)shellManager.CareerType];
+           // text_Activiies.text = activities[(int)shellManager.CareerType];
+            text_Activiies.text = activities[(int)mainContentManager.finalCareer];
         }
 
         public void SetResult3View()
         {
             resultViews[1].SetActive(false);
             resultViews[2].SetActive(true);
-            text_Job.text = job[(int)shellManager.CareerType];
+           // text_Job.text = job[(int)shellManager.CareerType];
+             text_Job.text = job[(int)mainContentManager.finalCareer];
         }
 
         private string[] pearlType = new string[] { "뚝딱진주", "궁금진주", "상상진주", "친절진주", "열정진주", "꼼꼼진주" };

@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class MainContentManager : MonoBehaviour
 {
@@ -9,8 +10,22 @@ public class MainContentManager : MonoBehaviour
     // 현재 진행중인 Phase 인덱스(0~5)
     private int currentPhase = 0;
 
+
+
     // Career 선택 카운트 (R=0, I=1, A=2, S=3, E=4, C=5)
     private int[] careerSelectedCounts = new int[6];
+
+    [Header("UI")]
+    [SerializeField]
+    TMP_Text TMP_PhaseText;
+
+
+    [Header("Result")]
+    [SerializeField] Jun.Dolphin dolphin;
+    [SerializeField] GameObject Basket;
+    [SerializeField] GameObject ShellCountUI;
+
+    public ShellInfo.CareerType finalCareer;
 
     private void Start()
     {
@@ -46,6 +61,12 @@ public class MainContentManager : MonoBehaviour
 
         if (phaseParents[currentPhase] != null)
             phaseParents[currentPhase].SetActive(true);
+
+        // currentPhase는 0~5이므로, 실제 표기는 1~6이 되도록 (currentPhase + 1)
+        if (TMP_PhaseText != null)
+        {
+            TMP_PhaseText.text = $"{(currentPhase)}/{phaseParents.Length}";
+        }
     }
 
     /// <summary>
@@ -87,6 +108,9 @@ public class MainContentManager : MonoBehaviour
         {
             // 모든 Phase 끝났으면 결과 계산
             CalculateFinalCareer();
+
+            // 결과 Phase로 이동
+            GoToResultPhase();
         }
     }
 
@@ -101,9 +125,21 @@ public class MainContentManager : MonoBehaviour
             if (careerSelectedCounts[i] > careerSelectedCounts[maxIndex])
                 maxIndex = i;
         }
-
-        ShellInfo.CareerType finalCareer = (ShellInfo.CareerType)maxIndex;
+        finalCareer = (ShellInfo.CareerType)maxIndex;
         Debug.Log($"가장 많이 선택된 유형: {finalCareer}");
         // TODO: 결과 UI 표시, 씬 전환 등
+    }
+
+    private void GoToResultPhase()
+    {
+        // TODO: 결과 화면(Phase) 활성화, 씬 전환, UI 표시 등
+        // ex) resultPhaseObject.SetActive(true);
+        // ex) SceneManager.LoadScene("ResultScene");
+        // ...
+
+        Basket.SetActive(false);
+        ShellCountUI.SetActive(false);
+        dolphin.gameObject.SetActive(true);
+        if (dolphin) dolphin.PlayAnimation();
     }
 }
