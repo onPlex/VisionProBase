@@ -32,6 +32,9 @@ namespace YJH
         // 두 번째 Material을 가리키므로 보통 인덱스는 1
         [SerializeField] private int materialIndex = 1;
 
+        [Header("API")]
+        SendResultData sendResultData;
+
         // (2) R, I, A, S, E, C 점수를 저장
         private readonly Dictionary<string, int> resultScores = new Dictionary<string, int>
         {
@@ -258,6 +261,69 @@ namespace YJH
             ApplyMaterialColorForCategory(highestCategory);
 
             Debug.Log($"[DisplayHighestCategory] 최고점: {highestCategory} ({highestScore}점)");
+
+             // (추가) 최고점 카테고리를 바탕으로 SendResultData 전송
+            if (sendResultData != null)
+            {
+                SendDummyResultByHighestCategory(highestCategory);
+            }
+            else
+            {
+                Debug.LogWarning("[DisplayHighestCategory] sendResultData가 할당되어 있지 않습니다.");
+            }
+        }
+
+         /// <summary>
+        /// 최고점 카테고리에 따라 임시로 설정된 데이터로 SendGameResult 전송
+        /// </summary>
+        private void SendDummyResultByHighestCategory(string highestCategory)
+        {
+            // 예시로 사용하는 더미 데이터
+            string contData = "마법 정원 기본 설명";
+            int imgTypeData = -1;
+            int statusData = 0;
+
+            switch (highestCategory)
+            {
+                case "R":
+                    contData = "결과로 대지의 나무, 가이아가 나왔군요! 광활한 땅의 힘을 상징하는 이 나무는 어떤 환경에서도 흔들리지 않을 만큼 깊게 내린 뿌리와 튼튼한 줄기, 넓게 뻗은 잎사귀로 신뢰감을 줍니다. 현실적이고 실용적이며 성실하게 목표를 이루어 가는 성향을 가진 사람들에게 어울리는 나무죠. 가이아는 모든 이들에게 든든한 존재가 되어주는 아주 매력적인 나무랍니다.";
+                    imgTypeData = 98; 
+                    statusData = 1;  
+                    break;
+                case "I":
+                    contData = "결과로 천체의 나무, 아스트룸이 나왔군요! 밤하늘의 신비로운 별빛을 담은 이 나무는 호기심 가득한 가지들이 하늘에 닿을 듯이 끝없이 뻗어 나갑니다. 논리적이고 창의적이며 지식을 탐구하기 좋아하는 성향을 가진 사람들에게 어울리는 나무죠. 아스트룸은 매일 조금씩 달라지는 별빛을 뿜어내며 사람들에게 지적 영감을 주는 아주 매력적인 나무랍니다.";
+                    imgTypeData = 99;
+                    statusData = 1;
+                    break;
+                case "A":
+                    contData = "결과로 새벽의 나무, 오로라가 나왔군요! 새벽의 별처럼 형형색색의 빛을 띄고 있는 가지와, 창의적인 아이디어가 샘솟듯 잎사귀가 풍성하게 피어오른 이 나무는 예술적 영감을 줍니다. 상상력과 감수성이 풍부하며 새로운 시도를 즐기는 성향을 가진 사람들에게 어울리는 나무죠. 오로라는 사람들에게 예술적 영감을 주는 아주 매력적인 나무랍니다.";
+                    imgTypeData = 100;
+                    statusData = 1;
+                    break;
+                case "S":
+                    contData = "결과로 온기의 나무, 아미카가 나왔군요! 따스한 봄날의 햇살처럼 은은한 빛이 흘러넘치며 풍성한 잎사귀로 주변을 감싸는 이 나무는 포근함을 줍니다. 타인과의 유대감을 소중히 여기고, 사람들에게 위로와 편안함을 제공하는 성향을 가진 사람들에게 어울리는 나무죠. 아미카는 언제나 온화하고 친근한 에너지를 주며, 주변 환경을 밝게 물들이는 아주 매력적인 나무입니다.";
+                    imgTypeData = 101;
+                    statusData = 1;
+                    break;
+                case "E":
+                    contData = "결과로 용기의 나무, 비르투스가 나왔군요! 힘찬 기운으로 높이 솟아오르는 줄기와 강인한 잎사귀, 단단한 뿌리는 굳센 용기와 의지를 내비칩니다. 도전적이고, 리더십이 있으며, 목표를 향해 멈추지 않고 나아가는 사람들에게 어울리는 나무죠. 비르투스는 빛나는 성취의 길로 사람들을 이끄는 아주 매력적인 나무입니다.";
+                    imgTypeData = 102;
+                    statusData = 1;
+                    break;
+                case "C":
+                    contData = "결과로 질서의 나무, 오르도가 나왔군요! 질서를 바탕으로 대칭적으로 뻗어나가는 가지와 강인한 뿌리와 잎사귀가 완벽한 조화를 이루는 이 나무는 평온함과 안정감을 줍니다. 늘 미리 준비하고 대비하며, 맡은 일을 꼼꼼하고 성실하게 수행하는 사람들에게 어울리는 나무죠. 오르도는 강한 책임감과 신뢰를 바탕으로 사람들에게 든든한 지원군이 되어주는 아주 매력적인 나무입니다.";
+                    imgTypeData = 103;
+                    statusData = 1;
+                    break;
+                default:
+                    contData = "알 수 없는 카테고리 - 임시 설명 텍스트";
+                    imgTypeData = 999;
+                    statusData = 1;
+                    break;
+            }
+
+            // 실제 전송
+            sendResultData.SendGameResult(contData, imgTypeData, statusData);
         }
 
 

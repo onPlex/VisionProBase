@@ -5,7 +5,7 @@ namespace Jun
 {
     public class ResultUI : MonoBehaviour
     {
-        [SerializeField]  private MainContentManager mainContentManager;
+        [SerializeField]  private YJH.MainContentManager mainContentManager;
         [SerializeField] private ShellManager shellManager;
         [SerializeField] private GameObject[] resultViews;
         [SerializeField] private UnityEngine.UI.Image pearlImage;

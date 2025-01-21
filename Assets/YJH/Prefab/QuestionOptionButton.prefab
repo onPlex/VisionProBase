@@ -453,6 +453,10 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4528842260309374864, guid: c5c135ccb1e651e4192f4fa4b4d39e7c, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6030304304688983173, guid: c5c135ccb1e651e4192f4fa4b4d39e7c, type: 3}
       propertyPath: m_Name
       value: FX_FairySpark

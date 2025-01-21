@@ -1,6 +1,8 @@
 using Jun;
 using UnityEngine;
 
+namespace YJH
+{
 public class ShellBasket : MonoBehaviour
 {
 
@@ -43,4 +45,5 @@ public class ShellBasket : MonoBehaviour
         }
     }
 
+}
 }

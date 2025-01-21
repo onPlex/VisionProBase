@@ -5861,7 +5861,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cee4814f77ce47eaaf6bea58b5f7ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClipInfos: []
+  audioClipInfos:
+  - clipName: soundevent8
+    audioClip: {fileID: 8300000, guid: 76f4a606162b54df9a2eb859ffccbd2d, type: 3}
+  - clipName: soundevent11
+    audioClip: {fileID: 8300000, guid: 1c63c4dd113304f5297a07ecc7dd264d, type: 3}
+  - clipName: soundevent6
+    audioClip: {fileID: 8300000, guid: 2b46916bb51d848a38f144ea255b470d, type: 3}
+  - clipName: soundevent10
+    audioClip: {fileID: 8300000, guid: 7f3e33640f3a94795b5000e0522cd018, type: 3}
+  - clipName: soundevent5
+    audioClip: {fileID: 8300000, guid: 8eb98d4ba83bf48d7a16924a1e83ccc9, type: 3}
+  - clipName: soundevent4
+    audioClip: {fileID: 8300000, guid: 293757278b7304b3ba317aae44de2ec4, type: 3}
+  - clipName: soundevent2
+    audioClip: {fileID: 8300000, guid: 090db40ad5a5f4eb382f9d8ac6fc3068, type: 3}
+  - clipName: soundevent1
+    audioClip: {fileID: 8300000, guid: 7fcf8ad5a950041cea6ff55e53911e48, type: 3}
+  - clipName: soundevent3
+    audioClip: {fileID: 8300000, guid: 25a82e1c6d8e442ad8afc8f25b963425, type: 3}
+  - clipName: soundevent7
+    audioClip: {fileID: 8300000, guid: 14cc7369bf3b04c0aa81649eecc7c8b6, type: 3}
+  - clipName: soundevent9
+    audioClip: {fileID: 8300000, guid: dfd98b2bc1bf147278fd6048a3682061, type: 3}
 --- !u!114 &339371877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20066,6 +20088,7 @@ GameObject:
   - component: {fileID: 654499411824249737}
   - component: {fileID: 1468227616072947542}
   - component: {fileID: 7406450175639178294}
+  - component: {fileID: 7406450175639178295}
   m_Layer: 5
   m_Name: ResultTextBoard
   m_TagString: Untagged
@@ -20108,6 +20131,20 @@ MonoBehaviour:
   - {fileID: 783980038}
   targetMeshRenderer: {fileID: 1423779738}
   materialIndex: 1
+--- !u!114 &7406450175639178295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7406450175639178293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a7b758508f94b6488ffc9ca6ea4ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kindData: "\uCD08\uB4F1 \uB2E8\uCCB4 01"
+  TitleData: "\uB450\uADFC\uB450\uADFC \uB9C8\uBC95\uC758 \uD765\uBBF8\uC815\uC6D0"
 --- !u!4 &7749794577180379282
 Transform:
   m_ObjectHideFlags: 0
