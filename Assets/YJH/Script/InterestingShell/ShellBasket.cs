@@ -17,7 +17,7 @@ public class ShellBasket : MonoBehaviour
 
     [SerializeField] private MainContentManager mainManager;
 
-    [SerializeField] ParticleSystem particle;
+    //[SerializeField] ParticleSystem particle;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,7 +28,7 @@ public class ShellBasket : MonoBehaviour
             TutorialPhase4.SetActive(true);
             TutorialShell.SetActive(false);
 
-            particle.Play();
+            //particle.Play();
             SoundManager.Instance.PlayEffect("SE 2_b");
         }
         else if (other.gameObject.CompareTag("Shell"))
@@ -36,7 +36,7 @@ public class ShellBasket : MonoBehaviour
             ShellInfo shell = other.GetComponent<ShellInfo>();
             if (shell != null)
             {
-                particle.Play();
+                //particle.Play();
                 SoundManager.Instance.PlayEffect("SE 2_b");
                 // ShellInfo.Career → int 변환
                 int cIndex = (int)shell.Career;

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using YJH;
 
 namespace Jun
 {
@@ -26,7 +27,7 @@ namespace Jun
 
         public void PlayAnimation()
         {
-            treeSmall.SetActive(true);
+            treeSmall.SetActive(true);          
             StartCoroutine(DelayEvent());
         }
 

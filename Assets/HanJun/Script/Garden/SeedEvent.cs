@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
+using YJH;
 
 namespace Jun
 {
@@ -44,9 +45,16 @@ namespace Jun
                 yield return null;
             }
 
+            AudioManager.Instance.PlaySFX("soundevent5");
+            yield return new WaitForSeconds(0.1f);
+            AudioManager.Instance.PlaySFX("soundevent5");
+            yield return new WaitForSeconds(0.1f);
+            AudioManager.Instance.PlaySFX("soundevent5");
             isTilting = false;
             particle.Play();
+            AudioManager.Instance.PlaySFX("soundevent5");
             yield return new WaitForSeconds(2f);
+            AudioManager.Instance.PlaySFX("soundevent5");
             onComplete?.Invoke();
 
         }

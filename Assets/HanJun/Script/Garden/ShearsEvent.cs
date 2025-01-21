@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using YJH;
 
 namespace Jun
 {
@@ -17,10 +18,12 @@ namespace Jun
         private IEnumerator DelayEvent()
         {
             shears[0].SetActive(true);
+
             // yield return new WaitForSeconds(GetAnimationClipLength(animator[0], "gardening_shears_ani_cut_Notmove"));
             yield return new WaitForSeconds(2f);
             shears[0].SetActive(false);
             shears[1].SetActive(true);
+
             grass[0].SetActive(false);
             // yield return new WaitForSeconds(GetAnimationClipLength(animator[1], "gardening_shears_ani_cut_Notmove"));
             yield return new WaitForSeconds(2f);
@@ -29,6 +32,11 @@ namespace Jun
             yield return new WaitForSeconds(0.5f);
 
             onComplete?.Invoke();
+        }
+
+        public void PlaySoundEffect()
+        {
+            AudioManager.Instance.PlaySFX("soundevent7");
         }
     }
 }

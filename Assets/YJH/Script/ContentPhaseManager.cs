@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace YJH
 {
@@ -124,9 +125,7 @@ namespace YJH
         {
             Debug.Log("OnStage1Finish");
 
-            magicalGardenResult.StoreBoardResult(0);
-            magicalGardenResult.CalculateFinalResult();
-
+            magicalGardenResult.StoreBoardResult(0);       
             Stage1Obj.SetActive(false);
             Stage1EndObj.SetActive(true);
             yield return null;
@@ -160,8 +159,7 @@ namespace YJH
         IEnumerator IOnStage2End()
         {
             Debug.Log("OnStage2End");
-            magicalGardenResult.StoreBoardResult(1);
-            magicalGardenResult.CalculateFinalResult();
+            magicalGardenResult.StoreBoardResult(1);           
             Stage2Obj.SetActive(false);
             Stage2EndObj.SetActive(true);
             //[물뿌리개] 아이콘이 생성
@@ -200,8 +198,7 @@ namespace YJH
         IEnumerator IOnStage3End()
         {
             Debug.Log("OnStage3End");
-            magicalGardenResult.StoreBoardResult(2);
-            magicalGardenResult.CalculateFinalResult();
+            magicalGardenResult.StoreBoardResult(2);          
             Stage3Obj.SetActive(false);
             Stage3EndObj.SetActive(true);
 
@@ -271,6 +268,11 @@ namespace YJH
             if (Stage4Obj) Stage4Obj.SetActive(false);
             if (Stage4EndObj) Stage4EndObj.SetActive(false);
             if (ResultObj) ResultObj.SetActive(false);
+        }
+
+        public void OnClickNextStage()
+        {
+            SceneManager.LoadScene("InterestingShell");
         }
     }
 }

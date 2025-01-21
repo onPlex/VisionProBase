@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using YJH;
 
 namespace Jun
 {
@@ -26,6 +27,7 @@ namespace Jun
 
         private IEnumerator DelayAnimationEvent()
         {
+           
             yield return new WaitForSeconds(GetAnimationClipLength(animator, "Sprout_ani"));
             onComplete?.Invoke();
         }

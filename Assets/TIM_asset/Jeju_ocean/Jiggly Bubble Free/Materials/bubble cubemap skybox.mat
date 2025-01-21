@@ -47,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 364dfee8dc474ba46b35ad1e0803a746, type: 3}
+        m_Texture: {fileID: 2800000, guid: 58ab3eea7edd61d46aaecb65f84a7b7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -116,10 +116,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _AmbientPow: 1
-    - _Blend: 0
+    - _Blend: 2
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
@@ -127,15 +128,15 @@ Material:
     - _CameraNearFadeDistance: 1
     - _ColorMode: 0
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.231
     - _DLightPow: 4.21
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0
-    - _DstBlend: 10
-    - _DstBlendAlpha: 10
+    - _DstBlend: 1
+    - _DstBlendAlpha: 1
     - _EmissionEnabled: 0
     - _Exposure: 1.74
     - _FlipbookBlending: 0
@@ -152,6 +153,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _Rotation: 0
+    - _SampleGI: 0
     - _Shininess: 0.7
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0

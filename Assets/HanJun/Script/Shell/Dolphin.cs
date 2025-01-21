@@ -31,12 +31,12 @@ namespace Jun
 
         private IEnumerator DelayEvent()
         {
-            var tween = transform.DOMove(target.position, 3f).SetEase(ease);
+            var tween = transform.DOMove(target.position, 7f).SetEase(ease);
             yield return tween.WaitForCompletion();
             if (particle != null) particle.SetActive(true);
             onComplete?.Invoke();
-            yield return new WaitForSeconds(1f);
-            var tween2 = transform.DOMove(target2.position, 3f).SetEase(ease);
+            yield return new WaitForSeconds(0.5f);
+            var tween2 = transform.DOMove(target2.position, 2f).SetEase(ease);
             yield return tween2.WaitForCompletion();
             gameObject.SetActive(false);
         }

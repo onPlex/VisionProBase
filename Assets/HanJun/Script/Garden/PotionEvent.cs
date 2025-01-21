@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 using NUnit.Framework.Constraints;
+using YJH;
 
 namespace Jun
 {
@@ -20,8 +21,10 @@ namespace Jun
         {
             var tween = transform.DORotate(new Vector3(0, 0, 90), 2f);
             yield return tween.WaitForCompletion();
+            AudioManager.Instance.PlaySFX("soundevent9");
             particle.SetActive(true);
             yield return new WaitForSeconds(1f);
+            AudioManager.Instance.PlaySFX("soundevent9");
             particle.SetActive(false);
             tween = transform.DORotate(new Vector3(0, 0, 0), 1.5f);
             yield return tween.WaitForCompletion();

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using YJH;
 
 namespace Jun
 {
@@ -23,6 +24,8 @@ namespace Jun
 
         private IEnumerator DelayEvent()
         {
+            AudioManager.Instance.PlaySFX("soundevent6");
+           
             yield return new WaitForSeconds(GetAnimationClipLength(animator, "gardening_watercan_ani_water"));
             onComplete?.Invoke();
         }

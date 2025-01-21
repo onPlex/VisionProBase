@@ -32,9 +32,15 @@ namespace Jun
         private IEnumerator PlayAnimationCoroutine()
         {
             animator.SetBool("IsPlay", true);
+
             yield return new WaitForSeconds(GetAnimationClipLength(animator, "gardening_trowel_ani_digging") * 3);
             animator.SetBool("IsPlay", false);
             onComplete?.Invoke();
+        }
+
+        public void PlayTrowelSound()
+        {
+            AudioManager.Instance.PlaySFX("soundevent4");
         }
 
     }
