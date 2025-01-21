@@ -161,6 +161,7 @@ namespace YJH
                 Debug.Log("End of dialogues.");
                 if (contentPhaseManager != null)
                 {
+                    this.gameObject.SetActive(false);
                     contentPhaseManager.OnGamePrologueEnd();
                 }
                 else
