@@ -1,0 +1,129 @@
+character_04.png
+size:1794,1032
+filter:Linear,Linear
+pma:true
+111111
+bounds:855,303,51,46
+offsets:25,27,100,100
+111112
+bounds:1662,71,51,46
+offsets:25,27,100,100
+e1
+bounds:1662,119,60,96
+offsets:2,2,64,99
+e2
+bounds:1724,125,53,93
+offsets:1,1,55,95
+eb1
+bounds:2,2,51,17
+offsets:1,1,53,19
+eb2
+bounds:1662,46,46,23
+offsets:1,1,48,25
+eb2 복사
+bounds:1416,2,56,32
+offsets:1,1,58,34
+el1
+bounds:458,2,126,45
+el2
+bounds:1316,2,100,49
+rotate:90
+ela1
+bounds:919,19,31,23
+offsets:1,1,33,25
+ela2
+bounds:952,19,29,23
+offsets:1,1,31,25
+elight1
+bounds:1474,2,20,25
+offsets:1,1,22,27
+elight2
+bounds:55,4,15,21
+offsets:1,1,17,23
+rotate:90
+es1
+bounds:1367,2,100,47
+rotate:90
+es2
+bounds:1396,631,80,30
+ew1
+bounds:1113,2,98,96
+offsets:1,1,100,98
+rotate:90
+ew2
+bounds:1495,36,86,96
+offsets:1,1,88,98
+rotate:90
+mouth_12
+bounds:1593,29,93,67
+offsets:4,16,100,100
+rotate:90
+레이어 10
+bounds:1495,124,91,165
+rotate:90
+레이어 11
+bounds:2,364,459,666
+레이어 12
+bounds:1658,520,141,134
+offsets:1,1,143,136
+rotate:90
+레이어 13
+bounds:951,330,359,288
+레이어 14
+bounds:855,351,89,212
+레이어 15
+bounds:1773,952,78,14
+offsets:1,1,80,16
+rotate:90
+레이어 16
+bounds:2,21,341,454
+rotate:90
+레이어 16 복사
+bounds:1396,663,375,367
+레이어 17
+bounds:1312,297,171,321
+레이어 17_1
+bounds:1485,340,171,321
+레이어 18
+bounds:463,565,486,465
+레이어 19
+bounds:1312,104,104,191
+레이어 2
+bounds:951,620,443,410
+offsets:1,1,445,412
+레이어 20
+bounds:1495,217,137,121
+레이어 21
+bounds:1634,217,86,121
+레이어 22
+bounds:1722,220,52,126
+offsets:0,0,52,127
+레이어 24
+bounds:1418,115,75,180
+레이어 25
+bounds:653,18,57,29
+offsets:1,1,59,31
+레이어 27
+bounds:586,21,65,26
+offsets:1,1,67,28
+레이어 3
+bounds:1211,8,92,103
+rotate:90
+레이어 4
+bounds:463,285,278,390
+rotate:90
+레이어 5
+bounds:730,26,187,257
+레이어 6
+bounds:1113,102,197,226
+레이어 7
+bounds:458,49,234,270
+rotate:90
+레이어 8
+bounds:1773,938,12,19
+offsets:1,1,14,21
+rotate:90
+레이어 9
+bounds:1658,348,132,170
+레이어 9 복사
+bounds:919,44,192,284
