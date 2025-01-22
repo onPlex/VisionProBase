@@ -1,9 +1,7 @@
 using UnityEngine;
 
-
 namespace YJH.ChangeTheMood
 {
-
     public class PhaseManager : MonoBehaviour
     {
         public enum Sex
@@ -13,7 +11,6 @@ namespace YJH.ChangeTheMood
             Girl
         }
 
-
         [Header("Phases")]
         // 0~5까지의 Phase Parent 오브젝트
         [SerializeField] private GameObject[] phaseParents = new GameObject[6];
@@ -21,16 +18,53 @@ namespace YJH.ChangeTheMood
         // 현재 진행중인 Phase 인덱스(0~5)
         private int currentPhase = 0;
 
-        [Header("Select")]
-        Sex SelectedSex;
+        [Header("Background")]
+        [SerializeField]
+        MeshRenderer BackGroundMeshRenderer;
+        [SerializeField]
+        Material[] BackGroundMats;
 
-        string[] Nickname = {"닉네임1", "닉네임2", "닉네임3", "닉네임4", "닉네임5", "닉네임6", "닉네임7", "닉네임8", "닉네임9"};
+        [Header("Select")]
+        private Sex selectedSex;
+        private string selectedNickname;
+
+        private readonly string[] nicknames = { "닉네임0", "닉네임1", "닉네임2", "닉네임3", "닉네임4", "닉네임5", "닉네임6", "닉네임7", "닉네임8" };
 
         [Header("Result")]
-
         [SerializeField]
-        SendResultData sendResultData;
+        private SendResultData sendResultData;
 
+        public Sex SelectedSex
+        {
+            get => selectedSex;
+            private set
+            {
+                if (value == Sex.NoneSelect || value == Sex.Boy || value == Sex.Girl)
+                {
+                    selectedSex = value;
+                }
+                else
+                {
+                    Debug.LogWarning("Invalid sex selection");
+                }
+            }
+        }
+
+        public string SelectedNickname
+        {
+            get => selectedNickname;
+            private set
+            {
+                if (System.Array.Exists(nicknames, nickname => nickname == value))
+                {
+                    selectedNickname = value;
+                }
+                else
+                {
+                    Debug.LogWarning("Invalid nickname selection");
+                }
+            }
+        }
 
         private void Start()
         {
@@ -38,7 +72,6 @@ namespace YJH.ChangeTheMood
             InitializePhases();
             SelectedSex = Sex.NoneSelect;
         }
-
 
         private void InitializePhases()
         {
@@ -63,7 +96,14 @@ namespace YJH.ChangeTheMood
             if (phaseParents[currentPhase] != null)
                 phaseParents[currentPhase].SetActive(true);
 
-
+            if (currentPhase == 5)
+            {
+                BackGroundMeshRenderer.material = BackGroundMats[1];
+            }
+            else if (currentPhase == 6)
+            {
+                BackGroundMeshRenderer.material = BackGroundMats[2];
+            }
         }
 
         public void NextPhase()
@@ -89,11 +129,28 @@ namespace YJH.ChangeTheMood
             }
         }
 
-
         public void SelectSex(int selectIndex)
         {
-            SelectedSex = (Sex)selectIndex;
+            if (selectIndex >= 0 && selectIndex < System.Enum.GetValues(typeof(Sex)).Length)
+            {
+                SelectedSex = (Sex)selectIndex;
+            }
+            else
+            {
+                Debug.LogWarning("Invalid index for sex selection");
+            }
         }
 
+        public void SelectNickname(int selectIndex)
+        {
+            if (selectIndex >= 0 && selectIndex < nicknames.Length)
+            {
+                SelectedNickname = nicknames[selectIndex];
+            }
+            else
+            {
+                Debug.LogWarning("Invalid index for nickname selection");
+            }
+        }
     }
 }

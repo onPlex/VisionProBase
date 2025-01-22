@@ -1,0 +1,148 @@
+character_05.png
+size:1947,968
+filter:Linear,Linear
+pma:true
+e1
+bounds:1117,566,45,70
+offsets:1,1,47,72
+rotate:90
+e2
+bounds:1117,566,45,70
+offsets:1,1,47,72
+rotate:90
+eb1_1
+bounds:2,2,40,14
+offsets:1,1,42,16
+eb1_1 복사
+bounds:1189,568,43,31
+offsets:1,1,45,33
+rotate:90
+eb2
+bounds:1141,352,35,22
+offsets:1,1,37,24
+rotate:90
+el1
+bounds:1563,549,95,64
+el2
+bounds:1563,493,87,54
+ela1
+bounds:1268,449,21,17
+ela2
+bounds:461,2,23,16
+elight1
+bounds:578,3,15,17
+offsets:1,1,17,19
+rotate:90
+elight2
+bounds:486,2,16,19
+offsets:1,1,18,21
+rotate:90
+es1
+bounds:1222,571,74,40
+es2
+bounds:1199,354,67,33
+ew1
+bounds:1823,697,73,66
+offsets:1,1,75,68
+rotate:90
+ew2
+bounds:1538,281,67,68
+offsets:1,1,69,70
+rotate:90
+레이어 1
+bounds:1099,351,40,36
+offsets:1,1,43,38
+레이어 10 복사
+bounds:1238,614,306,352
+offsets:1,1,308,354
+레이어 10 복사 10
+bounds:554,354,217,612
+레이어 10 복사 12
+bounds:773,563,342,403
+offsets:1,14,343,417
+레이어 10 복사 13
+bounds:777,2,383,346
+offsets:1,0,384,346
+레이어 10 복사 14
+bounds:1546,690,276,275
+offsets:0,1,276,276
+rotate:90
+레이어 10 복사 15
+bounds:1647,149,275,275
+offsets:1,1,276,276
+레이어 10 복사 2
+bounds:1099,389,161,172
+offsets:0,1,161,173
+레이어 10 복사 3
+bounds:891,357,126,204
+레이어 10 복사 4
+bounds:1538,8,139,266
+offsets:1,0,140,266
+rotate:90
+레이어 10 복사 5
+bounds:773,350,116,211
+offsets:0,13,116,224
+레이어 10 복사 6
+bounds:2,18,403,321
+offsets:1,1,406,323
+레이어 10 복사 7
+bounds:186,342,182,624
+offsets:0,1,182,625
+레이어 10 복사 8
+bounds:370,342,182,624
+offsets:0,1,182,625
+레이어 10 복사 9
+bounds:2,341,182,625
+레이어 15
+bounds:44,6,10,96
+offsets:1,1,12,98
+rotate:90
+레이어 16
+bounds:507,3,69,15
+offsets:1,1,71,17
+레이어 19
+bounds:407,20,320,368
+rotate:90
+레이어 2
+bounds:407,2,52,16
+offsets:1,1,54,18
+레이어 20
+bounds:1823,871,95,122
+rotate:90
+레이어 21
+bounds:1546,615,73,148
+rotate:90
+레이어 22
+bounds:1019,365,78,196
+레이어 25
+bounds:1823,772,103,97
+레이어 26
+bounds:1117,613,353,119
+offsets:1,1,355,121
+rotate:90
+레이어 27
+bounds:1162,6,374,344
+offsets:0,0,374,345
+레이어 3
+bounds:1262,519,50,31
+offsets:1,1,52,33
+rotate:90
+레이어 30
+bounds:1696,426,247,262
+offsets:0,0,247,263
+레이어 30 복사
+bounds:1298,365,247,263
+offsets:1,0,248,264
+rotate:90
+레이어 31
+bounds:1806,8,81,139
+레이어 31 복사
+bounds:1563,350,82,141
+레이어 4
+bounds:1268,468,49,22
+offsets:1,1,51,24
+rotate:90
+레이어 6
+bounds:1165,353,34,32
+offsets:1,1,36,34
+rotate:90

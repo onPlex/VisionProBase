@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/YJH/ChangeTheMood.meta
 guid: 7fa048dd6af154ac182f45f83251862e
+========
+guid: 42bf7a90c59174a1ea081c34e2323d1e
+>>>>>>>> 033e3064bc2f82540638180b994e48dec846ed53:Assets/HanJun/Script/Spine.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
