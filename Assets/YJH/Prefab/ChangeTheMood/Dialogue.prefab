@@ -690,11 +690,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phaseManager: {fileID: 0}
-  dialogues:
-  - 
-  - 
+  dialogues: []
+  speakerObjects: []
   NickNameTextTMP: {fileID: 3505485386922889345}
   dialogueTextTMP: {fileID: 4667311552049135396}
+  ProcessButtonObj: {fileID: 7289970664598444118}
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  distance: 0.6
+  duration: 1.5
 --- !u!1 &7289970664598444118
 GameObject:
   m_ObjectHideFlags: 0

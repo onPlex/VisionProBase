@@ -96,7 +96,12 @@ namespace YJH.ChangeTheMood
             if (phaseParents[currentPhase] != null)
                 phaseParents[currentPhase].SetActive(true);
 
-            if (currentPhase == 5)
+
+            if (currentPhase == 1)
+            {
+                BackGroundMeshRenderer.material = BackGroundMats[0];
+            }
+            else if (currentPhase == 5)
             {
                 BackGroundMeshRenderer.material = BackGroundMats[1];
             }
