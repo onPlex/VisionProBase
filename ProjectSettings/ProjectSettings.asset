@@ -138,9 +138,9 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  visionOSBundleVersion: 0.6
+  visionOSBundleVersion: 0.7
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.6
+  bundleVersion: 0.7
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -166,7 +166,7 @@ PlayerSettings:
     VisionOS: com.GMWStudio.VisionProBase
   buildNumber:
     Standalone: 0
-    VisionOS: 3
+    VisionOS: 1
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
