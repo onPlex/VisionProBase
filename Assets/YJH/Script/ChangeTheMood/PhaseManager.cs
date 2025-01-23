@@ -109,6 +109,10 @@ namespace YJH.ChangeTheMood
             {
                 BackGroundMeshRenderer.material = BackGroundMats[2];
             }
+             else if (currentPhase == 9)
+            {
+                BackGroundMeshRenderer.material = BackGroundMats[0];
+            }
         }
 
         public void NextPhase()

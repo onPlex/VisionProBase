@@ -3,16 +3,32 @@ using TMPro;
 
 namespace YJH.ChangeTheMood
 {
+    /// <summary>
+    /// 문제 유형(정답/오답 있음, 없음)을 구분하기 위한 enum
+    /// </summary>
+    public enum QuizType
+    {
+        WithAnswer,  // 정답/오답이 존재하는 문제
+        NoAnswer     // 정답/오답 개념이 없는 문항
+    }
 
     [System.Serializable]
     public class QuizData
     {
-       
+        [Header("문제 유형")]
+        public QuizType quizType = QuizType.WithAnswer;
+
+        [Header("문제(질문)")]
+        [TextArea]
         public string QuizConetn;
-        public string CorrectAnswer;  
-        public string InCorrectAnswer;  
+
+        [Header("정답 텍스트(또는 보기1)")]
+        public string CorrectAnswer;
+
+        [Header("오답 텍스트(또는 보기2)")]
+        public string InCorrectAnswer;
     }
-public class Quiz : MonoBehaviour
+    public class Quiz : MonoBehaviour
     {
         [Header("Quiz Data")]
         [SerializeField]
@@ -30,6 +46,7 @@ public class Quiz : MonoBehaviour
         private GameObject correctFeedbackObject;   // 정답 연출 오브젝트
         [SerializeField]
         private GameObject incorrectFeedbackObject; // 오답 연출 오브젝트
+        [SerializeField] private GameObject noAnswerFeedbackObject;   // 답이 없는 문제용 피드백
 
         // 선택지 중 어느 쪽이 정답인지 (0 = A, 1 = B)
         private int correctAnswerIndex = -1;
@@ -107,19 +124,29 @@ public class Quiz : MonoBehaviour
                 return;
             }
 
-            userAnsweredCorrectly = (selectedAnswerIndex == correctAnswerIndex);
-           
-
-            if (userAnsweredCorrectly)
+            if (quizData.quizType == QuizType.NoAnswer)
             {
-                Debug.Log("정답을 맞혔습니다!");
-                ShowCorrectFeedback();
+                ShowNoAnswerFeedback();
             }
             else
             {
-                Debug.Log("오답입니다!");
-                ShowIncorrectFeedback();
+                userAnsweredCorrectly = (selectedAnswerIndex == correctAnswerIndex);
+
+
+                if (userAnsweredCorrectly)
+                {
+                    Debug.Log("정답을 맞혔습니다!");
+                    ShowCorrectFeedback();
+                }
+                else
+                {
+                    Debug.Log("오답입니다!");
+                    ShowIncorrectFeedback();
+                }
+
+
             }
+
 
             // 정답/오답에 따른 추가 로직(효과, 점수 등)을 여기서 처리
 
@@ -127,10 +154,10 @@ public class Quiz : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-         // ▼▼▼ 정답 연출용 함수 ▼▼▼
+        // ▼▼▼ 정답 연출용 함수 ▼▼▼
         private void ShowCorrectFeedback()
         {
-            Debug.Log("정답을 맞혔습니다!");          
+            Debug.Log("정답을 맞혔습니다!");
             if (correctFeedbackObject != null) correctFeedbackObject.SetActive(true);
 
             // 필요시 추가 로직(애니메이션, 사운드, 점수 등)...
@@ -139,10 +166,31 @@ public class Quiz : MonoBehaviour
         // ▼▼▼ 오답 연출용 함수 ▼▼▼
         private void ShowIncorrectFeedback()
         {
-            Debug.Log("오답입니다!");     
+            Debug.Log("오답입니다!");
             if (incorrectFeedbackObject != null) incorrectFeedbackObject.SetActive(true);
 
             // 필요시 추가 로직(애니메이션, 사운드, 재시도 등)...
+        }
+
+        /// <summary>
+        /// 정답/오답 개념이 없는 문제를 선택했을 때 보여줄 피드백
+        /// </summary>
+        private void ShowNoAnswerFeedback()
+        {
+            Debug.Log("정답/오답이 없는 문제를 선택했습니다. 동일 피드백을 표시합니다.");
+            if (noAnswerFeedbackObject != null)
+                noAnswerFeedbackObject.SetActive(true);
+        }
+
+        /// <summary>
+        /// 퀴즈 종료 시 공통 처리
+        /// </summary>
+        private void EndQuiz()
+        {
+            if (storyDialogueObject != null)
+                storyDialogueObject.SetActive(false);
+
+            gameObject.SetActive(false);
         }
 
         /// <summary>
