@@ -23,10 +23,12 @@ namespace YJH.ChangeTheMood
             if (result.isHappyEnd)
             {
                 HappyEndObj.SetActive(true);
+                UnHappyEndObj.SetActive(false);
             }
             else
             {
                 UnHappyEndObj.SetActive(true);
+                HappyEndObj.SetActive(false);
 
             }
         }
