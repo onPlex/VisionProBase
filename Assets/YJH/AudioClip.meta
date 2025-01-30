@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/YJH/AudioClip.meta
 guid: abc11abe8f86e4c25907d6c5e730b397
+========
+guid: 2d99116f2532c4d4e9cbcad912ff1941
+>>>>>>>> 033e3064bc2f82540638180b994e48dec846ed53:Assets/ChangeTheMood20250120.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
