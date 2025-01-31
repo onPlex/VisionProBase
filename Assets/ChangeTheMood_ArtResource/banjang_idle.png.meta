@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 22a33cd6fb5db41e4b53a19db10f8ab8
+guid: 93d7a32adb2984e5a9e5a4b92277d878
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -121,12 +121,4016 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: banjang_idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693a28f9644b546568bab4ac8cc27459
+      internalID: 1855045038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_1
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16faa07bc00304da4b01100dae27aaaa
+      internalID: -747102865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_2
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38b603775f304ce1b05e0b334857c1d
+      internalID: -454015661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_3
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d406069d3c3453093cbe5b590b0569
+      internalID: 1583763837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_4
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69401107e0ba3459d82229331d17fcaf
+      internalID: 895111016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_5
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a79537539dee42e58c11928295151d4
+      internalID: -655855599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_6
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7dd34eccb7941f998f420b574fda6f
+      internalID: 1857345726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_7
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260daccd7afd742d18821be9bd5ea551
+      internalID: -742786941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_8
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28bca120002264dd49c364aff1e94e69
+      internalID: -1893103983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_9
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8786de015584b41b08f73a2cebbeb867
+      internalID: -1307173653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_10
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e027ea94e40ca4caf83e7a00690c8736
+      internalID: 2008486717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_11
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0cb32bf6c774a20a1ac364dbab4f8d
+      internalID: 1706369933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_12
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 14521
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee953020f64a44698a8f8ad4764a63c
+      internalID: 710369596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e530a660a244a84a533b51a0f3f239
+      internalID: -696446927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_14
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff354c5938e24840996afd686afba6c
+      internalID: 1629860239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_15
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960d14c1a625e4e91911ae5215d8c90a
+      internalID: -906408597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_16
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6957cc410cf6426ea3cba1197135277
+      internalID: 712702264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_17
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b80be2bbeba45a098252517420c170
+      internalID: 1733809532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_18
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7a1366e8f394164bfd83af1f07abe6
+      internalID: -912382212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_19
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c835bf255ffb940e69c73e1c0ce8f2c3
+      internalID: 282595495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_20
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4562c0a3967ca4b938415e64022e23af
+      internalID: 8668386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_21
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41be79af7aabf41449f7b7ec359105f3
+      internalID: -1061926172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_22
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9421b966c05dd46fbbaed11ac30e4b24
+      internalID: -1471968134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_23
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b887320bc822a441a9093a2e021634c6
+      internalID: -1276750151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_24
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1bc2fbcbf9340c9af979fd073e9660
+      internalID: 1468259115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_25
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 13404
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0560336078df34fba8153277d5a4116f
+      internalID: -1466742800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc3a5476d56b41b894cbc55ed111ae2
+      internalID: 598744334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_27
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f30cecaeff4040e289edcbec8e3d6bb
+      internalID: 733789084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_28
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aebbcdfad9444d60b2fc02a4062921d
+      internalID: -1239179648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_29
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f17ed177fea44d10928c9cf09b860f1
+      internalID: 430088378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_30
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae31c61a633c94465be909fcb98ab110
+      internalID: -1605356634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_31
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 634115d66ee70455ba9a062e0122c8f2
+      internalID: 2065189159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_32
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf625fd22e0e4e7ca64a41d1712418a
+      internalID: 1126052948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_33
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e4930f34f0c46a0b078f5e67dbc772
+      internalID: 1384063661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_34
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2597f3154dcad4b39a73708046cb33ae
+      internalID: -338578201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_35
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a021923863f54ce994b83307d4ae5f1
+      internalID: 1770833984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_36
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff181f5d374f148cb9b7c32250800fbf
+      internalID: -1367227558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_37
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a9e49caa82c4fd18a8abdb8f188f9c
+      internalID: -1331174616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_38
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 12287
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa71b6cfe1bf048ebb39ac248a015e99
+      internalID: 665269475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402288308a7fb4965b05ca2ba5a859dd
+      internalID: -1851487137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_40
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fced535cba749e89fcbb8a943f0cf1
+      internalID: 558870120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_41
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b2026dd1dbb405e95b84ff293cf0bb
+      internalID: -2118343475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_42
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c6be16ff5714d73ae16e9d8e18b438
+      internalID: 1656000842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_43
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef806151e5ba4663950e46c2feb6739
+      internalID: -744409208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_44
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69e177120bd5418390d1d5d1c132230
+      internalID: -526278608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_45
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f33c0c4c89cc47a28bd344c9b0670aa
+      internalID: 75740050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_46
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab5d871f0eeb426392212217c1b72f5
+      internalID: 2025221665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_47
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbbab75ea162c46409501e51fe2525dd
+      internalID: 1751750745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_48
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2a083a2806f4683aab9b645054a60e
+      internalID: -1472643798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_49
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aea2817cc68346a8b09d3526f0014e7
+      internalID: 739453899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_50
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b98e650d79f489d92b0125d689e8b7
+      internalID: -1304429025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_51
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 11170
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa425e3ebf720435da5367696c8642be
+      internalID: -760683698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c7f9e610c6b434ca3ed5150f70b74d
+      internalID: -1028178866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_53
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88adad324044437bad7907f22eb8813
+      internalID: 1939051169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_54
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13225ab195524f869a5e0d2d6c6b404
+      internalID: 297911595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_55
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620dbac04b734424e9b809b1319112d1
+      internalID: 291515535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_56
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335b6c0dcd5834cf5b75b43b900cc337
+      internalID: -1208993477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_57
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7ff9c83a38b4b3aa5ccaedb16c8d50
+      internalID: -1784140036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_58
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ef0b15c6b6b4db2adfe3ae7e9dea28
+      internalID: -957361263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_59
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc22e202f1f94b5ea332a683da0108a
+      internalID: -415568033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_60
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6b326b876e844a5a86d13b072ae171
+      internalID: -1104801447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_61
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a90d3c24048648fdb8a2ae7afcdb7af
+      internalID: 154909481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_62
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d601c5454f88448abb845261c5b759d3
+      internalID: -1084752858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_63
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df48810d6555b4fae95784acfb37f2a5
+      internalID: 704309254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_64
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 10053
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ca3b79bee164ff18404c818d4d8b97
+      internalID: 1814124786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27db05de60ece4102898f931923e7cc9
+      internalID: 436059503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_66
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68619c39625b94aee8b497950843cb7e
+      internalID: -1981823986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_67
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f7b6924b9214ebb8b9646d815f2ae7
+      internalID: 602486184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_68
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ad30f7ec1e94f2d83690db766a9cec
+      internalID: -1396286268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_69
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def4ab06ddfb64788ae85d77705048a5
+      internalID: 1936788475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_70
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9faf97ba008624408b39a6dcb4aae06c
+      internalID: -1102388018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_71
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14efde76199cb4ac983295dbc1b62c0a
+      internalID: -1946633091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_72
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ca280770a304f6faafa2ad6f29c4dc
+      internalID: 1675042649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_73
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c894a75d2d68494d9b2a87ba2975dae
+      internalID: 1329084038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_74
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fe66f6336d141049adb71bc45fecb1
+      internalID: 1463579862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_75
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0376800f5f46941b682cbee8136ac759
+      internalID: -1220870230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_76
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b23e0d491f8045f2985571dee57eb95
+      internalID: -23338200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_77
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 8936
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7259f5067e2b8438f90dcc1141e22994
+      internalID: -495191997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb79b45a4cd44dc29b47dc4ee5c3b21
+      internalID: 321301520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_79
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b84af9d2c92941cdb53ab264e735da9
+      internalID: 873289945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_80
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3847c31af194e7daf7db5f1948b164
+      internalID: 637447437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_81
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7932fdf1ff7ec4f3e885090ef07509ca
+      internalID: -1400729651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_82
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b98b41775262404c972559d51585c69
+      internalID: 2046388383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_83
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279387f070f2d44018eabca22ea822b8
+      internalID: 413541546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_84
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4558b173b87044dbb16619163ed0b1b
+      internalID: -210049799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_85
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a6c09861534402c83814e20c1252b3
+      internalID: 1841384217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_86
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1e8afd509b742dabbc79354c57a894
+      internalID: 105085337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_87
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aedc2d0b3b0a54a09bd29cd195edd164
+      internalID: 244974221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_88
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4757b7c11df473e818c15cc17e6961
+      internalID: 856176380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_89
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a381116d53d344999645a6a596639d1
+      internalID: -1869422545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_90
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 7819
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7a4c432e05c49dbb2bba93a004d74d
+      internalID: -2136799472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7eba2c96d6449a6956725c31985991
+      internalID: -555358251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_92
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee9834c042ef4f63b8e2d7cd81f6194
+      internalID: 1720057082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_93
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89fc9e57bd404464da02a0b1b34730a8
+      internalID: 1168315417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_94
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a49caaf5f0d446ebe70c2530b1ad31
+      internalID: -1728795470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_95
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b2545374e414c55823938c547a4cf9
+      internalID: 458232865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_96
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2647a04d90112406a94919ca059e839d
+      internalID: -796294087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_97
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af3274d6a1244acf853ab0234bd76e6
+      internalID: -1630395506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_98
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847529cf92f8d47c997ff94f6c2c2e85
+      internalID: -1023723198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_99
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8008b0bd096804b0eb64d4deef4c2b5d
+      internalID: 1849584144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_100
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1c23b3a26314cfcb4a4ee5346cc427
+      internalID: -881736369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_101
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a03c7ee45e94021b59368e37d79b1f
+      internalID: 1733742255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_102
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb58953da4af4056b213ca147999fce
+      internalID: -580625562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_103
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 6702
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c979a2326972142209b86569d1b005fa
+      internalID: 1843580199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ce7f5a4c2334c2e8f0791dfd33317d
+      internalID: 721246253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_105
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b75451c7cfa143459337132f0253a62
+      internalID: 577591604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_106
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3014dd09160c84a6fba0792a4fd2da9b
+      internalID: -1945908855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_107
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d12f4a3b18b049d098ad8f6a60931a9
+      internalID: -1975745927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_108
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb76f6671a9f4f9a9b30a2c2e08a2c0
+      internalID: 1236993846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_109
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916d9c3ab6528461a830181accdc8f54
+      internalID: -69714336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_110
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89132974e50e64f5b8aaf120a6124c5a
+      internalID: 1419527691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_111
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f74ab53896047cd9623ed4cba0f3b9
+      internalID: 1542528803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_112
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1076209de9464404ea6a17bac11fdb69
+      internalID: 891688601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_113
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff9650710213439dbaffe87ff407c52
+      internalID: 1137902695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_114
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61fb71182cfb24396a5ddb041fd168a4
+      internalID: 1833258483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_115
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9fa5be3a82b422bbb70ca1e15ef95b
+      internalID: -260608355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_116
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 5585
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941e1dbfce57043459b4b2a9251514b2
+      internalID: 2044489090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40413679650534a459dea5867cce2322
+      internalID: 520703204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_118
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3018d5b6416484c7b9dfe8bfc13f1d92
+      internalID: 2001639552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_119
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ffedeb8f738474895f719b9ac984df
+      internalID: -326909606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_120
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba362d1acbe84bd78c92b8c60e100f7
+      internalID: -779886279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_121
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90f55d5fa4904d7ca2a9e719ca71da3
+      internalID: 1003303212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_122
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968dff0921d2b46c1b77bea443767a9f
+      internalID: 1050824214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_123
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301daba3a689b468e907c759c374ae15
+      internalID: 447391159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_124
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a0480923f0f4c56b3ef885a84cf45e
+      internalID: -933496771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_125
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b2dad8f5fde4916869e6daf085056d
+      internalID: -1250116234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_126
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd3b06bfddc445579b97f9ea86f178a
+      internalID: -797694271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_127
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063f8ae837560467087a1f2e064ff7fa
+      internalID: -1087034645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_128
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84fd08fc1870f42ecaa9367f7badf4e8
+      internalID: -416632622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_129
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 4468
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d758d9fa20d423ca4a75702afb3cd3
+      internalID: -591780801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4042fa00b3feb42f39583d1425572506
+      internalID: 815357634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_131
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee79c1d4f5b84266a25074a82fd3c74
+      internalID: 681236390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_132
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9302c6c62c91b466ba0e5ff55403744f
+      internalID: -1782935723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_133
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339cb6007e7fa4f9e9552bd4b7bbd13f
+      internalID: -1137629011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_134
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a157d46244a47dfa89faf1680feaf3
+      internalID: -1000642800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_135
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a841fdfd2124f0cb173bbb9d62b1e1
+      internalID: 1373732279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_136
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8468cbd28744bd59f9dd3d518b0ed4
+      internalID: 1799080866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_137
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d313e472ca8c4683b7246b72e8366e3
+      internalID: -2007497032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_138
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8239163176e064410b04f9dbe3b03821
+      internalID: -1445078583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_139
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1cb7ce1bc214cab92b4aa4cf4271dc
+      internalID: 1803414528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_140
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a47b61a31c74bac8b293aaf21b67ca
+      internalID: 1894366767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_141
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df2d219b958e470dbbe054538255eeb
+      internalID: -1140719062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_142
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 3351
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785efbc8825ce45c58eaef3df6898368
+      internalID: 69231813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc9e1e9361a84a48aebb8dcb5f036bc
+      internalID: 1052886764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_144
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b915bc7709da847c3821ff16492d72fb
+      internalID: -1171108076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_145
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49ba87a6ef954e308875492b74e3605
+      internalID: -1045264534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_146
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ee32dd9841f40a9acd4963be67fdb3
+      internalID: -1377646896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_147
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c8d617a4315445dad8a147863f32e6
+      internalID: -973037950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_148
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6beae89750a6548eeb613d76c65e4d5d
+      internalID: 1667976993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_149
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f02abcadbc0541be883e527d2573f37
+      internalID: -774263154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_150
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7e49703218847249f2ebe648a97679
+      internalID: -414523754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_151
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca7a0a8a26ae42e5a8467c302769bb4
+      internalID: 2095623078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_152
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5cc3487f53a40a09241450ac854da5
+      internalID: 658565113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_153
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22839a95eb0f4e2f973c50cfcffd73e
+      internalID: -2005976675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_154
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c332208489c3e4da1a3612c0e2d5e736
+      internalID: -599834033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_155
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 2234
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41436cdb1bba346549498429cbcea280
+      internalID: -644124195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_156
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e64dd4abce946faa1cdcbcc0cfd230
+      internalID: 704666152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_157
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c0bda043bbc49f480908644fc0231b
+      internalID: -1248149134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_158
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d25a032ed88431c975038fc4f08b6c
+      internalID: -1938328841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_159
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678c23ffe190e47bcbb9b08b1a8c6cac
+      internalID: -1349368179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_160
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1266c8bc7c444f7294381ecb8f49262
+      internalID: 365638844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_161
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab0c05d26e634938af586e6ad44c2a2
+      internalID: -592600849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_162
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c7f3612d6e04f9b98e22ae4adeb132
+      internalID: 115001523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_163
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76e9859a592b423fa42bc2ccfb22a75
+      internalID: -731021292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_164
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d37775008634142b74c622587b4308
+      internalID: -1438985300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_165
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ca54c90bd2f485e81182400d215423
+      internalID: -1782246120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_166
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84595a7e634b543eb8f5023480b3436f
+      internalID: -965618783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_167
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4816b75290f83414fa7120078b45d43f
+      internalID: 130525830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_168
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 1117
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e568fc752d494496d9b6576fec2c8160
+      internalID: 1837624459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_169
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053466d3e980149b98d461a21ae42794
+      internalID: -1462126446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_170
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c567e768eff4e1aa69cc8f7e4ddb83
+      internalID: -747885080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_171
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d9d9878c5d84300bdcea6e54c06a40
+      internalID: -1332880065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_172
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f6984c6e13446439da442a8a57ebba
+      internalID: 151340012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_173
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1c4e60d54d74aaa982c2e837f2d2d7
+      internalID: -1727496392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_174
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fa3084444fd4dcd8953f9fae2a16e6
+      internalID: -172040865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_175
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ffc8e44aed94ee282e0fdc287be412
+      internalID: 47678191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_176
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f69e8b9d2d04588bd97d2c05e4b3cc
+      internalID: -685705337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_177
+      rect:
+        serializedVersion: 2
+        x: 4928
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5957cbb7f7ba0469ca1dbf27b9026c0a
+      internalID: -603829911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_178
+      rect:
+        serializedVersion: 2
+        x: 5544
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48ee1dc2032e48779b0355b7bea7ce3
+      internalID: 191904682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_179
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa59802c0ca524fc686027cb985688b1
+      internalID: 299370820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_180
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f163bd2a982b24f1ba2b8acef33dc5cb
+      internalID: -990572390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banjang_idle_181
+      rect:
+        serializedVersion: 2
+        x: 7392
+        y: 0
+        width: 616
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f96339a5a4cb4f3592c3fe4adf023fe
+      internalID: 2082863470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 07226582a94444f3a90b3a1b35088d75
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +4139,189 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      banjang_idle_0: 1855045038
+      banjang_idle_1: -747102865
+      banjang_idle_10: 2008486717
+      banjang_idle_100: -881736369
+      banjang_idle_101: 1733742255
+      banjang_idle_102: -580625562
+      banjang_idle_103: 1843580199
+      banjang_idle_104: 721246253
+      banjang_idle_105: 577591604
+      banjang_idle_106: -1945908855
+      banjang_idle_107: -1975745927
+      banjang_idle_108: 1236993846
+      banjang_idle_109: -69714336
+      banjang_idle_11: 1706369933
+      banjang_idle_110: 1419527691
+      banjang_idle_111: 1542528803
+      banjang_idle_112: 891688601
+      banjang_idle_113: 1137902695
+      banjang_idle_114: 1833258483
+      banjang_idle_115: -260608355
+      banjang_idle_116: 2044489090
+      banjang_idle_117: 520703204
+      banjang_idle_118: 2001639552
+      banjang_idle_119: -326909606
+      banjang_idle_12: 710369596
+      banjang_idle_120: -779886279
+      banjang_idle_121: 1003303212
+      banjang_idle_122: 1050824214
+      banjang_idle_123: 447391159
+      banjang_idle_124: -933496771
+      banjang_idle_125: -1250116234
+      banjang_idle_126: -797694271
+      banjang_idle_127: -1087034645
+      banjang_idle_128: -416632622
+      banjang_idle_129: -591780801
+      banjang_idle_13: -696446927
+      banjang_idle_130: 815357634
+      banjang_idle_131: 681236390
+      banjang_idle_132: -1782935723
+      banjang_idle_133: -1137629011
+      banjang_idle_134: -1000642800
+      banjang_idle_135: 1373732279
+      banjang_idle_136: 1799080866
+      banjang_idle_137: -2007497032
+      banjang_idle_138: -1445078583
+      banjang_idle_139: 1803414528
+      banjang_idle_14: 1629860239
+      banjang_idle_140: 1894366767
+      banjang_idle_141: -1140719062
+      banjang_idle_142: 69231813
+      banjang_idle_143: 1052886764
+      banjang_idle_144: -1171108076
+      banjang_idle_145: -1045264534
+      banjang_idle_146: -1377646896
+      banjang_idle_147: -973037950
+      banjang_idle_148: 1667976993
+      banjang_idle_149: -774263154
+      banjang_idle_15: -906408597
+      banjang_idle_150: -414523754
+      banjang_idle_151: 2095623078
+      banjang_idle_152: 658565113
+      banjang_idle_153: -2005976675
+      banjang_idle_154: -599834033
+      banjang_idle_155: -644124195
+      banjang_idle_156: 704666152
+      banjang_idle_157: -1248149134
+      banjang_idle_158: -1938328841
+      banjang_idle_159: -1349368179
+      banjang_idle_16: 712702264
+      banjang_idle_160: 365638844
+      banjang_idle_161: -592600849
+      banjang_idle_162: 115001523
+      banjang_idle_163: -731021292
+      banjang_idle_164: -1438985300
+      banjang_idle_165: -1782246120
+      banjang_idle_166: -965618783
+      banjang_idle_167: 130525830
+      banjang_idle_168: 1837624459
+      banjang_idle_169: -1462126446
+      banjang_idle_17: 1733809532
+      banjang_idle_170: -747885080
+      banjang_idle_171: -1332880065
+      banjang_idle_172: 151340012
+      banjang_idle_173: -1727496392
+      banjang_idle_174: -172040865
+      banjang_idle_175: 47678191
+      banjang_idle_176: -685705337
+      banjang_idle_177: -603829911
+      banjang_idle_178: 191904682
+      banjang_idle_179: 299370820
+      banjang_idle_18: -912382212
+      banjang_idle_180: -990572390
+      banjang_idle_181: 2082863470
+      banjang_idle_19: 282595495
+      banjang_idle_2: -454015661
+      banjang_idle_20: 8668386
+      banjang_idle_21: -1061926172
+      banjang_idle_22: -1471968134
+      banjang_idle_23: -1276750151
+      banjang_idle_24: 1468259115
+      banjang_idle_25: -1466742800
+      banjang_idle_26: 598744334
+      banjang_idle_27: 733789084
+      banjang_idle_28: -1239179648
+      banjang_idle_29: 430088378
+      banjang_idle_3: 1583763837
+      banjang_idle_30: -1605356634
+      banjang_idle_31: 2065189159
+      banjang_idle_32: 1126052948
+      banjang_idle_33: 1384063661
+      banjang_idle_34: -338578201
+      banjang_idle_35: 1770833984
+      banjang_idle_36: -1367227558
+      banjang_idle_37: -1331174616
+      banjang_idle_38: 665269475
+      banjang_idle_39: -1851487137
+      banjang_idle_4: 895111016
+      banjang_idle_40: 558870120
+      banjang_idle_41: -2118343475
+      banjang_idle_42: 1656000842
+      banjang_idle_43: -744409208
+      banjang_idle_44: -526278608
+      banjang_idle_45: 75740050
+      banjang_idle_46: 2025221665
+      banjang_idle_47: 1751750745
+      banjang_idle_48: -1472643798
+      banjang_idle_49: 739453899
+      banjang_idle_5: -655855599
+      banjang_idle_50: -1304429025
+      banjang_idle_51: -760683698
+      banjang_idle_52: -1028178866
+      banjang_idle_53: 1939051169
+      banjang_idle_54: 297911595
+      banjang_idle_55: 291515535
+      banjang_idle_56: -1208993477
+      banjang_idle_57: -1784140036
+      banjang_idle_58: -957361263
+      banjang_idle_59: -415568033
+      banjang_idle_6: 1857345726
+      banjang_idle_60: -1104801447
+      banjang_idle_61: 154909481
+      banjang_idle_62: -1084752858
+      banjang_idle_63: 704309254
+      banjang_idle_64: 1814124786
+      banjang_idle_65: 436059503
+      banjang_idle_66: -1981823986
+      banjang_idle_67: 602486184
+      banjang_idle_68: -1396286268
+      banjang_idle_69: 1936788475
+      banjang_idle_7: -742786941
+      banjang_idle_70: -1102388018
+      banjang_idle_71: -1946633091
+      banjang_idle_72: 1675042649
+      banjang_idle_73: 1329084038
+      banjang_idle_74: 1463579862
+      banjang_idle_75: -1220870230
+      banjang_idle_76: -23338200
+      banjang_idle_77: -495191997
+      banjang_idle_78: 321301520
+      banjang_idle_79: 873289945
+      banjang_idle_8: -1893103983
+      banjang_idle_80: 637447437
+      banjang_idle_81: -1400729651
+      banjang_idle_82: 2046388383
+      banjang_idle_83: 413541546
+      banjang_idle_84: -210049799
+      banjang_idle_85: 1841384217
+      banjang_idle_86: 105085337
+      banjang_idle_87: 244974221
+      banjang_idle_88: 856176380
+      banjang_idle_89: -1869422545
+      banjang_idle_9: -1307173653
+      banjang_idle_90: -2136799472
+      banjang_idle_91: -555358251
+      banjang_idle_92: 1720057082
+      banjang_idle_93: 1168315417
+      banjang_idle_94: -1728795470
+      banjang_idle_95: 458232865
+      banjang_idle_96: -796294087
+      banjang_idle_97: -1630395506
+      banjang_idle_98: -1023723198
+      banjang_idle_99: 1849584144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
