@@ -7,6 +7,8 @@ TagManager:
   - Projectile
   - ShellTutorial
   - Shell
+  - Sphere
+  - Basket
   layers:
   - Default
   - TransparentFX
