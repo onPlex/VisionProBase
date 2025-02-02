@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2151273727410262226}
   - component: {fileID: 2480422636894057176}
   - component: {fileID: 6888790987620892678}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShapeBall_31_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 3479250750935195963}
   - component: {fileID: 8908943238684267753}
   - component: {fileID: 1055318470125915161}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ball_LV02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

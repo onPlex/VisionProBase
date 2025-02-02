@@ -33,6 +33,7 @@ namespace Jun
 
         public JobCommonSenseController jobCommonSenseController;
         public BallManager ballManager;
+        public BallSelectionBehavior ballSelectionBehavior;
 
         private int currentRound = 1;     // 현재 라운드(1 or 2)
         private int questionIndex = 0;    // 현재 문제 번호(0~4)
@@ -139,7 +140,8 @@ namespace Jun
             QuizData qd = (currentRound == 1) ? round1[questionIndex] : round2[questionIndex];
             bool isCorrect = (qd.answerIsO == userChoiceO);
 
-            // 해설 패널 활성화
+            ballManager.isTouch = false;
+            ballSelectionBehavior.isTouch = false;
 
             if (isCorrect)
             {
@@ -163,15 +165,17 @@ namespace Jun
                 ScoreNumber++;
                 roundScore++;
                 ballManager.UpgradeSphere(roundScore);
+                ballSelectionBehavior.UpgradeSphere(roundScore);
 
                 // 다음 문제로 넘어갈 준비
                 StartCoroutine(WaitAndNext());
             }
             else
             {
-                explanationPanel.SetActive(true);
                 // 오답
                 explanationText.text = "<color=red>오답입니다!</color>\n\n" + qd.explanation;
+                // 해설 패널 활성화
+                explanationPanel.SetActive(true);
             }
 
 
@@ -184,9 +188,6 @@ namespace Jun
         {
             isWaitingNext = true;
             yield return new WaitForSeconds(2.0f); // 해설 2초 정도 보여주고
-
-            // leftTargetAnimator.SetBool("Correct", false);
-            // rightTargetAnimator.SetBool("Correct", false);
 
             NextQuiz();
         }
@@ -206,6 +207,8 @@ namespace Jun
                     questionIndex = 0;
                     roundScore = 0;
                     ballManager.UpgradeSphere(roundScore);
+                    ballSelectionBehavior.UpgradeSphere(roundScore);
+
                     jobCommonSenseController.SetPhaseIndex(4);
                 }
                 else
@@ -217,6 +220,9 @@ namespace Jun
 
 
             if (isEndQuiz) return;
+
+            ballManager.isTouch = true;
+            ballSelectionBehavior.isTouch = true;
             // 다음 문제 UI 로드
             LoadQuestion();
             isWaitingNext = false;

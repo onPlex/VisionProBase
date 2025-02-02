@@ -19,8 +19,8 @@ TagManager:
   - PlacementObject
   - Placeable Surface
   - Spawner Contact
-  - 
-  - 
+  - SlingShot
+  - Ball
   - 
   - 
   - 

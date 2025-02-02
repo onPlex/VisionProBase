@@ -32,6 +32,8 @@ namespace Jun
         private float chargeTime = 0f; // 게이지 충전
         private float startAngle;      // 시작 시점의 Y회전값(중앙 기준)
 
+        public bool isTouch = true;
+
         void Start()
         {
             // BallManager 오브젝트의 초기 Y회전값 저장 → 왼/오른쪽 판별에 사용
@@ -40,13 +42,7 @@ namespace Jun
 
         void Update()
         {
-            //------------------------------------------------
-            // (예시) 어떤 이벤트로 업그레이드 조건 만족 시:
-            // if (score >= 10)
-            // {
-            //     UpgradeSphere(); // 레벨 1 → 2
-            // }
-            //------------------------------------------------
+            if (!isTouch) return;
 
             // [1] 마우스 왼쪽 버튼 누르고 있는 동안 (공 생성, 회전, 당기기, 게이지)
             if (Input.GetMouseButton(0))
@@ -130,15 +126,11 @@ namespace Jun
                 rb.useGravity = false; // 중력 비활성 → 곧장 직선 이동
                 float speed = 20f;     // 원하는 속도
 
-                // velocity 직접 설정 (직선으로 타겟 중심에 도달)
-#if UNITY_2023_1_OR_NEWER
-                // 최신 Unity에서 velocity가 deprecated된 경우
+                // velocity 직접 설정 (직선으로 타겟 중심에 도달)ßß
                 rb.linearVelocity = direction * speed;
-#else
-                    rb.velocity = direction * speed;
-#endif
             }
             else
+
             {
                 // -------------------------
                 // (B) 70% 미만: 약한 힘 + 중력 적용 → 도중에 떨어짐
