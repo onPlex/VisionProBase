@@ -49,6 +49,7 @@ namespace YJH.ChangeTheMood
                 }
             }
 
+            SetUpNickName();
             // 최종 판단 후 함수 호출
             if (allCorrect)
             {
@@ -88,7 +89,7 @@ namespace YJH.ChangeTheMood
             if (CorrectResultPlayerNickName != null)
             {
                 string textToDisplay =
-              $"김시우 - 7표 반장 - 2표 {phaseManager.SelectedNickname} - 11표";
+              $"김시우 - 7표\n반장 - 2표\n{phaseManager.SelectedNickname} - 11표";
                 CorrectResultPlayerNickName.text = textToDisplay;
             }
 
@@ -96,7 +97,7 @@ namespace YJH.ChangeTheMood
             if (InCorrectResultPlayerNickName != null)
             {
                 string textToDisplay =
-              $"김시우 - 12표 반장 - 7표 {phaseManager.SelectedNickname} - 1표";
+              $"김시우 - 12표\n반장 - 7표\n{phaseManager.SelectedNickname} - 1표";
                 InCorrectResultPlayerNickName.text = textToDisplay;
             }
         }
