@@ -8,6 +8,9 @@ TagManager:
   - ShellTutorial
   - Shell
   - MajorHuntingDropObj
+  - Sphere
+  - SlingShot
+  - Ball
   layers:
   - Default
   - TransparentFX

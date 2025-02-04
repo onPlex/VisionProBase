@@ -713,7 +713,7 @@ MonoBehaviour:
   onMoveComplete:
     m_PersistentCalls:
       m_Calls: []
-  distance: 0.6
+  distance: 0.7
   duration: 1.5
 --- !u!1 &7289970664598444118
 GameObject:

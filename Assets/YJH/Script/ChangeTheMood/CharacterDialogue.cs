@@ -13,6 +13,10 @@ namespace YJH.ChangeTheMood
         public int speakerIndex;
         public string speaker;  // 말하는 사람(캐릭터 이름 등)       
         public string content;  // 실제 대사
+
+           // === 변경됨 ===
+        // 새로 추가: 해당 대사의 애니메이션 이름
+        public string animationName; 
     }
 
     public class CharacterDialogue : MonoBehaviour
@@ -92,6 +96,10 @@ namespace YJH.ChangeTheMood
                 // UI 반영
                 NickNameTextTMP.text = speaker;
                 dialogueTextTMP.text = content;
+
+                  // === 변경됨 ===
+                // 대사에 지정된 애니메이션 재생 시도
+                PlaySpeakerAnimation(currentLine);
             }
             else
             {
@@ -142,6 +150,54 @@ namespace YJH.ChangeTheMood
                 {
                     Debug.LogWarning($"Speaker index {speakerIndex} is out of range for speakerObjects[] array.");
                 }
+            }
+        }
+
+          /// <summary>
+        /// 현재 대사를 말하는 캐릭터에게서 RawImageAnimation(또는 파생 클래스를) 찾아서,
+        /// animationName에 맞는 애니메이션을 재생한다.
+        /// </summary>
+        private void PlaySpeakerAnimation(DialogueLine line)
+        {
+            if (string.IsNullOrEmpty(line.animationName)) 
+            {
+                return; // 대사에 별도의 애니메이션 지시가 없으면 무시
+            }
+
+            // speakerIndex를 실제 오브젝트 인덱스로 환산
+            int realIndex = line.speakerIndex;
+            if (realIndex == -1)
+            {
+                // 주인공 캐릭터
+                if (phaseManager.SelectedSex == PhaseManager.Sex.Boy)
+                {
+                    realIndex = 0;
+                }
+                else
+                {
+                    realIndex = 1;
+                }
+            }
+
+            // 인덱스 범위 확인
+            if (realIndex < 0 || realIndex >= speakerObjects.Length)
+            {
+                Debug.LogWarning("Invalid speaker index for animation.");
+                return;
+            }
+
+            // 해당 speaker 오브젝트에서 RawImageAnimation (또는 WomanAnimation 등 상속) 컴포넌트 찾기
+            var animComponent = speakerObjects[realIndex].GetComponent<Jun.RawImageAnimation>();
+            if (animComponent != null)
+            {
+                // animationName을 그대로 사용
+                animComponent.StopAnimation();   // (선택) 이전 애니메이션 중단
+                animComponent.SendMessage("PlayAnimation", line.animationName, SendMessageOptions.DontRequireReceiver);
+                // 또는: animComponent.PlayAnimation(line.animationName);
+            }
+            else
+            {
+                Debug.LogWarning($"RawImageAnimation component not found on {speakerObjects[realIndex].name}");
             }
         }
 
