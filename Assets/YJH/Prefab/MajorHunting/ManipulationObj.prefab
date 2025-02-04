@@ -83,7 +83,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &779030141780132137
 MonoBehaviour:
@@ -129,8 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946f8de25c45b4777ad9c7ac499a807b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemData: 
+  professionData: 0
   UI_Text: {fileID: 925082835694843545}
+  jobItemBoardManager: {fileID: 0}
 --- !u!1001 &4569183781100456186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -248,6 +249,18 @@ PrefabInstance:
       value: 38.7
       objectReference: {fileID: 0}
     - target: {fileID: 3728854600210382435, guid: a4ed8876fac444fd78aea8d1a1f1f2bb, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728854600210382435, guid: a4ed8876fac444fd78aea8d1a1f1f2bb, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728854600210382435, guid: a4ed8876fac444fd78aea8d1a1f1f2bb, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728854600210382435, guid: a4ed8876fac444fd78aea8d1a1f1f2bb, type: 3}
       propertyPath: m_fontSizeMax
       value: 50
       objectReference: {fileID: 0}
@@ -258,6 +271,10 @@ PrefabInstance:
     - target: {fileID: 3728854600210382435, guid: a4ed8876fac444fd78aea8d1a1f1f2bb, type: 3}
       propertyPath: m_TextWrappingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728854600210382435, guid: a4ed8876fac444fd78aea8d1a1f1f2bb, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8035570505598618084, guid: a4ed8876fac444fd78aea8d1a1f1f2bb, type: 3}
       propertyPath: m_Name
