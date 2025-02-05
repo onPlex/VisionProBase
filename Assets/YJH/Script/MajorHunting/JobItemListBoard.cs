@@ -18,10 +18,16 @@ namespace YJH.MajorHunting
     {
         // Inspector에서 JobItem + quizMode 를 세트로 관리
         [SerializeField]
-        private List<JobItemEntry> jobItemEntries;       
+        private List<JobItemEntry> jobItemEntries;
         public List<JobItemEntry> JobItemEntries => jobItemEntries;
 
-        
+
+        [Header("MapSelectionButton")]
+        [SerializeField]
+        private BoxCollider mapSelectBoxCollider;
+        public BoxCollider MapSelectBoxCollider => mapSelectBoxCollider;
+
+
         /// <summary>
         /// jobItemEntries에서 quizMode = true인 JobItem만 퀴즈 상태로 만들고,
         /// quizMode = false인 아이템은 일반 상태로 전환
@@ -55,5 +61,7 @@ namespace YJH.MajorHunting
             }
             return false;
         }
+
+
     }
 }

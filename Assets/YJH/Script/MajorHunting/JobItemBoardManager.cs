@@ -10,12 +10,18 @@ namespace YJH.MajorHunting
         [SerializeField]
         private List<JobItemListBoard> boards;
 
+        [Space]
+        [SerializeField]
+        private PhaseManager phaseManager;
+
+
         private void Start()
         {
             // 1) 모두 quizMode 설정 적용
             ApplyAllBoardsQuizSettings();
             // 2) NoneSelected인 JobItem 자동 설정
             CheckDuplicateProfessions();
+            phaseManager.JobItemBoardManager = this;
         }
 
         /// <summary>
@@ -181,8 +187,24 @@ namespace YJH.MajorHunting
         /// </summary>
         private void NextContent()
         {
-            Debug.Log("NextContent() 호출 - 다음 콘텐츠로 진행 로직을 작성하세요.");
-            // 예: 씬 전환, UI 팝업, 새로운 오브젝트 활성화 등
+            phaseManager.OnStepToMain2();
+        }
+
+        public void SetMapSelectCollidersActive(bool enable)
+        {
+            if (boards == null) return;
+
+            foreach (var board in boards)
+            {
+                if (board == null) continue;
+
+                // board.MapSelectBoxCollider가 null이 아닐 때만 활성/비활성 설정
+                BoxCollider collider = board.MapSelectBoxCollider;
+                if (collider != null)
+                {
+                    collider.enabled = enable;
+                }
+            }
         }
     }
 }
