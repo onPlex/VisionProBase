@@ -6322,9 +6322,9 @@ Transform:
   m_GameObject: {fileID: 1725392166}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.7, z: 2}
+  m_LocalPosition: {x: 0, y: 1, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 209648182}
   - {fileID: 1568813476}
@@ -6538,7 +6538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16d0515520e3534fb2feed528973003, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16d0515520e3534fb2feed528973003, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7797,11 +7797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744017552322833686, guid: cef99035c800c4eceb2ea0971f087e83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8744017552322833686, guid: cef99035c800c4eceb2ea0971f087e83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8744017552322833686, guid: cef99035c800c4eceb2ea0971f087e83, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13929,6 +13929,7 @@ GameObject:
   - component: {fileID: 3241038521612635970}
   - component: {fileID: 3241038521612635971}
   - component: {fileID: 3241038521612635972}
+  - component: {fileID: 3241038521612635973}
   m_Layer: 9
   m_Name: ====[MasterSlingshot]====
   m_TagString: Untagged
@@ -13997,6 +13998,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.4, y: 3.8, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3241038521612635973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241038521612635969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec180ed0ef74440b93237e826654f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_IntensityMultiplier: 1
+  m_FadeInDuration: 0
+  m_FadeOutDuration: 0
 --- !u!1 &3241141150184749565
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
@@ -33,11 +34,13 @@ namespace YJH.MajorHunting
         private float timeLeft = 60f;
         private bool isGameRunning = false;  // 카운트다운 진행 여부
 
-        // ▼ NEW: 총알 관련
+        //총알 관련
         private int bulletCount = 5; // 남은 총알 수
         [SerializeField]
         private GameObject[] bulletIndicators; // 씬에 배치된 5개 총알 UI
 
+        // ▼ 라운드 내에 맞춘 정답 개수 추적
+        private int correctCountInRound = 0;
         [Header("UI")]
         [SerializeField]
         TMP_Text MissionList1Name;
@@ -57,9 +60,18 @@ namespace YJH.MajorHunting
         [Header("PopUp")]
         [SerializeField]
         GameObject FailPopUp;
+        [SerializeField]
+        GameObject countdownPopup;
+        [SerializeField]
+        TMP_Text countdownText;
+        [SerializeField]
+        GameObject successPopup;
 
         [Header("Shooting Targets (9개 버튼)")]
         [SerializeField] private List<ShootingTarget> shootingTargets;
+
+        [Header("Result")]
+        [SerializeField] private ResultManager resultManager;
 
         private void OnEnable()
         {
@@ -91,6 +103,26 @@ namespace YJH.MajorHunting
             currentRound = 1;
             SetupRoundEnvironment(currentRound, round1ID);
             StartRound();
+
+            // --- 총알 5발은 게임 전체 통합이므로, 여기서 한 번만 초기화 ---
+            bulletCount = 5;
+            ResetBulletUI(); // 5개 총알 UI 활성화
+                             // 라운드 타이머 등 리셋
+            timeLeft = 60f;
+            correctCountInRound = 0;
+            isGameRunning = true; // 라운드 시작
+        }
+
+        private void ResetBulletUI()
+        {
+            if (bulletIndicators != null)
+            {
+                for (int i = 0; i < bulletIndicators.Length; i++)
+                {
+                    if (bulletIndicators[i] != null)
+                        bulletIndicators[i].SetActive(true);
+                }
+            }
         }
 
         private void AssignMissionsToShootingTargets(MissionData[] correctDatas, MissionData[] wrongDatas)
@@ -152,8 +184,6 @@ namespace YJH.MajorHunting
             }
             else
             {
-                // ▼ TimerText 에 "Timer : 남은시간초 초" 형태로 표시
-                // Mathf.CeilToInt를 써서 올림 표시하거나, int 변환 등 원하는 방식 사용 가능
                 TimerText.text = $"Timer : {Mathf.CeilToInt(timeLeft)}초";
             }
         }
@@ -213,21 +243,121 @@ namespace YJH.MajorHunting
         public void OnRoundClear()
         {
             isGameRunning = false;
-            Debug.Log($"[MainShootingGame] Round {currentRound} 클리어!");
+            Debug.Log($"[MainShootingGame] Round {currentRound} 클리어, 3개 정답 맞춤!");
+
+            // 모든 ShootingTarget을 초기 상태로 리셋
+            foreach (var target in shootingTargets)
+            {
+                if (target != null)
+                {
+                    target.ResetEffect(); // NormalBoard 활성, Green/Red 비활성
+                }
+            }
 
             if (currentRound == 1)
             {
-                // 라운드1 → 라운드2로 진입
-                currentRound = 2;
-                SetupRoundEnvironment(currentRound, round2ID);
-                StartRound();
+                // 라운드1 클리어 → "카운트다운 팝업" 표시 및 4초간 카운트다운
+                if (countdownPopup != null)
+                {
+                    countdownPopup.SetActive(true);
+                    StartCoroutine(Co_ShowCountdown()); // 카운트다운 시작
+                }
             }
             else
             {
-                // 라운드2까지 모두 성공 시 게임 완료
-                Debug.Log("[MainShootingGame] 모든 라운드 완료! 게임 승리");
-                // TODO: 씬 전환 or UI 표시 등
+                // 라운드2 클리어 → "성공 팝업" 표시, 게임 종료
+                if (successPopup != null)
+                {
+                    successPopup.SetActive(true);
+                    resultManager.ShowFinalResults();
+                }
             }
+        }
+
+
+        private void StoreCorrectAnswer(string jobName)
+        {
+            string mapID = currentRound == 1 ? round1ID : round2ID;
+
+            if (missionDatabase.TryGetValue(mapID, out MissionData[] missions))
+            {
+                foreach (var mission in missions)
+                {
+                    if (mission.name == jobName)
+                    {
+                        // 🎯 정답을 ResultManager에 저장 (라운드 정보 포함)
+                        string major = GetMajorForJob(jobName);
+                        string majorDesc = GetMajorDescription(major);
+                        resultManager.AddCorrectAnswer(currentRound, mission.name, mission.desc, major, majorDesc);
+                        return; // 저장 후 종료
+                    }
+                }
+            }
+
+            Debug.LogWarning($"StoreCorrectAnswer: '{jobName}'에 대한 정보를 찾을 수 없습니다.");
+        }
+        private IEnumerator Co_ShowCountdown()
+        {
+            if (countdownPopup != null)
+            {
+                countdownText = countdownPopup.GetComponentInChildren<TMP_Text>();
+                if (countdownText != null)
+                {
+                    countdownText.text = "3"; // 3초 남음
+                    yield return new WaitForSeconds(1f);
+
+                    countdownText.text = "2"; // 2초 남음
+                    yield return new WaitForSeconds(1f);
+
+                    countdownText.text = "1"; // 1초 남음
+                    yield return new WaitForSeconds(1f);
+
+                    countdownText.text = "Start!"; // 시작!
+                    yield return new WaitForSeconds(1f);
+                }
+            }
+
+            // 카운트다운 종료 후 팝업 닫기 및 Round2 시작
+            if (countdownPopup != null)
+            {
+                countdownPopup.SetActive(false);
+            }
+
+            // Round2 설정
+            currentRound = 2;
+            correctCountInRound = 0;
+
+            // 라운드2 타이머 재설정
+            timeLeft = 60f;
+
+            // "isGameRunning" 다시 활성화 (Round2 진행 시작)
+            SetupRoundEnvironment(currentRound, round2ID);
+            isGameRunning = true;
+        }
+
+        /// <summary>
+        /// 라운드1 클리어 후 3초 대기 → 라운드2 세팅
+        /// </summary>
+        private IEnumerator Co_ProceedRound2AfterDelay(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            // 카운트다운 팝업 닫기
+            if (countdownPopup != null)
+            {
+                countdownPopup.SetActive(false);
+            }
+
+            // Round2 설정
+            currentRound = 2;
+            correctCountInRound = 0;
+
+            // 라운드2 타이머 재설정
+            timeLeft = 60f;
+
+            // "isGameRunning" 다시 활성화 (Round2 진행 시작)
+            SetupRoundEnvironment(currentRound, round2ID);
+            isGameRunning = true;
         }
 
         /// <summary>
@@ -270,7 +400,10 @@ namespace YJH.MajorHunting
             isGameRunning = false;
             Debug.Log($"[MainShootingGame] 게임 실패: {reason}");
 
-            FailPopUp.SetActive(true);
+            if (FailPopUp != null)
+            {
+                FailPopUp.SetActive(true);
+            }
         }
 
 
@@ -297,11 +430,13 @@ namespace YJH.MajorHunting
             // 3) 현재 라운드에 따라 다시 환경 세팅 + StartRound
             if (currentRound == 1)
             {
+                resultManager.ClearAllAnswers();
                 SetupRoundEnvironment(1, round1ID);
                 StartRound();
             }
             else
             {
+                resultManager.ClearRoundAnswers(2);
                 SetupRoundEnvironment(2, round2ID);
                 StartRound();
             }
@@ -353,9 +488,6 @@ namespace YJH.MajorHunting
                 return;
             }
 
-            // 남은 총알 1발 소진
-            ConsumeBullet();
-
             // 현재 화면에 표시된 미션 명(3개) 중 하나와 일치하면 정답, 아니면 오답
             // MissionListXName.text 에 표시된 문자열과 비교
             bool isCorrect = false;
@@ -369,21 +501,67 @@ namespace YJH.MajorHunting
 
             if (isCorrect)
             {
-                // ShootingTarget 정답 이펙트
-                target.PlayCorrectEffect();
+                StoreCorrectAnswer(missionName);
 
-                // TODO: 미션 하나를 맞췄으니 어떤 로직을 수행할지?
-                // ex) "3개 미션 중 1개 해결" 로직, 3개 모두 해결 시 OnRoundClear() 등
-                Debug.Log($"[MainShootingGame] 미션 '{missionName}' 정답!");
+                // 정답: 총알 소모하지 않는다
+                target.PlayCorrectEffect();
+                correctCountInRound++;
+
+                // 3개 정답 모두 맞추면 라운드 클리어
+                if (correctCountInRound >= 3)
+                {
+                    OnRoundClear();
+                }
             }
             else
             {
-                // 오답
+                // 오답: 총알 소모
                 target.PlayWrongEffect();
-                Debug.Log($"[MainShootingGame] 미션 '{missionName}' 오답!");
+                ConsumeBullet();
             }
         }
 
+        private Dictionary<string, string> jobToMajorMapping = new Dictionary<string, string>
+{
+    { "로봇디자이너", "산업디자인학과" },
+    { "인공지능전문가", "인공지능공학과" },
+    { "드론윤리학자", "법학과" },
+    { "생의학엔지니어", "의료공학과" },
+    { "나노의약품전문가", "약학과" },
+    { "유전상담사", "심리학과" },
+    { "빅데이터전문가", "통계학과" },
+    { "도시계획가", "도시계획학과" },
+    { "무인자동차엔지니어", "자동차공학과" },
+    { "반려동물훈련상담사", "동물자원학과" },
+    { "디지털큐레이터", "미디어커뮤니케이션학과" },
+    { "스포츠심리상담원", "체육학과" }
+};
+
+        private string GetMajorForJob(string jobName)
+        {
+            return jobToMajorMapping.ContainsKey(jobName) ? jobToMajorMapping[jobName] : "관련 학과 없음";
+        }
+
+        private Dictionary<string, string> majorDescriptions = new Dictionary<string, string>
+{
+    { "산업디자인학과", "가전제품, 전자기기, 생활용품 등 다양한 제품 디자인 인재를 양성한다." },
+    { "인공지능공학과", "AI 개발에 필요한 딥러닝, 정보이론 등의 커리큘럼을 구성한다." },
+    { "법학과", "법률 전문가를 양성하여 사회 정의와 민주주의를 실현한다." },
+    { "의료공학과", "의학과 공학을 융합하여 의료 기기 및 생체 재료를 연구한다." },
+    { "약학과", "인간 건강 증진과 질병 예방을 위한 전문적인 약학 교육을 제공한다." },
+    { "심리학과", "인간의 사고 과정과 행동을 이해하고 연구하는 학문을 교육한다." },
+    { "통계학과", "사회, 경제, 의료 등 다양한 데이터 분석 및 통계를 연구하는 학문이다." },
+    { "도시계획학과", "도시의 효율적 개발 및 지역 문제 해결을 위한 전문가를 양성한다." },
+    { "자동차공학과", "자동차 설계, 제작, 유지보수 등의 기초와 실무를 연구하는 학과이다." },
+    { "동물자원학과", "동물과 관련된 생명과학을 연구하며, 반려동물 및 가축 관리에 대한 교육을 제공한다." },
+    { "미디어커뮤니케이션학과", "디지털 미디어 및 커뮤니케이션 이론을 기반으로 콘텐츠 기획 및 제작을 연구한다." },
+    { "체육학과", "운동, 스포츠 및 신체 활동을 통해 건강과 체력을 향상시키는 학문을 연구한다." }
+};
+
+        private string GetMajorDescription(string major)
+        {
+            return majorDescriptions.ContainsKey(major) ? majorDescriptions[major] : "학과 설명 없음";
+        }
 
         // ▼ 맵 별로 "오답 6개"도 관리하는 사전
         private Dictionary<string, MissionData[]> wrongMissionDatabase = new Dictionary<string, MissionData[]>

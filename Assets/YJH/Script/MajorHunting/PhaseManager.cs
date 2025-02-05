@@ -77,6 +77,15 @@ namespace YJH.MajorHunting
         [SerializeField]
         private TMP_Text Round2Text;
 
+        [Header("Result")]
+        [SerializeField]
+        private GameObject ResultObj;
+
+        [SerializeField]
+        private GameObject Main360;
+        [SerializeField]
+        private GameObject Result360;
+
         private void Awake()
         {
             // 4개 버튼을 미리 Dictionary에 등록(초기값 false)
@@ -152,8 +161,13 @@ namespace YJH.MajorHunting
 
         }
 
-
-
+        public void OnStepToResult()
+        {
+            Main3Obj.SetActive(false);
+            ResultObj.SetActive(true);
+            Main360.SetActive(false);
+            Result360.SetActive(true);
+        }
 
 
         #region  Main2 MAP SELECTION
