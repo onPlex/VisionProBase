@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: GMWStudio
-  productName: VisionProBase
+  productName: "\uAFC8\uD0A4\uC62C\uB798 [\uCD08\uB4F1]"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.12156863, g: 0.12156863, b: 0.1254902, a: 1}
@@ -138,14 +138,10 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  visionOSBundleVersion: 0.9
+  visionOSBundleVersion: 0.1
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.9
-  preloadedAssets:
-  - {fileID: 11400000, guid: d1b44b12dbc12554c862e577406554bd, type: 2}
-  - {fileID: 11400000, guid: bb65518a4a80049acbc5e85e70dbbee0, type: 2}
-  - {fileID: 11400000, guid: ac517bd71f33e472fa5c25448bc7a703, type: 2}
-  - {fileID: -374473393521292908, guid: 91384b14c79fa804d924648a4e81b07c, type: 2}
+  bundleVersion: 0.1
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -167,13 +163,13 @@ PlayerSettings:
   androidMaxAspectRatio: 2.4
   androidMinAspectRatio: 1
   applicationIdentifier:
-    VisionOS: com.GMWStudio.VisionProBase
+    VisionOS: com.GMWStudio.elementaryindividual
   buildNumber:
     Standalone: 0
-    VisionOS: 8
+    VisionOS: 1
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
+  overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
@@ -294,7 +290,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: c13a321a0c0614202afdb742b86b5c61, type: 3}
+      m_Icon: {fileID: 2800000, guid: 1fec1cca221a64b0286ef968c586e6f3, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -399,9 +395,9 @@ PlayerSettings:
   - m_BuildTarget: VisionOS
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: 953ba51f69a984f50beedf695e15c8e0, type: 3}
-      - {fileID: 2800000, guid: 953ba51f69a984f50beedf695e15c8e0, type: 3}
-      - {fileID: 2800000, guid: 953ba51f69a984f50beedf695e15c8e0, type: 3}
+      - {fileID: 2800000, guid: 1fec1cca221a64b0286ef968c586e6f3, type: 3}
+      - {fileID: 2800000, guid: 1fec1cca221a64b0286ef968c586e6f3, type: 3}
+      - {fileID: 2800000, guid: 1fec1cca221a64b0286ef968c586e6f3, type: 3}
       m_Width: 1024
       m_Height: 1024
       m_Kind: 0
@@ -816,7 +812,7 @@ PlayerSettings:
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
-  platformRequiresReadableAssets: 1
+  platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
   insecureHttpOption: 0
   androidVulkanDenyFilterList: []

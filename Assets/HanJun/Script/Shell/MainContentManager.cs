@@ -30,10 +30,10 @@ namespace YJH
         [SerializeField] GameObject ShellCountUI;
 
         public ShellInfo.CareerType finalCareer;
-        [Header("API")]
+        //[Header("API")]
 
-        [SerializeField]
-        SendResultData sendResultData;
+        //[SerializeField]
+        //SendResultData sendResultData;
         private void Start()
         {
             // 초기 셋업
@@ -137,14 +137,16 @@ namespace YJH
             // TODO: 결과 UI 표시, 씬 전환 등
 
             // 추가: 최종 결과를 SendResultData로 전달 (임시/더미 값 예시)
-            if (sendResultData != null)
-            {
-                SendFinalCareerResult(finalCareer);
-            }
-            else
-            {
-                Debug.LogWarning("[CalculateFinalCareer] sendResultData가 할당되어 있지 않습니다.");
-            }
+            // if (sendResultData != null)
+            // {
+            //     SendFinalCareerResult(finalCareer);
+            // }
+            // else
+            // {
+            //     Debug.LogWarning("[CalculateFinalCareer] sendResultData가 할당되어 있지 않습니다.");
+            // }
+
+            SendFinalCareerResult(finalCareer);
         }
 
         private void GoToResultPhase()
@@ -206,7 +208,10 @@ namespace YJH
             }
 
             // 실제 전송
-            sendResultData.SendGameResult(contData, imgTypeData, statusData);
+            //sendResultData.SendGameResult(contData, imgTypeData, statusData);
+            ResultDataStorage.Instance.Game1ContData = contData;
+            ResultDataStorage.Instance.Game1ImgTypeData = imgTypeData;
+            ResultDataStorage.Instance.Game1StatusData = statusData;
         }
 
     }

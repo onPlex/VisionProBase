@@ -4591,7 +4591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC0B4\uD3B4\uBCF4\uAE30"
+  m_text: "[\uD655\uC778]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 320cd1cd842844a8fba850a899c2eaef, type: 2}
   m_sharedMaterial: {fileID: -8001386963232807324, guid: 320cd1cd842844a8fba850a899c2eaef, type: 2}
@@ -4748,9 +4748,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uBBF8\uC158\uC744 \uC644\uB8CC\uD558\uC168\uC2B5\uB2C8\uB2E4!\n\uC774\uC81C
-    \uD2B8\uB80C\uB4DC \uD0A4\uC6CC\uB4DC\uC640 \uAD00\uB828\uB41C \uB77C\uC774\uC9D5
-    \uC774\uC0C9\uACB0\uACFC\uB97C \uC0B4\uD3B4\uBCFC\uAE4C\uC694?"
+  m_text: "\uD655\uC778\uC744 \uB20C\uB7EC \uB2E4\uC74C \uCF58\uD150\uCE20\uB97C
+    \r\n\uC2E4\uD589\uD574 \uC8FC\uC138\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b47973db6a8cd40d0a6d52211a03c3fa, type: 2}
   m_sharedMaterial: {fileID: -2217962319032300651, guid: b47973db6a8cd40d0a6d52211a03c3fa, type: 2}
@@ -6559,6 +6558,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772727858}
   m_CullTransparentMesh: 1
+--- !u!1 &782855275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782855277}
+  - component: {fileID: 782855276}
+  m_Layer: 0
+  m_Name: '[ResultData]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &782855276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782855275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8515745c7bd4d08a6ffb85be269077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game1ContData: "\uAE30\uBCF8 \uB354\uBBF8 \uB0B4\uC6A9"
+  game1ImgTypeData: -1
+  game1StatusData: 0
+  game2ContData: "Game2 \uAE30\uBCF8 \uB354\uBBF8 \uB0B4\uC6A9"
+  game2ImgTypeData: -1
+  game2StatusData: 0
+--- !u!4 &782855277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782855275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &788851534
 GameObject:
   m_ObjectHideFlags: 0
@@ -7514,7 +7563,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ProjectSelect
+          m_StringArgument: EmotionJewel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &964856321
@@ -13385,7 +13434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCD95\uD558\uD569\uB2C8\uB2E4!"
+  m_text: "'\uCF58\uD150\uCE20 \uCCB4\uD5D8 \uC2DC\uAC04\uC774 \uB05D\uB0AC\uC5B4\uC694!'"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b47973db6a8cd40d0a6d52211a03c3fa, type: 2}
   m_sharedMaterial: {fileID: -2217962319032300651, guid: b47973db6a8cd40d0a6d52211a03c3fa, type: 2}
@@ -15456,7 +15505,6 @@ MonoBehaviour:
   Basket: {fileID: 5728361114916729097}
   ShellCountUI: {fileID: 1489700638}
   finalCareer: 0
-  sendResultData: {fileID: 1775990098}
 --- !u!114 &1775990098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21992,3 +22040,4 @@ SceneRoots:
   - {fileID: 552937587}
   - {fileID: 2098410010}
   - {fileID: 1832268762}
+  - {fileID: 782855277}
