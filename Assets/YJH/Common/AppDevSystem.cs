@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class AppDevSystem : MonoBehaviour
 {
     private static AppDevSystem instance;
@@ -42,8 +43,13 @@ public class AppDevSystem : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-public void OnQuitApp()
-{
-    Application.Quit();
-}
+    public void OnQuitApp()
+    {
+        Application.Quit();
+    }
+
+    public void OnLoadSelectScene()
+    {
+        SceneManager.LoadScene("ProjectSelect");
+    }
 }
