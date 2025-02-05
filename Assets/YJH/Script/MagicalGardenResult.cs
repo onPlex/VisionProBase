@@ -32,9 +32,6 @@ namespace YJH
         // 두 번째 Material을 가리키므로 보통 인덱스는 1
         [SerializeField] private int materialIndex = 1;
 
-        [Header("API")]
-        [SerializeField]
-        SendResultData sendResultData;
 
         // (2) R, I, A, S, E, C 점수를 저장
         private readonly Dictionary<string, int> resultScores = new Dictionary<string, int>
@@ -263,18 +260,12 @@ namespace YJH
 
             Debug.Log($"[DisplayHighestCategory] 최고점: {highestCategory} ({highestScore}점)");
 
-             // (추가) 최고점 카테고리를 바탕으로 SendResultData 전송
-            if (sendResultData != null)
-            {
-                SendDummyResultByHighestCategory(highestCategory);
-            }
-            else
-            {
-                Debug.LogWarning("[DisplayHighestCategory] sendResultData가 할당되어 있지 않습니다.");
-            }
+
+            SendDummyResultByHighestCategory(highestCategory);
+
         }
 
-         /// <summary>
+        /// <summary>
         /// 최고점 카테고리에 따라 임시로 설정된 데이터로 SendGameResult 전송
         /// </summary>
         private void SendDummyResultByHighestCategory(string highestCategory)
@@ -288,8 +279,8 @@ namespace YJH
             {
                 case "R":
                     contData = "결과로 대지의 나무, 가이아가 나왔군요! 광활한 땅의 힘을 상징하는 이 나무는 어떤 환경에서도 흔들리지 않을 만큼 깊게 내린 뿌리와 튼튼한 줄기, 넓게 뻗은 잎사귀로 신뢰감을 줍니다. 현실적이고 실용적이며 성실하게 목표를 이루어 가는 성향을 가진 사람들에게 어울리는 나무죠. 가이아는 모든 이들에게 든든한 존재가 되어주는 아주 매력적인 나무랍니다.";
-                    imgTypeData = 98; 
-                    statusData = 1;  
+                    imgTypeData = 98;
+                    statusData = 1;
                     break;
                 case "I":
                     contData = "결과로 천체의 나무, 아스트룸이 나왔군요! 밤하늘의 신비로운 별빛을 담은 이 나무는 호기심 가득한 가지들이 하늘에 닿을 듯이 끝없이 뻗어 나갑니다. 논리적이고 창의적이며 지식을 탐구하기 좋아하는 성향을 가진 사람들에게 어울리는 나무죠. 아스트룸은 매일 조금씩 달라지는 별빛을 뿜어내며 사람들에게 지적 영감을 주는 아주 매력적인 나무랍니다.";
@@ -323,8 +314,8 @@ namespace YJH
                     break;
             }
 
-            // 실제 전송
-            sendResultData.SendGameResult(contData, imgTypeData, statusData);
+            // 실제 전송 TODO:: Save Game Result Data 
+            //sendResultData.SendGameResult(contData, imgTypeData, statusData);
         }
 
 

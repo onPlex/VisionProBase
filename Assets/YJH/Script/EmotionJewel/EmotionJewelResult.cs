@@ -59,9 +59,6 @@ namespace YJH
         // (1) 모든 QuestionBoard의 응답을 통합 저장하는 딕셔너리 (key: "전역 질문 인덱스", value: 선택지)
         private Dictionary<int, int> combinedResponses = new Dictionary<int, int>();
 
-        [Header("API")]
-        [SerializeField]
-        SendResultData sendResultData;
 
         // (2) 지능 유형별 점수
         private readonly Dictionary<string, int> intelligenceScores = new Dictionary<string, int>
@@ -196,16 +193,10 @@ namespace YJH
 
 
 
-            // 최종적으로 SendResultData에 결과 전송
-            if (sendResultData != null)
-            {
-                // 더미 데이터 전송
-                SendDummyResultByHighestIntelligence(highestIntelligence);
-            }
-            else
-            {
-                Debug.LogWarning("[DisplayResults] sendResultData가 할당되어 있지 않습니다. 결과 전송 불가.");
-            }
+            // 더미 데이터 전송
+            SendDummyResultByHighestIntelligence(highestIntelligence);
+
+
         }
 
         private void MatchHighestIntelligenceUI(string highestIntelligence)
@@ -301,7 +292,10 @@ namespace YJH
             }
 
             // 전송
-            sendResultData.SendGameResult(contData, imgTypeData, statusData);
+            //sendResultData.SendGameResult(contData, imgTypeData, statusData);
+            ResultDataStorage.Instance.Game2ContData = contData;
+            ResultDataStorage.Instance.Game2ImgTypeData =  imgTypeData;
+            ResultDataStorage.Instance.Game2StatusData = statusData;
         }
 
         private void UISetUP(int index)
