@@ -272,7 +272,8 @@ namespace YJH
 
         public void OnClickNextStage()
         {
-            SceneManager.LoadScene("InterestingShell");
+            //Save ResultDATA
+            SceneManager.LoadScene("ChangeTheMood");
         }
     }
 }

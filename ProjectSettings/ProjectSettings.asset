@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: GMWStudio
-  productName: "\uAFC8\uD0A4\uC62C\uB798 [\uCD08\uB4F1]"
+  productName: "\uAFC8\uD0A4\uC62C\uB798 [\uCD08\uB4F1\uB2E8\uCCB4]"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.12156863, g: 0.12156863, b: 0.1254902, a: 1}
@@ -163,7 +163,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.4
   androidMinAspectRatio: 1
   applicationIdentifier:
-    VisionOS: com.GMWStudio.elementaryindividual
+    VisionOS: com.GMWStudio.elementarygroup
   buildNumber:
     Standalone: 0
     VisionOS: 1
@@ -290,7 +290,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 1fec1cca221a64b0286ef968c586e6f3, type: 3}
+      m_Icon: {fileID: 2800000, guid: 858beee70640d4ad1af600501a59825d, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -395,9 +395,9 @@ PlayerSettings:
   - m_BuildTarget: VisionOS
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: 1fec1cca221a64b0286ef968c586e6f3, type: 3}
-      - {fileID: 2800000, guid: 1fec1cca221a64b0286ef968c586e6f3, type: 3}
-      - {fileID: 2800000, guid: 1fec1cca221a64b0286ef968c586e6f3, type: 3}
+      - {fileID: 2800000, guid: 858beee70640d4ad1af600501a59825d, type: 3}
+      - {fileID: 2800000, guid: 858beee70640d4ad1af600501a59825d, type: 3}
+      - {fileID: 2800000, guid: 858beee70640d4ad1af600501a59825d, type: 3}
       m_Width: 1024
       m_Height: 1024
       m_Kind: 0

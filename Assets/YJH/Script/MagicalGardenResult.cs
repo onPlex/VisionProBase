@@ -316,6 +316,9 @@ namespace YJH
 
             // 실제 전송 TODO:: Save Game Result Data 
             //sendResultData.SendGameResult(contData, imgTypeData, statusData);
+            ResultDataStorage.Instance.Game1ContData = contData;
+            ResultDataStorage.Instance.Game1ImgTypeData = imgTypeData;
+            ResultDataStorage.Instance.Game1StatusData = statusData;
         }
 
 

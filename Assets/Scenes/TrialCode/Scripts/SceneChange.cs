@@ -16,6 +16,7 @@ public class SceneChange : MonoBehaviour
         {
             // 입력받은 이름의 씬을 로드
             SceneManager.LoadScene(name);
+            
         }
     }
 }

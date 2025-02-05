@@ -16,13 +16,21 @@ namespace YJH
         [SerializeField]
         string Game2TitleData;
 
+        public void OnClickSendGameResult()
+        {
+            String _Game1ContDATA = ResultDataStorage.Instance.Game1ContData;
+            int _Game1ImgTypeDATA = ResultDataStorage.Instance.Game1ImgTypeData;
+            int _Game1StatusDATA = ResultDataStorage.Instance.Game1StatusData;
+            String _Game2ContDATA = ResultDataStorage.Instance.Game2ContData;
+            int _Game2ImgTypeDATA = ResultDataStorage.Instance.Game2ImgTypeData;
+            int _Game2StatusDATA = ResultDataStorage.Instance.Game2StatusData;
 
-        public void SendGameResult(String Game1ContDATA, int Game1ImgTypeDATA, int Game1StatusDATA,
+            SendGameResult(_Game1ContDATA, _Game1ImgTypeDATA, _Game1StatusDATA, _Game2ContDATA, _Game2ImgTypeDATA, _Game2StatusDATA);
+        }
+
+        void SendGameResult(String Game1ContDATA, int Game1ImgTypeDATA, int Game1StatusDATA,
         String Game2ContDATA, int Game2ImgTypeDATA, int Game2StatusDATA)
         {
-
-
-
             var game1 = new KochatGameData
             {
                 Kind = Game1KindData,
@@ -59,7 +67,6 @@ namespace YJH
             {
                 Debug.Log("error : " + error);
             });
-
         }
     }
 }

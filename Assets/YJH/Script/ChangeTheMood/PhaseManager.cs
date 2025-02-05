@@ -28,7 +28,7 @@ namespace YJH.ChangeTheMood
         private Sex selectedSex;
         private string selectedNickname;
 
-        private readonly string[] nicknames = { "닉네임0", "닉네임1", "닉네임2", "닉네임3", "닉네임4", "닉네임5", "닉네임6", "닉네임7", "닉네임8" };
+        private readonly string[] nicknames = { "태오", "현우", "리안", "다린", "준우", "하람", "채아", "루나", "미카" };
 
         [Header("Result")]
         [SerializeField]
