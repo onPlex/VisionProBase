@@ -15,7 +15,7 @@ namespace Jun
     public class RawImageAnimation : MonoBehaviour
     {
         public RawImage rawImage; // UI에서 사용할 RawImage
-        public int framesPerSecond = 60; // FPS 설정 (예: 60, 30, 24 등)
+        public int framesPerSecond = 30; // FPS 설정 (예: 60, 30, 24 등)
 
         private string idleAnimationName = "idle"; // 기본적으로 실행될 Idle 애니메이션
         public List<AnimationClipData> animationClips = new List<AnimationClipData>(); // Inspector에서 관리
