@@ -26,18 +26,19 @@ public class Basket : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             currentHitCount++;
+            hit.Play();
+
+
             if (currentHitCount >= maxHitCount)
             {
                 currentHitCount = 0;
+                if (basketType) oXQuizManager.OnSelectO();
+                else oXQuizManager.OnSelectX();
             }
             else
             {
                 myAnimator.SetTrigger("Hit");
             }
-
-            Debug.Log("BallCheck");
-            myAnimator.SetTrigger("Hit");
-            oXQuizManager.OnSelectO();
         }
     }
 

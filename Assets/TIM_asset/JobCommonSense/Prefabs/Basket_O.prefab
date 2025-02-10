@@ -613,7 +613,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095a768ccbcdd485b9ba4b8e920468bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basketType: 1
+  maxHitCount: 3
+  currentHitCount: 0
   myAnimator: {fileID: 7518352766242106389}
+  oXQuizManager: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!1 &6448988544306354935
 GameObject:
   m_ObjectHideFlags: 0
