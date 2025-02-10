@@ -28,7 +28,8 @@ namespace YJH.ChangeTheMood
         private Sex selectedSex;
         private string selectedNickname;
 
-        private readonly string[] nicknames = { "태오", "현우", "리안", "다린", "준우", "하람", "채아", "루나", "미카" };
+[Tooltip("0~5 boy Nickname, 6~11 boy Nickname")]
+        private readonly string[] nicknames = { "태오", "현우", "리안", "다린", "준우", "하람","채아", "루나", "미카", "하린", "유나", "지안"};      
 
         [Header("Result")]
         [SerializeField]
@@ -55,14 +56,31 @@ namespace YJH.ChangeTheMood
             get => selectedNickname;
             private set
             {
-                if (System.Array.Exists(nicknames, nickname => nickname == value))
+                if (selectedSex == Sex.Boy)
                 {
-                    selectedNickname = value;
+                    if (System.Array.Exists(nicknames, nickname => nickname == value))
+                    {
+                        selectedNickname = value;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Invalid nickname selection");
+                    }
                 }
                 else
                 {
-                    Debug.LogWarning("Invalid nickname selection");
+                    if (System.Array.Exists(nicknames, nickname => nickname == value))
+                    {
+                        selectedNickname = value;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Invalid nickname selection");
+                    }
+
                 }
+
+
             }
         }
 
@@ -109,7 +127,7 @@ namespace YJH.ChangeTheMood
             {
                 BackGroundMeshRenderer.material = BackGroundMats[2];
             }
-             else if (currentPhase == 9)
+            else if (currentPhase == 9)
             {
                 BackGroundMeshRenderer.material = BackGroundMats[0];
             }
