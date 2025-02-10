@@ -529,6 +529,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7598242430580022983}
     m_Modifications:
+    - target: {fileID: 2385375781053751497, guid: 7359659ddcfcefe4c843957829b9ae34, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5493056046636929463, guid: 7359659ddcfcefe4c843957829b9ae34, type: 3}
       propertyPath: m_Name
       value: Basket_X
@@ -537,6 +541,10 @@ PrefabInstance:
       propertyPath: hit
       value: 
       objectReference: {fileID: 7249390057695819106}
+    - target: {fileID: 7600602973683212664, guid: 7359659ddcfcefe4c843957829b9ae34, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8709058241527615776, guid: 7359659ddcfcefe4c843957829b9ae34, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5000005
@@ -588,6 +596,10 @@ PrefabInstance:
     - target: {fileID: 8709058241527615776, guid: 7359659ddcfcefe4c843957829b9ae34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803212761870204185, guid: 7359659ddcfcefe4c843957829b9ae34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

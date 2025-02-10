@@ -18,14 +18,14 @@ EditorBuildSettings:
     path: Assets/YJH/Scene/ChangeTheMood.unity
     guid: 2cbe44ba104fb40eb9b729af98ba6b18
   - enabled: 1
-    path: Assets/HanJun/Scene/JobCommonSense.unity
-    guid: afb8ecc733e6641108d7624901cda48f
-  - enabled: 1
     path: Assets/YJH/Scene/InterestingShell.unity
     guid: 45065ddfc42534f81ae06c836c5d7b7f
   - enabled: 1
     path: Assets/YJH/Scene/MajorHunting.unity
     guid: 95754334913fa4f32afc6a7f1abe5681
+  - enabled: 1
+    path: Assets/YJH/Scene/JobCommonSense.unity
+    guid: 3787d7cc4ade14c3fb9c149e1e6e9c87
   m_configObjects:
     UnityEditor.XR.VisionOS.VisionOSSettings: {fileID: 11400000, guid: 25e1f68848051c946b9048e8426e646c, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: bb65518a4a80049acbc5e85e70dbbee0, type: 2}
