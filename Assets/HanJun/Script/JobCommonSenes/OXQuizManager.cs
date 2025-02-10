@@ -32,8 +32,6 @@ namespace Jun
         public GameObject explanationPanel; // 해설을 보여줄 패널(UI)
 
         public JobCommonSenseController jobCommonSenseController;
-        public BallManager ballManager;
-        public BallSelectionBehavior ballSelectionBehavior;
 
         private int currentRound = 1;     // 현재 라운드(1 or 2)
         private int questionIndex = 0;    // 현재 문제 번호(0~4)
@@ -140,9 +138,6 @@ namespace Jun
             QuizData qd = (currentRound == 1) ? round1[questionIndex] : round2[questionIndex];
             bool isCorrect = (qd.answerIsO == userChoiceO);
 
-            ballManager.isTouch = false;
-            ballSelectionBehavior.isTouch = false;
-
             if (isCorrect)
             {
                 // 정답
@@ -164,8 +159,6 @@ namespace Jun
 
                 ScoreNumber++;
                 roundScore++;
-                ballManager.UpgradeSphere(roundScore);
-                ballSelectionBehavior.UpgradeSphere(roundScore);
 
                 // 다음 문제로 넘어갈 준비
                 StartCoroutine(WaitAndNext());
@@ -206,8 +199,7 @@ namespace Jun
                     currentRound++;
                     questionIndex = 0;
                     roundScore = 0;
-                    ballManager.UpgradeSphere(roundScore);
-                    ballSelectionBehavior.UpgradeSphere(roundScore);
+                 
 
                     jobCommonSenseController.SetPhaseIndex(4);
                 }
@@ -221,20 +213,10 @@ namespace Jun
 
             if (isEndQuiz) return;
 
-            ballManager.isTouch = true;
-            ballSelectionBehavior.isTouch = true;
             // 다음 문제 UI 로드
             LoadQuestion();
             isWaitingNext = false;
         }
 
-        /// <summary>
-        /// 외부에서 임의로 부를 수 있는 '레벨업' 함수. (예시)
-        /// </summary>
-        public void UpgradeSphere()
-        {
-            // 만약 BallManager에서 공 레벨 업그레이드가 필요한 경우라면 이 안에서 처리 가능
-            // (OXQuiz에는 직접 연관되지 않으므로 필요 시 참조)
-        }
     }
 }

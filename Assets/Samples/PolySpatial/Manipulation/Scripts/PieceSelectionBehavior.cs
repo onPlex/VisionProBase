@@ -18,6 +18,11 @@ namespace PolySpatial.Samples
 
         public int selectingPointer { get; private set; } = ManipulationInputManager.k_Deselected;
 
+        public bool IsCurrentlySelected
+        {
+            get { return selectingPointer != ManipulationInputManager.k_Deselected; }
+        }
+
         void Start()
         {
             m_RigidBody = GetComponent<Rigidbody>();
