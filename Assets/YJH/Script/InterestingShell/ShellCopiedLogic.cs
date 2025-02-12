@@ -33,7 +33,8 @@ public class ShellCopiedLogic : MonoBehaviour
 
     public void OnClickTitleButton()
     {
-        dec.SetActive(true);
+        if(!dec.activeInHierarchy)dec.SetActive(true);
+        else dec.SetActive(false);
         ManipulationBoxCollider.enabled = true;
     }
 
