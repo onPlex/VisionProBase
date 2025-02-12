@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.Events;
 using System.Collections;
 
@@ -7,7 +6,6 @@ public class ShellCopiedLogic : MonoBehaviour
 {
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject dec;
-
     [SerializeField] private BoxCollider ManipulationBoxCollider;
 
 

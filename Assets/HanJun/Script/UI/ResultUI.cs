@@ -11,8 +11,10 @@ namespace Jun
         [SerializeField] private UnityEngine.UI.Image pearlImage;
         [SerializeField] private Sprite[] pearlSprites;
 
-        [SerializeField] private MeshRenderer pearlMesh;
-        [SerializeField] private Material[] pearlColors;
+       // [SerializeField] private MeshRenderer pearlMesh;
+        //[SerializeField] private Material[] pearlColors;
+
+        [SerializeField] private GameObject[] PearsObj;
 
         [SerializeField] private TMP_Text text_Name;
         [SerializeField] private TMP_Text text_Desc;
@@ -39,7 +41,8 @@ namespace Jun
         private void SetImage(int index)
         {
             pearlImage.sprite = pearlSprites[index];
-            pearlMesh.material = pearlColors[index];
+           // pearlMesh.material = pearlColors[index];
+           PearsObj[index].SetActive(true);
         }
 
         private void SetText(int index)

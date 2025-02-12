@@ -1,10 +1,9 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 namespace YJH
 {
-
-
     public class MainContentManager : MonoBehaviour
     {
         [Header("Phases")]
@@ -12,9 +11,9 @@ namespace YJH
         [SerializeField] private GameObject[] phaseParents = new GameObject[6];
 
         // 현재 진행중인 Phase 인덱스(0~5)
+        [SerializeField]
         private int currentPhase = 0;
-
-
+        public event Action OnPhaseChanged; // Phase 변경 이벤트
 
         // Career 선택 카운트 (R=0, I=1, A=2, S=3, E=4, C=5)
         private int[] careerSelectedCounts = new int[6];
@@ -23,6 +22,12 @@ namespace YJH
         [SerializeField]
         TMP_Text TMP_PhaseText;
 
+        [SerializeField]
+        GameObject PhaseTextObj;
+
+        [SerializeField]
+        GameObject ReturnButtonObj;
+
 
         [Header("Result")]
         [SerializeField] Jun.Dolphin dolphin;
@@ -30,15 +35,6 @@ namespace YJH
         [SerializeField] GameObject ShellCountUI;
 
         public ShellInfo.CareerType finalCareer;
-        //[Header("API")]
-
-        //[SerializeField]
-        //SendResultData sendResultData;
-        private void Start()
-        {
-            // 초기 셋업
-            //InitializePhases();
-        }
 
         /// <summary>
         /// 모든 PhaseParent를 비활성화 후, 현재 phaseParent만 활성화
@@ -55,11 +51,49 @@ namespace YJH
             ActivateCurrentPhase();
         }
 
+        public void ReturnToPreviousPhase()
+        {
+
+            Debug.Log("ReturnToPreviousPhase , currentPhase:" + currentPhase);
+
+            // 현재 Phase가 1 이상일 때만 이전 단계로 이동
+            if (currentPhase >= 1)
+            {
+                // 현재 Phase 비활성화
+                phaseParents[currentPhase].SetActive(false);
+
+                // --- 핵심 수정 부분: currentPhase 먼저 감소 ---
+                currentPhase--;
+
+                // 감소된 currentPhase 기반으로 새 Phase 활성화
+                ActivateCurrentPhase();
+
+                OnPhaseChanged?.Invoke(); // Phase 변경 이벤트 호출
+            }
+            else
+            {
+                Debug.Log("이미 0단계이므로 더 이상 이전 단계로 돌아갈 수 없습니다.");
+            }
+        }
+
+
         /// <summary>
         /// phaseParents[currentPhase]만 활성화
         /// </summary>
         private void ActivateCurrentPhase()
         {
+            if (currentPhase == 0)
+            {
+                PhaseTextObj.transform.localPosition = new Vector3(0, 0, 0);
+                ReturnButtonObj.SetActive(false);
+            }
+            else
+            {
+                PhaseTextObj.transform.localPosition = new Vector3(-.5f, 0, 0);
+                ReturnButtonObj.transform.localPosition = new Vector3(.5f, 0, 0);
+                ReturnButtonObj.SetActive(true);
+            }
+
             if (currentPhase < 0 || currentPhase >= phaseParents.Length)
             {
                 Debug.LogWarning("Phase 범위 에러");
@@ -69,10 +103,38 @@ namespace YJH
             if (phaseParents[currentPhase] != null)
                 phaseParents[currentPhase].SetActive(true);
 
-            // currentPhase는 0~5이므로, 실제 표기는 1~6이 되도록 (currentPhase + 1)
             if (TMP_PhaseText != null)
             {
                 TMP_PhaseText.text = $"{(currentPhase)}/{phaseParents.Length}";
+            }
+        }
+
+        private void ActivatePhase(int phase)
+        {
+            if (phase == 0)
+            {
+                PhaseTextObj.transform.localPosition = new Vector3(0, 0, 0);
+                ReturnButtonObj.SetActive(false);
+            }
+            else
+            {
+                PhaseTextObj.transform.localPosition = new Vector3(-.5f, 0, 0);
+                ReturnButtonObj.transform.localPosition = new Vector3(.5f, 0, 0);
+                ReturnButtonObj.SetActive(true);
+            }
+
+            if (phase < 0 || phase >= phaseParents.Length)
+            {
+                Debug.LogWarning("Phase 범위 에러");
+                return;
+            }
+
+            if (phaseParents[phase] != null)
+                phaseParents[phase].SetActive(true);
+
+            if (TMP_PhaseText != null)
+            {
+                TMP_PhaseText.text = $"{(phase)}/{phaseParents.Length}";
             }
         }
 
@@ -110,6 +172,7 @@ namespace YJH
             {
                 // 새 Phase 활성화
                 ActivateCurrentPhase();
+                OnPhaseChanged?.Invoke(); // Phase 변경 이벤트 호출
             }
             else
             {
@@ -119,6 +182,10 @@ namespace YJH
                 // 결과 Phase로 이동
                 GoToResultPhase();
             }
+        }
+        public int GetCurrentPhase()
+        {
+            return currentPhase;
         }
 
         /// <summary>
@@ -134,28 +201,13 @@ namespace YJH
             }
             finalCareer = (ShellInfo.CareerType)maxIndex;
             Debug.Log($"가장 많이 선택된 유형: {finalCareer}");
-            // TODO: 결과 UI 표시, 씬 전환 등
 
-            // 추가: 최종 결과를 SendResultData로 전달 (임시/더미 값 예시)
-            // if (sendResultData != null)
-            // {
-            //     SendFinalCareerResult(finalCareer);
-            // }
-            // else
-            // {
-            //     Debug.LogWarning("[CalculateFinalCareer] sendResultData가 할당되어 있지 않습니다.");
-            // }
 
             SendFinalCareerResult(finalCareer);
         }
 
         private void GoToResultPhase()
         {
-            // TODO: 결과 화면(Phase) 활성화, 씬 전환, UI 표시 등
-            // ex) resultPhaseObject.SetActive(true);
-            // ex) SceneManager.LoadScene("ResultScene");
-            // ...
-
             Basket.SetActive(false);
             ShellCountUI.SetActive(false);
             dolphin.gameObject.SetActive(true);
