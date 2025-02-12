@@ -28,8 +28,8 @@ namespace YJH.ChangeTheMood
         private Sex selectedSex;
         private string selectedNickname;
 
-[Tooltip("0~5 boy Nickname, 6~11 boy Nickname")]
-        private readonly string[] nicknames = { "태오", "현우", "리안", "다린", "준우", "하람","채아", "루나", "미카", "하린", "유나", "지안"};      
+        [Tooltip("0~5 boy Nickname, 6~11 boy Nickname")]
+        private readonly string[] nicknames = { "태오", "현우", "리안", "다린", "준우", "하람", "채아", "루나", "미카", "하린", "유나", "지안" };
 
         [Header("Result")]
         [SerializeField]
@@ -56,30 +56,24 @@ namespace YJH.ChangeTheMood
             get => selectedNickname;
             private set
             {
-                if (selectedSex == Sex.Boy)
+                int startIndex = selectedSex == Sex.Boy ? 0 : (selectedSex == Sex.Girl ? 6 : -1);
+                int endIndex = selectedSex == Sex.Boy ? 5 : (selectedSex == Sex.Girl ? 11 : -1);
+
+                if (startIndex == -1 || endIndex == -1)
                 {
-                    if (System.Array.Exists(nicknames, nickname => nickname == value))
-                    {
-                        selectedNickname = value;
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Invalid nickname selection");
-                    }
+                    Debug.LogWarning("Sex가 선택되지 않음");
+                    return;
+                }
+
+                int nicknameIndex = System.Array.IndexOf(nicknames, value);
+                if (nicknameIndex >= startIndex && nicknameIndex <= endIndex)
+                {
+                    selectedNickname = value;
                 }
                 else
                 {
-                    if (System.Array.Exists(nicknames, nickname => nickname == value))
-                    {
-                        selectedNickname = value;
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Invalid nickname selection");
-                    }
-
+                    Debug.LogWarning("잘못된 닉네임 선택");
                 }
-
 
             }
         }
