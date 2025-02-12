@@ -10,10 +10,43 @@ namespace YJH
         // 0~5까지의 Phase Parent 오브젝트
         [SerializeField] private GameObject[] phaseParents = new GameObject[6];
 
-        // 현재 진행중인 Phase 인덱스(0~5)
-        [SerializeField]
-        private int currentPhase = 0;
-        public event Action OnPhaseChanged; // Phase 변경 이벤트
+        // 현재 진행중인 Phase 인덱스(0~5)        
+        private int _currentPhase = 0;
+        public event Action<int> OnPhaseChanged;
+
+        public int CurrentPhase
+        {
+            get => _currentPhase;
+            private set
+            {
+                // 0 ~ (phaseParents.Length - 1) 범위 안에서만 설정
+                int clampedValue = Mathf.Clamp(value, 0, phaseParents.Length - 1);
+
+                // 만약 변경 이전값과 다르면 갱신 + Phase 변경 처리
+                if (_currentPhase != clampedValue)
+                {
+                    // 이전 Phase 비활성화
+                    if (_currentPhase >= 0 && _currentPhase < phaseParents.Length)
+                    {
+                        if (phaseParents[_currentPhase] != null)
+                            phaseParents[_currentPhase].SetActive(false);
+                    }
+
+                    _currentPhase = clampedValue;
+
+                    // 새 Phase 활성화
+                    if (phaseParents[_currentPhase] != null)
+                        phaseParents[_currentPhase].SetActive(true);
+
+                    // UI 업데이트 등
+                    UpdatePhaseUI();
+
+                    // 필요하다면 이벤트 호출
+                    OnPhaseChanged?.Invoke(_currentPhase);
+                }
+                // else: 값이 같다면 아무 동작도 안 함
+            }
+        }
 
         // Career 선택 카운트 (R=0, I=1, A=2, S=3, E=4, C=5)
         private int[] careerSelectedCounts = new int[6];
@@ -41,34 +74,25 @@ namespace YJH
         /// </summary>
         private void InitializePhases()
         {
-            // 전체 PhaseParent 비활성화
+            // 전부 비활성화
             for (int i = 0; i < phaseParents.Length; i++)
             {
                 if (phaseParents[i] != null)
                     phaseParents[i].SetActive(false);
             }
-            // 현재 Phase만 활성화
-            ActivateCurrentPhase();
+
+            // Phase 0부터 시작할 경우:
+            CurrentPhase = 0; // 이렇게만 하면 자동으로 UI/오브젝트가 갱신됨
         }
 
         public void ReturnToPreviousPhase()
         {
-
-            Debug.Log("ReturnToPreviousPhase , currentPhase:" + currentPhase);
-
-            // 현재 Phase가 1 이상일 때만 이전 단계로 이동
-            if (currentPhase >= 1)
+            // 0보다 크면 1 감소
+            if (CurrentPhase > 0)
             {
-                // 현재 Phase 비활성화
-                phaseParents[currentPhase].SetActive(false);
-
-                // --- 핵심 수정 부분: currentPhase 먼저 감소 ---
-                currentPhase--;
-
-                // 감소된 currentPhase 기반으로 새 Phase 활성화
-                ActivateCurrentPhase();
-
-                OnPhaseChanged?.Invoke(); // Phase 변경 이벤트 호출
+                // setter 내부에서 자동으로 이전 Phase 비활성 + 새 Phase 활성 처리
+                CurrentPhase = CurrentPhase - 1;
+                Debug.Log("ReturnToPreviousPhase , currentPhase:" + CurrentPhase);
             }
             else
             {
@@ -76,38 +100,68 @@ namespace YJH
             }
         }
 
-
-        /// <summary>
-        /// phaseParents[currentPhase]만 활성화
-        /// </summary>
-        private void ActivateCurrentPhase()
+        private void UpdatePhaseUI()
         {
-            if (currentPhase == 0)
+            // 0단계면 “이전으로” 돌아가는 버튼 숨기기
+            if (_currentPhase == 0)
             {
                 PhaseTextObj.transform.localPosition = new Vector3(0, 0, 0);
                 ReturnButtonObj.SetActive(false);
             }
             else
             {
-                PhaseTextObj.transform.localPosition = new Vector3(-.5f, 0, 0);
-                ReturnButtonObj.transform.localPosition = new Vector3(.5f, 0, 0);
+                PhaseTextObj.transform.localPosition = new Vector3(-0.5f, 0, 0);
+                ReturnButtonObj.transform.localPosition = new Vector3(0.5f, 0, 0);
                 ReturnButtonObj.SetActive(true);
             }
 
-            if (currentPhase < 0 || currentPhase >= phaseParents.Length)
+            // 범위 에러도 여기서 체크 가능
+            if (_currentPhase < 0 || _currentPhase >= phaseParents.Length)
             {
                 Debug.LogWarning("Phase 범위 에러");
                 return;
             }
 
-            if (phaseParents[currentPhase] != null)
-                phaseParents[currentPhase].SetActive(true);
-
+            // PhaseText
             if (TMP_PhaseText != null)
             {
-                TMP_PhaseText.text = $"{(currentPhase)}/{phaseParents.Length}";
+                // (currentPhase + 1)로 표시하고 싶다면: $"{(_currentPhase + 1)}/{phaseParents.Length}"
+                TMP_PhaseText.text = $"{_currentPhase}/{phaseParents.Length}";
             }
         }
+
+
+        /// <summary>
+        /// phaseParents[currentPhase]만 활성화
+        /// </summary>
+        // private void ActivateCurrentPhase()
+        // {
+        //     if (currentPhase == 0)
+        //     {
+        //         PhaseTextObj.transform.localPosition = new Vector3(0, 0, 0);
+        //         ReturnButtonObj.SetActive(false);
+        //     }
+        //     else
+        //     {
+        //         PhaseTextObj.transform.localPosition = new Vector3(-.5f, 0, 0);
+        //         ReturnButtonObj.transform.localPosition = new Vector3(.5f, 0, 0);
+        //         ReturnButtonObj.SetActive(true);
+        //     }
+
+        //     if (currentPhase < 0 || currentPhase >= phaseParents.Length)
+        //     {
+        //         Debug.LogWarning("Phase 범위 에러");
+        //         return;
+        //     }
+
+        //     if (phaseParents[currentPhase] != null)
+        //         phaseParents[currentPhase].SetActive(true);
+
+        //     if (TMP_PhaseText != null)
+        //     {
+        //         TMP_PhaseText.text = $"{(currentPhase)}/{phaseParents.Length}";
+        //     }
+        // }
 
         private void ActivatePhase(int phase)
         {
@@ -162,30 +216,23 @@ namespace YJH
         /// </summary>
         private void NextPhase()
         {
-            // 현재 PhaseParent 비활성화
-            if (phaseParents[currentPhase] != null)
-                phaseParents[currentPhase].SetActive(false);
+            // currentPhase를 1 증가
+            int newPhase = CurrentPhase + 1;
 
-            currentPhase++;
-
-            if (currentPhase < phaseParents.Length)
+            if (newPhase < phaseParents.Length)
             {
-                // 새 Phase 활성화
-                ActivateCurrentPhase();
-                OnPhaseChanged?.Invoke(); // Phase 변경 이벤트 호출
+                CurrentPhase = newPhase;
             }
             else
             {
-                // 모든 Phase 끝났으면 결과 계산
+                // 모든 Phase 끝났으면 결과 계산 후 결과 Phase로 이동
                 CalculateFinalCareer();
-
-                // 결과 Phase로 이동
                 GoToResultPhase();
             }
         }
         public int GetCurrentPhase()
         {
-            return currentPhase;
+            return CurrentPhase;
         }
 
         /// <summary>

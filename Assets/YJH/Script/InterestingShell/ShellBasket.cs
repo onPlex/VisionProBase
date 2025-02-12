@@ -14,16 +14,16 @@ namespace YJH
 
         private void Start()
         {
-            // MainContentManager에서 Phase 변경 이벤트에 대한 리스너 등록
+            // 1) 이벤트 등록 (int 파라미터 받는 콜백)
             mainManager.OnPhaseChanged += UpdateShellsActivation;
 
-            // 초기 활성화 상태 업데이트
-            UpdateShellsActivation();
+            // 2) 씬 시작 시 현재 Phase에 맞춰 초기 활성화
+            UpdateShellsActivation(mainManager.GetCurrentPhase());
         }
 
         private void OnDestroy()
         {
-            // 이벤트 리스너 해제 (메모리 누수 방지)
+
             if (mainManager != null)
             {
                 mainManager.OnPhaseChanged -= UpdateShellsActivation;
@@ -54,20 +54,22 @@ namespace YJH
             }
         }
 
-        /// <summary>
-        /// currentPhase에 따라 Shells 배열의 활성화 상태를 업데이트
-        /// </summary>
-        private void UpdateShellsActivation()
+        private void UpdateShellsActivation(int phase)
         {
-            int currentPhase = mainManager.GetCurrentPhase() - 1;
-
-            if (currentPhase < 0)
+            // 기존 코드에서 ShellBasket은 "Phase - 1" 인덱스를 사용
+            int shellIndex = phase - 1;
+            if (shellIndex < 0)
             {
+                // 0단계일 때는 스킵하거나, 필요하면 특정 로직
                 return;
             }
-            else
+
+            // 배열 범위를 벗어나지 않는지 확인
+            if (shellIndex < Shells.Length)
             {
-                Shells[currentPhase].SetActive(true);                
+                // 이전 단계들까지 전부 켤지, 또는 이전 단계는 끌지 등은
+                // 기획에 따라 수정 가능
+                Shells[shellIndex].SetActive(true);
             }
         }
     }
