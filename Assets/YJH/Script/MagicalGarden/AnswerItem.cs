@@ -1,27 +1,17 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using YJH.EmotionJewel;
 
-namespace YJH
+
+namespace YJH.MagicalGarden
 {
-    public class QuestionOptionButton : SpatialButtonEvent
+    public class AnswerItem : SpatialButtonEvent
     {
-        private int optionIndex;
+       private int optionIndex;
         public System.Action<int> OnOptionSelected;
 
         [SerializeField]
         TMP_Text textMesh;
-
-        [SerializeField]
-        bool IsEmotionJewel = true;
-        AnswerButton answerButton;
-
-
-        void Start()
-        {
-            answerButton = GetComponent<AnswerButton>();
-        }
 
         /// <summary>
         /// Sets the option text for the button (e.g., TextMesh or TextMeshPro).
@@ -56,18 +46,7 @@ namespace YJH
                 Debug.LogWarning("Button is inactive but Press was called. Proceeding to handle input.");
             }
 
-            hasPressed = true;
-
-            if (IsEmotionJewel)
-            {
-                if (answerButton) answerButton.OnClickEffect();
-                else
-                {
-                    answerButton = GetComponent<AnswerButton>();
-                    answerButton.OnClickEffect();
-                }
-            }
-
+            hasPressed = true;       
             // Trigger the action
             OnOptionSelected?.Invoke(optionIndex);
 

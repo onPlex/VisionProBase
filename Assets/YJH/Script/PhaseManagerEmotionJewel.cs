@@ -95,6 +95,7 @@ namespace YJH.EmotionJewel
             StartCoroutine(HandleStageTransition(Phase.Stage4, Phase.Result, "TutorialEnd4", 3));
         }
 
+
         // ============ 공통적인 스테이지 전환 처리 ============
         private IEnumerator HandleStageTransition(Phase from, Phase to, string sfx, int resultIndex)
         {

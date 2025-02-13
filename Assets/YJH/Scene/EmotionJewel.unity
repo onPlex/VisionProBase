@@ -202,9 +202,6 @@ MonoBehaviour:
   Step1Obj: {fileID: 1773319881}
   LetterAnim: {fileID: 1511651931}
   Step2Obj: {fileID: 280773684}
-  FairyObj: {fileID: 0}
-  MovePoint: []
-  DialogueObj: {fileID: 0}
 --- !u!1 &41939273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8362152306819069281, guid: 6205022545ab4504fbc683b8533c113d, type: 3}
@@ -8251,10 +8248,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2169906426513211166, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
       insertIndex: 0
       addedObject: {fileID: 786513005927257259}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7851935432661582283, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a586e825effb04e0ab0bf406e1231cc2, type: 3}
 --- !u!224 &1408735155 stripped
 RectTransform:
@@ -13401,6 +13395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6553384141115827957}
+  IsEmotionJewel: 1
 --- !u!114 &530738207729064971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13414,6 +13409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6553384141008704126}
+  IsEmotionJewel: 1
 --- !u!114 &530738207734645433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13427,6 +13423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6553384141003148492}
+  IsEmotionJewel: 1
 --- !u!114 &530738208304573853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13440,6 +13437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6553384140502410216}
+  IsEmotionJewel: 1
 --- !u!114 &530738208516452989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13453,6 +13451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6553384140827409416}
+  IsEmotionJewel: 1
 --- !u!23 &589200621911973382
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13887,6 +13886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6322494724699348092}
+  IsEmotionJewel: 1
 --- !u!114 &725572967638797499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13900,6 +13900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6322494724688511694}
+  IsEmotionJewel: 1
 --- !u!114 &725572967674624048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13913,6 +13914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6322494724585600581}
+  IsEmotionJewel: 1
 --- !u!114 &725572967954522829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13926,6 +13928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6322494723766725816}
+  IsEmotionJewel: 1
 --- !u!114 &725572968137047341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13939,6 +13942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6322494724121080664}
+  IsEmotionJewel: 1
 --- !u!1 &727411494648340104
 GameObject:
   m_ObjectHideFlags: 0
@@ -17201,6 +17205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 4840868869184128310}
+  IsEmotionJewel: 1
 --- !u!114 &2198314240383079921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17214,6 +17219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 4840868869173992324}
+  IsEmotionJewel: 1
 --- !u!114 &2198314240418570618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17227,6 +17233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 4840868869071400719}
+  IsEmotionJewel: 1
 --- !u!114 &2198314240880993383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17240,6 +17247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 4840868868606880274}
+  IsEmotionJewel: 1
 --- !u!114 &2198314241235483527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17253,6 +17261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 4840868868789270002}
+  IsEmotionJewel: 1
 --- !u!224 &2249985381329211183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17719,7 +17728,7 @@ MonoBehaviour:
     - 5
     TriggerSpecialEvent: 1
     SpecialEvents:
-    - EventPhase: {fileID: 0}
+    - EventPhase: {fileID: 1044930383}
       MethodName: OnTutorialEnd
   optionButtons:
   - {fileID: 7741804565603786860}
@@ -23940,6 +23949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 885357657061987742}
+  IsEmotionJewel: 1
 --- !u!114 &5901597498078692363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23953,6 +23963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 885357657420663422}
+  IsEmotionJewel: 1
 --- !u!114 &5901597498646489903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23966,6 +23977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 885357656917927258}
+  IsEmotionJewel: 1
 --- !u!114 &5901597498652439965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23979,6 +23991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 885357656911952872}
+  IsEmotionJewel: 1
 --- !u!114 &5901597498692108566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23992,6 +24005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 885357656805150563}
+  IsEmotionJewel: 1
 --- !u!23 &5948515193496757898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28899,6 +28913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 3690701301223863477}
+  IsEmotionJewel: 1
 --- !u!114 &7969052428861826162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28912,6 +28927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 3690701301218175495}
+  IsEmotionJewel: 1
 --- !u!114 &7969052428883267147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28925,6 +28941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 3690701301129576510}
+  IsEmotionJewel: 1
 --- !u!114 &7969052429173658806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28938,6 +28955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 3690701300304419523}
+  IsEmotionJewel: 1
 --- !u!114 &7969052429364562774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28951,6 +28969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 3690701300650378531}
+  IsEmotionJewel: 1
 --- !u!223 &8102921690980637640
 Canvas:
   m_ObjectHideFlags: 0
