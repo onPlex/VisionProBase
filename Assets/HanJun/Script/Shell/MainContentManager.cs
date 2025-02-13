@@ -7,197 +7,138 @@ namespace YJH
     public class MainContentManager : MonoBehaviour
     {
         [Header("Phases")]
-        // 0~5까지의 Phase Parent 오브젝트
         [SerializeField] private GameObject[] phaseParents = new GameObject[6];
 
-        // 현재 진행중인 Phase 인덱스(0~5)        
+        [Header("UI")]
+        [SerializeField] TMP_Text TMP_PhaseText;
+        [SerializeField] private GameObject PhaseTextObj;
+        [SerializeField] private GameObject ReturnButtonObj;
+
+        [Header("Result")]
+        [SerializeField] private Jun.Dolphin dolphin;
+        [SerializeField] private GameObject Basket;
+        [SerializeField] private GameObject ShellCountUI;
+
+        // -------------------------------------------------------------
+        // 디버깅/로그에 도움이 되도록 SerializeField로 확인
+        // -------------------------------------------------------------
+        [SerializeField]
         private int _currentPhase = 0;
+
         public event Action<int> OnPhaseChanged;
+
+        // R,I,A,S,E,C (0,1,2,3,4,5)
+        private int[] careerSelectedCounts = new int[6];
+
+        public ShellInfo.CareerType finalCareer;
 
         public int CurrentPhase
         {
             get => _currentPhase;
             private set
             {
-                // 0 ~ (phaseParents.Length - 1) 범위 안에서만 설정
-                int clampedValue = Mathf.Clamp(value, 0, phaseParents.Length - 1);
+                // setter 호출 시점 디버그
+                int oldVal = _currentPhase;
+                Debug.Log($"[CurrentPhase setter] Called with value={value}, oldVal={oldVal}");
 
-                // 만약 변경 이전값과 다르면 갱신 + Phase 변경 처리
+                // 0 ~ (phaseParents.Length - 1) 범위로 보정
+                int clampedValue = Mathf.Clamp(value, 0, phaseParents.Length - 1);
+                Debug.Log($"[CurrentPhase setter] clampedValue={clampedValue}, phaseParents.Length={phaseParents.Length}");
+
                 if (_currentPhase != clampedValue)
                 {
+                    Debug.Log($"[CurrentPhase setter] Phase changing from {oldVal} to {clampedValue}");
+
                     // 이전 Phase 비활성화
                     if (_currentPhase >= 0 && _currentPhase < phaseParents.Length)
                     {
                         if (phaseParents[_currentPhase] != null)
+                        {
+                            Debug.Log($"[CurrentPhase setter] Deactivating old phase index={_currentPhase}");
                             phaseParents[_currentPhase].SetActive(false);
+                        }
                     }
 
                     _currentPhase = clampedValue;
 
                     // 새 Phase 활성화
                     if (phaseParents[_currentPhase] != null)
+                    {
+                        Debug.Log($"[CurrentPhase setter] Activating new phase index={_currentPhase}");
                         phaseParents[_currentPhase].SetActive(true);
+                    }
 
-                    // UI 업데이트 등
+                    // UI 갱신
                     UpdatePhaseUI();
 
-                    // 필요하다면 이벤트 호출
                     OnPhaseChanged?.Invoke(_currentPhase);
                 }
-                // else: 값이 같다면 아무 동작도 안 함
+                else
+                {
+                    // 값이 같으니 변경 없음
+                    Debug.Log($"[CurrentPhase setter] No change (oldVal=={oldVal}, clampedValue=={clampedValue})");
+                }
             }
         }
 
-        // Career 선택 카운트 (R=0, I=1, A=2, S=3, E=4, C=5)
-        private int[] careerSelectedCounts = new int[6];
-
-        [Header("UI")]
-        [SerializeField]
-        TMP_Text TMP_PhaseText;
-
-        [SerializeField]
-        GameObject PhaseTextObj;
-
-        [SerializeField]
-        GameObject ReturnButtonObj;
-
-
-        [Header("Result")]
-        [SerializeField] Jun.Dolphin dolphin;
-        [SerializeField] GameObject Basket;
-        [SerializeField] GameObject ShellCountUI;
-
-        public ShellInfo.CareerType finalCareer;
-
-        /// <summary>
-        /// 모든 PhaseParent를 비활성화 후, 현재 phaseParent만 활성화
-        /// </summary>
-        private void InitializePhases()
+        private void Awake()
         {
-            // 전부 비활성화
-            for (int i = 0; i < phaseParents.Length; i++)
-            {
-                if (phaseParents[i] != null)
-                    phaseParents[i].SetActive(false);
-            }
-
-            // Phase 0부터 시작할 경우:
-            CurrentPhase = 0; // 이렇게만 하면 자동으로 UI/오브젝트가 갱신됨
+            Debug.Log("[MainContentManager] Awake() called");
         }
 
-        public void ReturnToPreviousPhase()
+        private void Start()
         {
-            // 0보다 크면 1 감소
-            if (CurrentPhase > 0)
-            {
-                // setter 내부에서 자동으로 이전 Phase 비활성 + 새 Phase 활성 처리
-                CurrentPhase = CurrentPhase - 1;
-                Debug.Log("ReturnToPreviousPhase , currentPhase:" + CurrentPhase);
-            }
-            else
-            {
-                Debug.Log("이미 0단계이므로 더 이상 이전 단계로 돌아갈 수 없습니다.");
-            }
-        }
-
-        private void UpdatePhaseUI()
-        {
-            // 0단계면 “이전으로” 돌아가는 버튼 숨기기
-            if (_currentPhase == 0)
-            {
-                PhaseTextObj.transform.localPosition = new Vector3(0, 0, 0);
-                ReturnButtonObj.SetActive(false);
-            }
-            else
-            {
-                PhaseTextObj.transform.localPosition = new Vector3(-0.5f, 0, 0);
-                ReturnButtonObj.transform.localPosition = new Vector3(0.5f, 0, 0);
-                ReturnButtonObj.SetActive(true);
-            }
-
-            // 범위 에러도 여기서 체크 가능
-            if (_currentPhase < 0 || _currentPhase >= phaseParents.Length)
-            {
-                Debug.LogWarning("Phase 범위 에러");
-                return;
-            }
-
-            // PhaseText
-            if (TMP_PhaseText != null)
-            {
-                // (currentPhase + 1)로 표시하고 싶다면: $"{(_currentPhase + 1)}/{phaseParents.Length}"
-                TMP_PhaseText.text = $"{_currentPhase}/{phaseParents.Length}";
-            }
-        }
-
-
-        /// <summary>
-        /// phaseParents[currentPhase]만 활성화
-        /// </summary>
-        // private void ActivateCurrentPhase()
-        // {
-        //     if (currentPhase == 0)
-        //     {
-        //         PhaseTextObj.transform.localPosition = new Vector3(0, 0, 0);
-        //         ReturnButtonObj.SetActive(false);
-        //     }
-        //     else
-        //     {
-        //         PhaseTextObj.transform.localPosition = new Vector3(-.5f, 0, 0);
-        //         ReturnButtonObj.transform.localPosition = new Vector3(.5f, 0, 0);
-        //         ReturnButtonObj.SetActive(true);
-        //     }
-
-        //     if (currentPhase < 0 || currentPhase >= phaseParents.Length)
-        //     {
-        //         Debug.LogWarning("Phase 범위 에러");
-        //         return;
-        //     }
-
-        //     if (phaseParents[currentPhase] != null)
-        //         phaseParents[currentPhase].SetActive(true);
-
-        //     if (TMP_PhaseText != null)
-        //     {
-        //         TMP_PhaseText.text = $"{(currentPhase)}/{phaseParents.Length}";
-        //     }
-        // }
-
-        private void ActivatePhase(int phase)
-        {
-            if (phase == 0)
-            {
-                PhaseTextObj.transform.localPosition = new Vector3(0, 0, 0);
-                ReturnButtonObj.SetActive(false);
-            }
-            else
-            {
-                PhaseTextObj.transform.localPosition = new Vector3(-.5f, 0, 0);
-                ReturnButtonObj.transform.localPosition = new Vector3(.5f, 0, 0);
-                ReturnButtonObj.SetActive(true);
-            }
-
-            if (phase < 0 || phase >= phaseParents.Length)
-            {
-                Debug.LogWarning("Phase 범위 에러");
-                return;
-            }
-
-            if (phaseParents[phase] != null)
-                phaseParents[phase].SetActive(true);
-
-            if (TMP_PhaseText != null)
-            {
-                TMP_PhaseText.text = $"{(phase)}/{phaseParents.Length}";
-            }
+            Debug.Log("[MainContentManager] Start() called, setting CurrentPhase=0");
+            CurrentPhase = 0; // 초기 세팅
         }
 
         /// <summary>
-        /// ShellBasket 등에서 Shell이 선택되었다고 알림받으면,
-        /// 해당 Shell의 CareerType을 카운트하고 다음 Phase로 넘어감
+        /// 특정 phaseIndex로 전환(이전 Phase 비활성화 → Shell 리셋 → 새 Phase 활성화)
         /// </summary>
+        private void ActivatePhase(int newPhase)
+        {
+            // 범위 보정
+            int clampedValue = Mathf.Clamp(newPhase, 0, phaseParents.Length - 1);
+
+            // 1) 이전 Phase 비활성화
+            if (_currentPhase >= 0 && _currentPhase < phaseParents.Length)
+            {
+                var oldObj = phaseParents[_currentPhase];
+                if (oldObj != null)
+                    oldObj.SetActive(false);
+            }
+
+            // 2) ShellPhase 초기화 (활성화 전에)
+            var newObj = phaseParents[clampedValue];
+            if (newObj != null)
+            {
+                // ShellPhase 컴포넌트가 있다면 Reset
+                var shellPhase = newObj.GetComponent<ShellPhase>();
+                if (shellPhase != null)
+                {
+                    //TODO::
+                   // shellPhase.ResetPhaseShells();
+                }
+            }
+
+            // 3) 실제 Phase 변경
+            _currentPhase = clampedValue;
+
+            // 4) 새 Phase 활성화
+            if (newObj != null)
+                newObj.SetActive(true);
+
+            // 5) UI 업데이트 & 이벤트 호출
+            UpdatePhaseUI();
+            OnPhaseChanged?.Invoke(_currentPhase);
+
+            Debug.Log($"[ActivatePhase()] old={_currentPhase}, new={clampedValue}");
+        }
+
+
         public void RegisterShellSelection(int careerIndex)
         {
+            Debug.Log($"[RegisterShellSelection()] careerIndex={careerIndex}");
             if (careerIndex < 0 || careerIndex >= 6)
             {
                 Debug.LogWarning("Invalid careerIndex");
@@ -206,38 +147,81 @@ namespace YJH
 
             // 카운트 증가
             careerSelectedCounts[careerIndex]++;
+            Debug.Log($"careerSelectedCounts[{careerIndex}]={careerSelectedCounts[careerIndex]}");
 
-            // 다음 Phase
             NextPhase();
         }
-
-        /// <summary>
-        /// Phase 1 증가 후, 끝났으면 결과 산출
-        /// </summary>
-        private void NextPhase()
+        public void ReturnToPreviousPhase()
         {
-            // currentPhase를 1 증가
-            int newPhase = CurrentPhase + 1;
-
-            if (newPhase < phaseParents.Length)
+            Debug.Log($"[ReturnToPreviousPhase()] called, CurrentPhase={_currentPhase}");
+            if (_currentPhase > 0)
             {
-                CurrentPhase = newPhase;
+                int newPhase = _currentPhase - 1;
+                Debug.Log($"[ReturnToPreviousPhase()] -> newPhase={newPhase}");
+                ActivatePhase(newPhase);
             }
             else
             {
-                // 모든 Phase 끝났으면 결과 계산 후 결과 Phase로 이동
+                Debug.Log("이미 0단계이므로 더 이상 이전 단계로 돌아갈 수 없습니다.");
+            }
+        }
+
+        private void NextPhase()
+        {
+            int newPhase = _currentPhase + 1;
+            Debug.Log($"[NextPhase()] current={_currentPhase}, newPhase={newPhase}");
+
+            if (newPhase < phaseParents.Length)
+            {
+                ActivatePhase(newPhase);
+            }
+            else
+            {
+                Debug.Log("[NextPhase()] 모든 Phase를 완료했습니다. 결과를 산출합니다.");
                 CalculateFinalCareer();
                 GoToResultPhase();
             }
         }
-        public int GetCurrentPhase()
+
+
+        private void UpdatePhaseUI()
         {
-            return CurrentPhase;
+            Debug.Log($"[UpdatePhaseUI()] _currentPhase={_currentPhase}");
+
+            // 0단계라면 이전버튼 숨김
+            if (_currentPhase == 0)
+            {
+                if (PhaseTextObj != null)
+                    PhaseTextObj.transform.localPosition = new Vector3(0, 0, 0);
+
+                if (ReturnButtonObj != null)
+                    ReturnButtonObj.SetActive(false);
+            }
+            else
+            {
+                if (PhaseTextObj != null)
+                    PhaseTextObj.transform.localPosition = new Vector3(-0.5f, 0, 0);
+
+                if (ReturnButtonObj != null)
+                {
+                    ReturnButtonObj.transform.localPosition = new Vector3(0.5f, 0, 0);
+                    ReturnButtonObj.SetActive(true);
+                }
+            }
+
+            // PhaseText
+            if (_currentPhase < 0 || _currentPhase >= phaseParents.Length)
+            {
+                Debug.LogWarning("[UpdatePhaseUI()] Phase 범위 에러");
+                return;
+            }
+
+            if (TMP_PhaseText != null)
+            {
+                TMP_PhaseText.text = $"{_currentPhase}/{phaseParents.Length}";
+            }
         }
 
-        /// <summary>
-        /// R,I,A,S,E,C 중 최다 선택된 항목 판별
-        /// </summary>
         private void CalculateFinalCareer()
         {
             int maxIndex = 0;
@@ -247,71 +231,34 @@ namespace YJH
                     maxIndex = i;
             }
             finalCareer = (ShellInfo.CareerType)maxIndex;
-            Debug.Log($"가장 많이 선택된 유형: {finalCareer}");
-
+            Debug.Log($"[CalculateFinalCareer()] 가장 많이 선택된 유형: {finalCareer}");
 
             SendFinalCareerResult(finalCareer);
         }
 
         private void GoToResultPhase()
         {
-            Basket.SetActive(false);
-            ShellCountUI.SetActive(false);
-            dolphin.gameObject.SetActive(true);
-            if (dolphin) dolphin.PlayAnimation();
+            Debug.Log("[GoToResultPhase()] 결과 화면으로 전환");
+            if (Basket != null) Basket.SetActive(false);
+            if (ShellCountUI != null) ShellCountUI.SetActive(false);
+            if (dolphin != null)
+            {
+                dolphin.gameObject.SetActive(true);
+                dolphin.PlayAnimation();
+            }
         }
 
-        /// <summary>
-        /// finalCareer(최고 선택된 항목)에 따른 더미 데이터 전송
-        /// </summary>
         private void SendFinalCareerResult(ShellInfo.CareerType career)
         {
-            // 더미 데이터 (컨텐츠, 이미지타입, 상태코드)
-            string contData = "기본 더미 내용";
-            int imgTypeData = -1;
-            int statusData = 0;
-
-            // career 인덱스: R=0, I=1, A=2, S=3, E=4, C=5
-            switch (career)
-            {
-                case ShellInfo.CareerType.Realistic:
-                    contData = "뚝딱진주 : 솔직하고 성실한 성격을 가지고 있고, 몸을 많이 움직이는 활동을 좋아해요. 새로운 아이디어를 생각하기 보다는 기계나 도구를 다루는 일을 좋아해요. 나만의 텃밭 가꾸기, DIY 활동, 요리 활동을 추천해요.";
-                    imgTypeData = 1;
-                    statusData = 1;
-                    break;
-                case ShellInfo.CareerType.Investigative:
-                    contData = "궁금진주 : 호기심이 많고 독립적이며 새로운 정보를 알아가는 것을 좋아해요. 세심히 관찰하며 문제를 창의적으로 해결하는 데 흥미를 느끼고, 끊임없이 배우고 탐구하는 것을 즐겨요. 챗GPT 같은 대화형 인공지능 서비스를 활용하여 학교나 학원에서 배운 내용에 대한 새로운 정보를 탐색해 보세요.";
-                    imgTypeData = 102;
-                    statusData = 1;
-                    break;
-                case ShellInfo.CareerType.Artistic:
-                    contData = "상상진주 : 상상력이 많고 감정이 풍부한 성격을 가지고 있어요. 개성 있는 독특한 방법으로 스스로를 표현하는 것을 좋아하죠. 글쓰기, 음악, 미술을 좋아하고 나만의 세계로 빠져드는 것을 즐겨요. 이런 활동들을 통해 나만의 작품을 만들거나, 노래/춤/연기 등 예술활동을 할 수 있는 동아리에 참여해 보세요. ";
-                    imgTypeData = 3;
-                    statusData = 1;
-                    break;
-                case ShellInfo.CareerType.Social:
-                    contData = "친절진주 : 이해심 많고 사교적인 성격을 가지고 있어요. 어려운 상황에 처한 사람을 도와주는 것을 좋아하죠. 친구들과 사이좋게 지내고 함께 활동하는 것을 즐겨요. 어려운 이웃을 보살피는 봉사활동에 꾸준히 참여해 보세요.";
-                    imgTypeData = 4;
-                    statusData = 1;
-                    break;
-                case ShellInfo.CareerType.Enterprising:
-                    contData = "열정진주 : 사람들과 잘 어울리고 리더십 있는 성격이에요. 친구들을 설득하고 이끄는 것을 좋아해요. 말을 자신 있게 잘하고 모든 일에 열심히 참여하는 편이에요. 학급 행사와 같은 행사를 직접 계획하고 사람들을 모아 실행해 보세요.";
-                    imgTypeData = 5;
-                    statusData = 1;
-                    break;
-                case ShellInfo.CareerType.Conventional:
-                    contData = "꼼꼼진주 : 책임감이 강하고 정직한 성격이에요. 스스로 계획을 세우고 꾸준히 실천하는 것을 좋아해요. 친구들과의 약속이나 학교 규칙, 질서를 잘 지켜요. 하루, 일주일, 한 달 등 기간별로 계획을 세우고 실천해 보세요.";
-                    imgTypeData = 6;
-                    statusData = 1;
-                    break;
-            }
-
-            // 실제 전송
-            //sendResultData.SendGameResult(contData, imgTypeData, statusData);
-            ResultDataStorage.Instance.Game1ContData = contData;
-            ResultDataStorage.Instance.Game1ImgTypeData = imgTypeData;
-            ResultDataStorage.Instance.Game1StatusData = statusData;
+            // ... (생략) ...
+            Debug.Log($"[SendFinalCareerResult()] 전송할 경력 타입={career}");
+            //ResultDataStorage.Instance.Game1ContData = ...
+            // etc.
         }
 
+        public int GetCurrentPhase()
+        {
+            return CurrentPhase;
+        }
     }
 }

@@ -3,11 +3,22 @@ using UnityEngine;
 
 public class ShellPhase : MonoBehaviour
 {
-  [Header("Which Phase is this? (0 ~ 5)")]
+    [Header("Which Phase is this? (0 ~ 5)")]
     [SerializeField] private int phaseIndex;
 
     [Header("ShellInfo References (6 items)")]
     [SerializeField] private ShellInfo[] shellInfos = new ShellInfo[6];
+
+    public void ResetPhaseShells()
+    {
+        for (int i = 0; i < shellInfos.Length; i++)
+        {
+            if (shellInfos[i] != null)
+            {
+                shellInfos[i].ResetShell();
+            }
+        }
+    }
 
     // 36개의 WordTextData
     private string[] WordTextData = {
