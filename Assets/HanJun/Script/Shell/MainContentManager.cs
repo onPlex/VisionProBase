@@ -117,7 +117,8 @@ namespace YJH
                 if (shellPhase != null)
                 {
                     //TODO::
-                   // shellPhase.ResetPhaseShells();
+                   
+                    shellPhase.ResetPhaseShells();
                 }
             }
 
@@ -177,6 +178,7 @@ namespace YJH
             }
             else
             {
+                phaseParents[phaseParents.Length-1].SetActive(false);
                 Debug.Log("[NextPhase()] 모든 Phase를 완료했습니다. 결과를 산출합니다.");
                 CalculateFinalCareer();
                 GoToResultPhase();

@@ -65,15 +65,16 @@ public class ShellInfo : MonoBehaviour
 
 
     // [ 초기 위치/회전/스케일 저장용 필드
+    [SerializeField]
     private Vector3 initialPosition;
-    private Quaternion initialRotation;
-    private Vector3 initialScale;
+    [SerializeField]
+    private Quaternion initialRotation = new Quaternion(0,0,0,1);
 
     private void Awake()
     {
         // 게임 시작 시점의 Transform 상태를 기억해둡니다.
-        initialPosition = transform.position;
-        initialRotation = transform.rotation;       
+       // initialPosition = transform.position;
+        //initialRotation = transform.rotation;       
         ManipulationBoxCollider = GetComponent<BoxCollider>();
     }
 
@@ -87,17 +88,17 @@ public class ShellInfo : MonoBehaviour
             ManipulationBoxCollider.enabled = false;
         }
         // Transform 되돌리기
-        transform.position = initialPosition;
-        transform.rotation = initialRotation;
+        transform.localPosition = initialPosition;
+        transform.localRotation = initialRotation;
 
         // IsCollected 리셋
         IsCollected = false;
         DecObj.SetActive(false);
 
         // 혹은 Shell의 collider를 잠시 비활성 -> 몇 프레임 뒤 활성
-        var coll = GetComponent<Collider>();
-        if (coll != null) coll.enabled = false;
-        Invoke(nameof(ReEnableCollider), 0.1f);
+       // var coll = GetComponent<Collider>();
+        //if (coll != null) coll.enabled = false;
+        //Invoke(nameof(ReEnableCollider), 0.1f);
     }
 
     private void ReEnableCollider()

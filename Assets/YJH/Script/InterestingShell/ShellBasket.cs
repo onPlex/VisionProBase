@@ -12,6 +12,7 @@ namespace YJH
         [SerializeField] private GameObject[] Shells;
         [SerializeField] private MainContentManager mainManager;
 
+
         private void Start()
         {
             // 1) 이벤트 등록 (int 파라미터 받는 콜백)
@@ -61,22 +62,18 @@ namespace YJH
             }
         }
 
-        private void UpdateShellsActivation(int phase)
+        private void UpdateShellsActivation(int newPhase)
         {
-            // 기존 코드에서 ShellBasket은 "Phase - 1" 인덱스를 사용
-            int shellIndex = phase - 1;
-            if (shellIndex < 0)
+           // 배열 전체 순회
+            for (int i = 0; i < Shells.Length; i++)
             {
-                // 0단계일 때는 스킵하거나, 필요하면 특정 로직
-                return;
-            }
+                // i < newPhase 이면 활성화, 아니면 비활성화
+                bool shouldActive = (i < newPhase);
 
-            // 배열 범위를 벗어나지 않는지 확인
-            if (shellIndex < Shells.Length)
-            {
-                // 이전 단계들까지 전부 켤지, 또는 이전 단계는 끌지 등은
-                // 기획에 따라 수정 가능
-                Shells[shellIndex].SetActive(true);
+                if (Shells[i] != null)
+                {
+                    Shells[i].SetActive(shouldActive);
+                }
             }
         }
     }
