@@ -8,6 +8,7 @@ namespace YJH
     {
         [Header("Phases")]
         [SerializeField] private GameObject[] phaseParents = new GameObject[6];
+        [SerializeField] private ShellPhase[] shellPhases  = new ShellPhase[6];
 
         [Header("UI")]
         [SerializeField] TMP_Text TMP_PhaseText;
@@ -39,22 +40,29 @@ namespace YJH
             {
                 // setter 호출 시점 디버그
                 int oldVal = _currentPhase;
+#if UNITY_EDITOR
                 Debug.Log($"[CurrentPhase setter] Called with value={value}, oldVal={oldVal}");
+#endif
 
                 // 0 ~ (phaseParents.Length - 1) 범위로 보정
                 int clampedValue = Mathf.Clamp(value, 0, phaseParents.Length - 1);
+#if UNITY_EDITOR
                 Debug.Log($"[CurrentPhase setter] clampedValue={clampedValue}, phaseParents.Length={phaseParents.Length}");
-
+#endif
                 if (_currentPhase != clampedValue)
                 {
+#if UNITY_EDITOR
                     Debug.Log($"[CurrentPhase setter] Phase changing from {oldVal} to {clampedValue}");
+#endif
 
                     // 이전 Phase 비활성화
                     if (_currentPhase >= 0 && _currentPhase < phaseParents.Length)
                     {
                         if (phaseParents[_currentPhase] != null)
                         {
+#if UNITY_EDITOR
                             Debug.Log($"[CurrentPhase setter] Deactivating old phase index={_currentPhase}");
+#endif
                             phaseParents[_currentPhase].SetActive(false);
                         }
                     }
@@ -64,7 +72,9 @@ namespace YJH
                     // 새 Phase 활성화
                     if (phaseParents[_currentPhase] != null)
                     {
+#if UNITY_EDITOR
                         Debug.Log($"[CurrentPhase setter] Activating new phase index={_currentPhase}");
+#endif
                         phaseParents[_currentPhase].SetActive(true);
                     }
 
@@ -79,11 +89,6 @@ namespace YJH
                     Debug.Log($"[CurrentPhase setter] No change (oldVal=={oldVal}, clampedValue=={clampedValue})");
                 }
             }
-        }
-
-        private void Awake()
-        {
-            Debug.Log("[MainContentManager] Awake() called");
         }
 
         private void Start()
@@ -109,18 +114,20 @@ namespace YJH
             }
 
             // 2) ShellPhase 초기화 (활성화 전에)
+            shellPhases[clampedValue].ResetPhaseShells();
             var newObj = phaseParents[clampedValue];
-            if (newObj != null)
-            {
-                // ShellPhase 컴포넌트가 있다면 Reset
-                var shellPhase = newObj.GetComponent<ShellPhase>();
-                if (shellPhase != null)
-                {
-                    //TODO::
-                   
-                    shellPhase.ResetPhaseShells();
-                }
-            }
+    
+            // if (newObj != null)
+            // {
+            //     // ShellPhase 컴포넌트가 있다면 Reset
+            //     var shellPhase = newObj.GetComponent<ShellPhase>();
+            //     if (shellPhase != null)
+            //     {
+            //         //TODO::
+
+            //         shellPhase.ResetPhaseShells();
+            //     }
+            // }
 
             // 3) 실제 Phase 변경
             _currentPhase = clampedValue;
@@ -178,7 +185,7 @@ namespace YJH
             }
             else
             {
-                phaseParents[phaseParents.Length-1].SetActive(false);
+                phaseParents[phaseParents.Length - 1].SetActive(false);
                 Debug.Log("[NextPhase()] 모든 Phase를 완료했습니다. 결과를 산출합니다.");
                 CalculateFinalCareer();
                 GoToResultPhase();
@@ -256,11 +263,6 @@ namespace YJH
             Debug.Log($"[SendFinalCareerResult()] 전송할 경력 타입={career}");
             //ResultDataStorage.Instance.Game1ContData = ...
             // etc.
-        }
-
-        public int GetCurrentPhase()
-        {
-            return CurrentPhase;
         }
     }
 }

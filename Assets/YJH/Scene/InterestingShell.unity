@@ -220,7 +220,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -350,7 +350,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32690208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.03}
+  m_LocalPosition: {x: 0, y: 0, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -362,7 +362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.7}
   m_SizeDelta: {x: 3.7, y: 4.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &32690210
@@ -1563,7 +1563,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3443,7 +3443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &425387766
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3469,7 +3469,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -9287,8 +9287,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1533220617}
   - {fileID: 151403251}
+  - {fileID: 1533220617}
   - {fileID: 1978059440}
   - {fileID: 1183300139}
   - {fileID: 984417106}
@@ -17147,7 +17147,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 66e7faa69f0a24b47b655d8e9b8bef3d, type: 3}
   m_Controller: {fileID: 9100000, guid: 9256fcd0587d22043931f7a9bef2822a, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
@@ -17973,6 +17973,7 @@ MonoBehaviour:
   midPoint: {fileID: 2505750512806827559}
   endPoint: {fileID: 1702457467}
   ease: 4
+  TreasureBoxGuideObj: {fileID: 425387765}
 --- !u!1 &1775990088
 GameObject:
   m_ObjectHideFlags: 0
@@ -18064,6 +18065,13 @@ MonoBehaviour:
   - {fileID: 1368524138}
   - {fileID: 1677872135}
   - {fileID: 300336847}
+  shellPhases:
+  - {fileID: 174793338}
+  - {fileID: 1164110840}
+  - {fileID: 1645582791}
+  - {fileID: 1368524140}
+  - {fileID: 1677872137}
+  - {fileID: 300336849}
   TMP_PhaseText: {fileID: 818169044}
   PhaseTextObj: {fileID: 1245395039}
   ReturnButtonObj: {fileID: 595190389}
@@ -18784,7 +18792,7 @@ Transform:
   m_GameObject: {fileID: 1854716343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.075, z: -0.32125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

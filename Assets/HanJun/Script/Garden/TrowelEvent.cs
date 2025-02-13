@@ -7,6 +7,7 @@ namespace Jun
     public class TrowelEvent : ProductionEvent
     {
         private Animator animator;
+     
 
         private Coroutine playAnim = null;
 

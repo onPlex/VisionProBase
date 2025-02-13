@@ -34,6 +34,9 @@ namespace YJH
         [SerializeField]
         private ContentPhaseManager contentPhaseManager;
 
+        [Header("Dialogue End Event")]
+        public UnityEvent OnDialogueEnd; // Inspector에서 외부 함수를 등록할 수 있는 이벤트
+
         // Event to trigger during specific dialogues
         // public delegate void DialogueEvent();
         // public event DialogueEvent OnTriggerDialogueEvent;
@@ -166,7 +169,9 @@ namespace YJH
                 }
                 else
                 {
-                    Debug.LogError("ContentPhaseManager is not assigned.");
+                    Debug.LogWarning("ContentPhaseManager is not assigned. Invoking OnDialogueEnd event.");
+                    OnDialogueEnd?.Invoke(); // 외부에서 Inspector에서 등록한 함수 호출
+
                 }
             }
         }

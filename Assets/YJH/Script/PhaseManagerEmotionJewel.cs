@@ -2,133 +2,111 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-namespace YJH
+namespace YJH.EmotionJewel
 {
-    public class PhaseManagerEmotionJewel : ContentPhaseManager
+    public class PhaseManagerEmotionJewel : MonoBehaviour
     {
+        private enum Phase
+        {
+            Title,
+            Prologue,
+            Tutorial,
+            Stage1,
+            Stage2,
+            Stage3,
+            Stage4,
+            Result
+        }
+
         [Header("DebugTEXT")]
         [SerializeField]
-        TMP_Text resultDebugText;
-        //[SerializeField]
-        //private GameObject ResultDebugTextRootGameObj;
+        private TMP_Text resultDebugText;
 
         [SerializeField]
-        EmotionJewelResult emotionJewelResult;
+        private EmotionJewelResult emotionJewelResult;
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        [Header("Phase Objects")]
+        [Tooltip("Title - Prologue - Tutorial - Stage1 - Stage2 - Stage3 - Result")]
+        [SerializeField]
+        private GameObject[] phaseObjects;
+
+        private void Start()
         {
-           // ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
+
+
             InitPhase();
         }
 
-        public override void OnGameStart() // == OnPrologueStart
-        {
-            TitleObj.SetActive(false);
-            PrologueObj.SetActive(true);
-        }
-
-        public override void OnGamePrologueEnd()
-        {
-            // == OnTutorialStart
-            Stage1StartButton.SetActive(true);
-        }
-
         /// <summary>
-        /// Stage1
+        /// 모든 오브젝트 비활성화 후 초기 단계 활성화
         /// </summary>
-        public override void OnStage1Start()
+        private void InitPhase()
         {
-            PrologueObj.SetActive(false);
-            Stage1Obj.SetActive(true);
+            SetActivePhase(Phase.Title);
         }
 
-        public override void OnStage2()
+        private void SetActivePhase(Phase phase)
         {
-            StartCoroutine(IStageFinishEvent1());
+            for (int i = 0; i < phaseObjects.Length; i++)
+            {
+                if (phaseObjects[i])
+                    phaseObjects[i].SetActive(i == (int)phase);
+            }
         }
 
-        public override void OnStage3()
+        // ============ Phase 진행 함수 ============
+        public void OnPrologueStart()
         {
-            StartCoroutine(IStageFinishEvent2());
+            SetActivePhase(Phase.Prologue);
         }
 
-        public override void OnStage4()
+        public void OnGamePrologueEnd()
         {
-            StartCoroutine(IStageFinishEvent3());
+            OnTutorialStart();
         }
 
-        //TutorialEnd1
-        public IEnumerator IStageFinishEvent1()
+        public void OnTutorialStart()
         {
-            emotionJewelResult.StoreBoardResult(0);       
-            Stage1Obj.SetActive(false);
-            AudioManager.Instance.PlaySFX("TutorialEnd1");
-           // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
-            yield return new WaitForSecondsRealtime(10f);
+            SetActivePhase(Phase.Tutorial);
+        }
 
-            Debug.Log("OnStage2");
-          //  ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
-            Stage2Obj.SetActive(true);
+        public void OnStage1Start()
+        {
+            SetActivePhase(Phase.Stage1);
+        }
+
+        public void OnStage2()
+        {
+            StartCoroutine(HandleStageTransition(Phase.Stage1, Phase.Stage2, "TutorialEnd1", 0));
+        }
+
+        public void OnStage3()
+        {
+            StartCoroutine(HandleStageTransition(Phase.Stage2, Phase.Stage3, "TutorialEnd2", 1));
+        }
+
+        public void OnStage4()
+        {
+            StartCoroutine(HandleStageTransition(Phase.Stage3, Phase.Stage4, "TutorialEnd3", 2));
+        }
+
+        public void OnResult()
+        {
+            StartCoroutine(HandleStageTransition(Phase.Stage4, Phase.Result, "TutorialEnd4", 3));
+        }
+
+        // ============ 공통적인 스테이지 전환 처리 ============
+        private IEnumerator HandleStageTransition(Phase from, Phase to, string sfx, int resultIndex)
+        {
+            emotionJewelResult.StoreBoardResult(resultIndex);
+            SetActivePhase(from);
+
+            AudioManager.Instance.PlaySFX(sfx);
+            yield return new WaitForSecondsRealtime(1f);
+
+            Debug.Log($"Transitioning to {to}");
+            SetActivePhase(to);
             emotionJewelResult.CalculateFinalResult();
-            yield return null;
-        }
-
-        //TutorialEnd2
-        public IEnumerator IStageFinishEvent2()
-        {
-            emotionJewelResult.StoreBoardResult(1);  
-            Stage2Obj.SetActive(false);
-            AudioManager.Instance.PlaySFX("TutorialEnd2");
-           // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
-            yield return new WaitForSecondsRealtime(10f);
-
-            Debug.Log("OnStage3");
-           // ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
-            Stage3Obj.SetActive(true);
-             emotionJewelResult.CalculateFinalResult();
-            yield return null;
-        }
-
-
-
-        //TutorialEnd3
-        public IEnumerator IStageFinishEvent3()
-        {
-            emotionJewelResult.StoreBoardResult(2);  
-            Stage3Obj.SetActive(false);
-            AudioManager.Instance.PlaySFX("TutorialEnd3");
-           // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
-            yield return new WaitForSecondsRealtime(10f);
-
-            Debug.Log("OnStage4");
-            //ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
-            Stage4Obj.SetActive(true);
-              emotionJewelResult.CalculateFinalResult();
-            yield return null;
-        }
-
-
-        //TutorialEnd4
-        public IEnumerator IStageFinishEvent4()
-        {
-            emotionJewelResult.StoreBoardResult(3);  
-            Stage4Obj.SetActive(false);
-            AudioManager.Instance.PlaySFX("TutorialEnd4");
-           // ResultDebugTextRootGameObj.SetActive(true); // forDEBUG
-            yield return new WaitForSecondsRealtime(10f);
-
-            Debug.Log("OnStage4");
-           // ResultDebugTextRootGameObj.SetActive(false); // forDEBUG
-            ResultObj.SetActive(true);
-             emotionJewelResult.CalculateFinalResult();
-            yield return null;
-        }
-        public override void OnResult()
-        {
-            Debug.Log("OnResult");
-            StartCoroutine(IStageFinishEvent4());
         }
     }
 }
-
