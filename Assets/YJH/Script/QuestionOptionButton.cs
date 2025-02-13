@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using YJH.EmotionJewel;
 
 namespace YJH
 {
@@ -11,6 +12,13 @@ namespace YJH
 
         [SerializeField]
         TMP_Text textMesh;
+
+        AnswerButton answerButton;
+
+        void Start()
+        {
+            answerButton = GetComponent<AnswerButton>();
+        }
 
         /// <summary>
         /// Sets the option text for the button (e.g., TextMesh or TextMeshPro).
@@ -36,7 +44,7 @@ namespace YJH
 
         private bool hasPressed = false;
 
-       public override void Press()
+        public override void Press()
         {
             if (hasPressed) return;
 
@@ -46,12 +54,17 @@ namespace YJH
             }
 
             hasPressed = true;
-
+            if (answerButton) answerButton.OnClickEffect();
+            else
+            {
+                answerButton = GetComponent<AnswerButton>();
+                answerButton.OnClickEffect();
+            }
             // Trigger the action
             OnOptionSelected?.Invoke(optionIndex);
 
             // Allow pressing again after a short delay
-            if(gameObject.activeInHierarchy)StartCoroutine(ResetPressDelay(0.2f));
+            if (gameObject.activeInHierarchy) StartCoroutine(ResetPressDelay(0.2f));
         }
 
 

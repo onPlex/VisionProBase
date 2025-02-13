@@ -10,7 +10,9 @@ namespace YJH.EmotionJewel
         [SerializeField] private Transform[] MovePoint; // 최소 3개 이상의 포인트
         [SerializeField] private GameObject DialogueObj; // 도착 후 활성화할 오브젝트
         [SerializeField] private float moveDuration = 3f; // 이동 시간
+        [SerializeField] private float rotateDuration = 0.8f; // 회전 시간
         [SerializeField] private Ease moveEase = Ease.InOutSine; // 이동 방식
+        [SerializeField] private Ease rotateEase = Ease.OutBack; // 회전 방식
 
         void OnEnable()
         {
@@ -37,11 +39,17 @@ namespace YJH.EmotionJewel
                 .SetEase(moveEase) // 부드러운 이동
                 .OnComplete(() =>
                 {
-                    // 도착 후 대화창 활성화
-                    if (DialogueObj != null)
-                    {
-                        DialogueObj.SetActive(true);
-                    }
+                    // 이동 완료 후 Y축 -140도 회전
+                    FairyObj.transform.DORotate(new Vector3(0, -140, 0), rotateDuration)
+                        .SetEase(rotateEase)
+                        .OnComplete(() =>
+                        {
+                            // 회전 완료 후 대화창 활성화
+                            if (DialogueObj != null)
+                            {
+                                DialogueObj.SetActive(true);
+                            }
+                        });
                 });
         }
     }

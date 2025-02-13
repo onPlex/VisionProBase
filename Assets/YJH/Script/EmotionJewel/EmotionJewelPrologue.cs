@@ -19,10 +19,7 @@ namespace YJH.EmotionJewel
         [Header("Step2")]
         [SerializeField]
         GameObject Step2Obj;
-        [SerializeField] GameObject FairyObj;
-        [SerializeField] Transform[] MovePoint;
-        [SerializeField] GameObject DialogueObj;
-
+  
 
         public void OnOpenLetter()
         {
