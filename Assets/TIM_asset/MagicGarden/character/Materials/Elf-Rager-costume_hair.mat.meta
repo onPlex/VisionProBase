@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fb470610acdec1247ad61d64535e5c40
+timeCreated: 1521169229
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 114202
+  packageName: Elf Female Character_Pack
+  packageVersion: 1.0
+  assetPath: Assets/Elf Female Character_Pack/Asset/Elf Female Character_Pack/Elf
+    character-Ranger costume1/Materials/Elf-Rager-costume_hair.mat
+  uploadId: 235563

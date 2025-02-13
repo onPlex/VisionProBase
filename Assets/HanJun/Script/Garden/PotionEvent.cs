@@ -11,6 +11,11 @@ namespace Jun
         [SerializeField] private GameObject particle;
         private Animator animator;
 
+        void OnEnable()
+        {
+            PlayAnimation();
+        }
+
         public void PlayAnimation()
         {
             /// 포션 애니매이션 재생

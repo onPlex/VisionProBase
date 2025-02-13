@@ -1,6 +1,5 @@
 using UnityEngine;
 using YJH;
-using UnityEngine.Events;
 using System.Collections;
 
 namespace Jun
@@ -14,6 +13,11 @@ namespace Jun
         private void Awake()
         {
             animator = GetComponent<Animator>();
+        }
+
+        void OnEnable()
+        {
+            PlayAnimation();
         }
 
         public void PlayAnimation()

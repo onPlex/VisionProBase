@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6be579f4e6513e740b69bf267f4d804a
+timeCreated: 1521169118
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 114202
+  packageName: Elf Female Character_Pack
+  packageVersion: 1.0
+  assetPath: Assets/Elf Female Character_Pack/Asset/Elf Female Character_Pack/Elf
+    character-Ranger costume1/Materials/Elf-Rager-costume_body.mat
+  uploadId: 235563

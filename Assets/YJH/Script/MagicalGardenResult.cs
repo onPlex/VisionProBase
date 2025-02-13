@@ -28,9 +28,11 @@ namespace YJH
         private Dictionary<int, int> combinedResponses = new Dictionary<int, int>();
 
         [Header("Mesh & Material")]
-        [SerializeField] private MeshRenderer targetMeshRenderer;
+        [Tooltip("RIASEC order")]
+        [SerializeField] private GameObject[] ResultTree;
+        //[SerializeField] private MeshRenderer targetMeshRenderer;
         // 두 번째 Material을 가리키므로 보통 인덱스는 1
-        [SerializeField] private int materialIndex = 1;
+        //[SerializeField] private int materialIndex = 1;
 
 
         // (2) R, I, A, S, E, C 점수를 저장
@@ -256,7 +258,8 @@ namespace YJH
 
 
             // (추가) 머티리얼 색상 변경
-            ApplyMaterialColorForCategory(highestCategory);
+            //ApplyMaterialColorForCategory(highestCategory);
+            ApplyTreeSelect(highestCategory);
 
             Debug.Log($"[DisplayHighestCategory] 최고점: {highestCategory} ({highestScore}점)");
 
@@ -344,43 +347,59 @@ namespace YJH
         /// 최고점 카테고리에 따라 Material의 BaseColor 변경
         /// - MeshRenderer의 2번째(materialIndex=1) 머티리얼에 적용
         /// </summary>
-        private void ApplyMaterialColorForCategory(string category)
+        // private void ApplyMaterialColorForCategory(string category)
+        // {
+        //     // targetMeshRenderer가 할당되어 있지 않으면 무시
+        //     if (targetMeshRenderer == null)
+        //     {
+        //         Debug.LogWarning("ApplyMaterialColorForCategory: targetMeshRenderer가 할당되지 않았습니다.");
+        //         return;
+        //     }
+
+        //     // 머티리얼 배열 획득 (인스턴스화)
+        //     Material[] mats = targetMeshRenderer.materials;
+        //     if (materialIndex < 0 || materialIndex >= mats.Length)
+        //     {
+        //         Debug.LogWarning($"ApplyMaterialColorForCategory: materialIndex({materialIndex})가 범위를 벗어났습니다.");
+        //         return;
+        //     }
+
+        //     // 카테고리별 색상
+        //     Color color = category switch
+        //     {
+        //         "R" => Color.red,                               // 빨강
+        //         "I" => Color.green,                             // 초록
+        //         "A" => Color.blue,                              // 파랑
+        //         "S" => Color.yellow,                            // 노랑
+        //         "E" => new Color(0.5f, 0.0f, 0.5f, 1.0f),       // 보라
+        //         "C" => new Color(1.0f, 0.5f, 0.75f, 1.0f),      // 핑크
+        //         _ => Color.white
+        //     };
+
+        //     // 2번째 머티리얼의 BaseColor 세팅
+        //     // (URP/HDRP인 경우 "_BaseColor", Built-in Legacy인 경우 "_Color"일 수도 있으니 Shader에 맞춰 조정)
+        //     mats[materialIndex].SetColor("_BaseColor", color);
+
+        //     // 변경된 머티리얼 배열 다시 할당
+        //     targetMeshRenderer.materials = mats;
+
+        //     Debug.Log($"[ApplyMaterialColorForCategory] 카테고리={category}, 색상={color}");
+        // }
+
+        private void ApplyTreeSelect(string category)
         {
-            // targetMeshRenderer가 할당되어 있지 않으면 무시
-            if (targetMeshRenderer == null)
+            GameObject TreeObj = category switch
             {
-                Debug.LogWarning("ApplyMaterialColorForCategory: targetMeshRenderer가 할당되지 않았습니다.");
-                return;
-            }
-
-            // 머티리얼 배열 획득 (인스턴스화)
-            Material[] mats = targetMeshRenderer.materials;
-            if (materialIndex < 0 || materialIndex >= mats.Length)
-            {
-                Debug.LogWarning($"ApplyMaterialColorForCategory: materialIndex({materialIndex})가 범위를 벗어났습니다.");
-                return;
-            }
-
-            // 카테고리별 색상
-            Color color = category switch
-            {
-                "R" => Color.red,                               // 빨강
-                "I" => Color.green,                             // 초록
-                "A" => Color.blue,                              // 파랑
-                "S" => Color.yellow,                            // 노랑
-                "E" => new Color(0.5f, 0.0f, 0.5f, 1.0f),       // 보라
-                "C" => new Color(1.0f, 0.5f, 0.75f, 1.0f),      // 핑크
-                _ => Color.white
+                "R" => ResultTree[0],
+                "I" => ResultTree[1],
+                "A" => ResultTree[2],
+                "S" => ResultTree[3],
+                "E" => ResultTree[4],
+                "C" => ResultTree[5],
+                _ => ResultTree[6]
             };
 
-            // 2번째 머티리얼의 BaseColor 세팅
-            // (URP/HDRP인 경우 "_BaseColor", Built-in Legacy인 경우 "_Color"일 수도 있으니 Shader에 맞춰 조정)
-            mats[materialIndex].SetColor("_BaseColor", color);
-
-            // 변경된 머티리얼 배열 다시 할당
-            targetMeshRenderer.materials = mats;
-
-            Debug.Log($"[ApplyMaterialColorForCategory] 카테고리={category}, 색상={color}");
+            TreeObj.SetActive(true);
         }
     }
 }

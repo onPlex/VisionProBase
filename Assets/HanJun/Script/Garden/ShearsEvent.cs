@@ -10,6 +10,11 @@ namespace Jun
         [SerializeField] private GameObject[] grass;
         [SerializeField] private Animator[] animator;
 
+        void OnEnable()
+        {
+            PlayAnimation();
+        }
+
         public void PlayAnimation()
         {
             StartCoroutine(DelayEvent());

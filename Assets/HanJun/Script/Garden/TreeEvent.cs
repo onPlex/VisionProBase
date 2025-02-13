@@ -19,7 +19,7 @@ namespace Jun
 
         private IEnumerator DelayEventBig()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             onComplete?.Invoke();
         }
 
@@ -33,7 +33,7 @@ namespace Jun
 
         private IEnumerator DelayEvent()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             onComplete?.Invoke();
         }
 

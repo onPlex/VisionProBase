@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6449098730187347345}
   - component: {fileID: 82172880642561101}
   - component: {fileID: 1688596679110055706}
-  - component: {fileID: 8834270547401887532}
   m_Layer: 0
   m_Name: gardening_seed
   m_TagString: Untagged
@@ -27,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4630511182853367762}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -59,9 +58,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -87,19 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8834270547401887532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4630511182853367762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e2c917319df4e1faacf060e81c01a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spherePrefab: {fileID: 8778535549759740367, guid: 284048c8421b14cd8a1b3a6928f0b87a, type: 3}
-  spawnPoint: {fileID: 6449098730187347345}
-  throwForce: 5
-  arcHeight: 2

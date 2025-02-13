@@ -16,6 +16,11 @@ namespace Jun
             animator = GetComponent<Animator>();
         }
 
+        void OnEnable()
+        {
+            PlayAnimation();
+        }
+
         public void PlayAnimation()
         {
             animator.SetTrigger("Water");

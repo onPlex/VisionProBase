@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 64735938f23e69446a844872944462a9
+timeCreated: 1521169310
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 114202
+  packageName: Elf Female Character_Pack
+  packageVersion: 1.0
+  assetPath: Assets/Elf Female Character_Pack/Asset/Elf Female Character_Pack/Elf
+    character-Ranger costume1/Materials/Elf-Rager-costume_hat.mat
+  uploadId: 235563

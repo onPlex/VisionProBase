@@ -11,6 +11,7 @@ TagManager:
   - Sphere
   - SlingShot
   - Ball
+  - DropDownObj
   layers:
   - Default
   - TransparentFX

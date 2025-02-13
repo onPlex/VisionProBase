@@ -13,6 +13,11 @@ namespace Jun
 
         private bool isTilting = false; // 기울이기 상태 확인용
 
+        void OnEnable()
+        {
+        StartTiltAndThrow();
+        }
+
         // 기울어지는 연출을 시작하는 함수
         public void StartTiltAndThrow()
         {
