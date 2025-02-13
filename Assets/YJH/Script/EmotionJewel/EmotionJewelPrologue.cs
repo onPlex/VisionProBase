@@ -11,8 +11,23 @@ namespace YJH.EmotionJewel
 
         [SerializeField]
         GameObject Step1Obj;
+
+
+        [Header("Letter")]
+        [SerializeField] Animator LetterAnim;
+
+        [Header("Step2")]
         [SerializeField]
         GameObject Step2Obj;
+        [SerializeField] GameObject FairyObj;
+        [SerializeField] Transform[] MovePoint;
+        [SerializeField] GameObject DialogueObj;
+
+
+        public void OnOpenLetter()
+        {
+            LetterAnim.SetBool("IsOpen", true);
+        }
 
 
         public void OnProcessStep2()
