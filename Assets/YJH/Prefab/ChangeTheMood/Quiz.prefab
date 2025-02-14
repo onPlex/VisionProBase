@@ -244,7 +244,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8148123304966257928}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -787,6 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quizData:
+    quizType: 0
     QuizConetn: 
     CorrectAnswer: 
     InCorrectAnswer: 
@@ -796,6 +797,7 @@ MonoBehaviour:
   storyDialogueObject: {fileID: 0}
   correctFeedbackObject: {fileID: 0}
   incorrectFeedbackObject: {fileID: 0}
+  noAnswerFeedbackObject: {fileID: 0}
 --- !u!1 &5384367949915123727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,8 +1329,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7614657361948624761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.005}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.008}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4505663947871260417}

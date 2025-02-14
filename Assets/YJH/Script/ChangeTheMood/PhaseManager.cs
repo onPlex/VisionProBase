@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace YJH.ChangeTheMood
@@ -12,10 +13,7 @@ namespace YJH.ChangeTheMood
         }
 
         [Header("Phases")]
-        // 0~5까지의 Phase Parent 오브젝트
         [SerializeField] private GameObject[] phaseParents = new GameObject[6];
-
-        // 현재 진행중인 Phase 인덱스(0~5)
         private int currentPhase = 0;
 
         [Header("Background")]
@@ -28,8 +26,14 @@ namespace YJH.ChangeTheMood
         private Sex selectedSex;
         private string selectedNickname;
 
-        [Tooltip("0~5 boy Nickname, 6~11 boy Nickname")]
-        private readonly string[] nicknames = { "태오", "현우", "리안", "다린", "준우", "하람", "채아", "루나", "미카", "하린", "유나", "지안" };
+        [Tooltip("Boy Nicknames")]
+        private readonly string[] boyNicknames = { "태오", "현우", "리안", "다린", "준우", "하람" };
+
+        [Tooltip("Girl Nicknames")]
+        private readonly string[] girlNicknames = { "채아", "루나", "미카", "하린", "유나", "지안" };
+
+        [SerializeField]
+        TMP_Text[] NickNameListUI;
 
         [Header("Result")]
         [SerializeField]
@@ -43,6 +47,8 @@ namespace YJH.ChangeTheMood
                 if (value == Sex.NoneSelect || value == Sex.Boy || value == Sex.Girl)
                 {
                     selectedSex = value;
+                    selectedNickname = ""; // 성별이 변경될 때 닉네임 초기화
+                    UpdateNicknameListUI();
                 }
                 else
                 {
@@ -56,44 +62,38 @@ namespace YJH.ChangeTheMood
             get => selectedNickname;
             private set
             {
-                int startIndex = selectedSex == Sex.Boy ? 0 : (selectedSex == Sex.Girl ? 6 : -1);
-                int endIndex = selectedSex == Sex.Boy ? 5 : (selectedSex == Sex.Girl ? 11 : -1);
-
-                if (startIndex == -1 || endIndex == -1)
+                if (selectedSex == Sex.NoneSelect)
                 {
-                    Debug.LogWarning("Sex가 선택되지 않음");
+                    Debug.LogWarning("성별을 먼저 선택해야 합니다.");
                     return;
                 }
 
-                int nicknameIndex = System.Array.IndexOf(nicknames, value);
-                if (nicknameIndex >= startIndex && nicknameIndex <= endIndex)
+                string[] nicknameList = selectedSex == Sex.Boy ? boyNicknames : girlNicknames;
+
+                if (System.Array.Exists(nicknameList, nickname => nickname == value))
                 {
                     selectedNickname = value;
                 }
                 else
                 {
-                    Debug.LogWarning("잘못된 닉네임 선택");
+                    Debug.LogWarning($"잘못된 닉네임 선택: {value}");
                 }
-
             }
         }
 
         private void Start()
         {
-            // 초기 셋업
             InitializePhases();
             SelectedSex = Sex.NoneSelect;
         }
 
         private void InitializePhases()
         {
-            // 전체 PhaseParent 비활성화
             for (int i = 0; i < phaseParents.Length; i++)
             {
                 if (phaseParents[i] != null)
                     phaseParents[i].SetActive(false);
             }
-            // 현재 Phase만 활성화
             ActivateCurrentPhase();
         }
 
@@ -107,7 +107,6 @@ namespace YJH.ChangeTheMood
 
             if (phaseParents[currentPhase] != null)
                 phaseParents[currentPhase].SetActive(true);
-
 
             if (currentPhase == 1)
             {
@@ -129,7 +128,6 @@ namespace YJH.ChangeTheMood
 
         public void NextPhase()
         {
-            // 현재 PhaseParent 비활성화
             if (phaseParents[currentPhase] != null)
                 phaseParents[currentPhase].SetActive(false);
 
@@ -137,16 +135,11 @@ namespace YJH.ChangeTheMood
 
             if (currentPhase < phaseParents.Length)
             {
-                // 새 Phase 활성화
                 ActivateCurrentPhase();
             }
             else
             {
-                // 모든 Phase 끝났으면 결과 계산
-                //CalculateFinalCareer();
-
-                // 결과 Phase로 이동
-                //GoToResultPhase();
+                // 모든 Phase 끝났을 때 처리 (추가 구현 필요)
             }
         }
 
@@ -164,13 +157,45 @@ namespace YJH.ChangeTheMood
 
         public void SelectNickname(int selectIndex)
         {
-            if (selectIndex >= 0 && selectIndex < nicknames.Length)
+            string[] nicknameList = selectedSex == Sex.Boy ? boyNicknames : girlNicknames;
+
+            if (selectedSex == Sex.NoneSelect)
             {
-                SelectedNickname = nicknames[selectIndex];
+                Debug.LogWarning("성별을 먼저 선택해야 합니다.");
+                return;
+            }
+
+            if (selectIndex >= 0 && selectIndex < nicknameList.Length)
+            {
+                SelectedNickname = nicknameList[selectIndex];
             }
             else
             {
                 Debug.LogWarning("Invalid index for nickname selection");
+            }
+        }
+
+         private void UpdateNicknameListUI()
+        {
+            string[] nicknameList = selectedSex == Sex.Boy ? boyNicknames : girlNicknames;
+
+            if (NickNameListUI == null || NickNameListUI.Length == 0)
+            {
+                Debug.LogWarning("NicknameListUI가 설정되지 않았습니다.");
+                return;
+            }
+
+            for (int i = 0; i < NickNameListUI.Length; i++)
+            {
+                if (i < nicknameList.Length)
+                {
+                    NickNameListUI[i].text = nicknameList[i]; // 닉네임 업데이트
+                    NickNameListUI[i].gameObject.SetActive(true); // 사용 가능한 닉네임만 활성화
+                }
+                else
+                {
+                    NickNameListUI[i].gameObject.SetActive(false); // 사용하지 않는 UI는 비활성화
+                }
             }
         }
     }
