@@ -17,6 +17,9 @@ namespace YJH
         bool IsEmotionJewel = true;
         AnswerButton answerButton;
 
+        [Header("Option")]
+        [SerializeField]
+        float ButtonDelayTime = 0.2f;
 
         void Start()
         {
@@ -50,12 +53,6 @@ namespace YJH
         public override void Press()
         {
             if (hasPressed) return;
-
-            if (!gameObject.activeInHierarchy)
-            {
-                Debug.LogWarning("Button is inactive but Press was called. Proceeding to handle input.");
-            }
-
             hasPressed = true;
 
             if (IsEmotionJewel)
@@ -72,7 +69,7 @@ namespace YJH
             OnOptionSelected?.Invoke(optionIndex);
 
             // Allow pressing again after a short delay
-            if (gameObject.activeInHierarchy) StartCoroutine(ResetPressDelay(0.2f));
+            if (gameObject.activeInHierarchy) StartCoroutine(ResetPressDelay(ButtonDelayTime));
         }
 
 
