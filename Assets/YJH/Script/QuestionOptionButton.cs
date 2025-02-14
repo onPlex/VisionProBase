@@ -19,7 +19,7 @@ namespace YJH
 
         [Header("Option")]
         [SerializeField]
-        float ButtonDelayTime = 0.2f;
+        float ButtonDelayTime = 3f;
 
         void Start()
         {

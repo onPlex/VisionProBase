@@ -12,15 +12,19 @@ namespace YJH.EmotionJewel
             Prologue,
             Tutorial,
             Stage1,
+            Stage1End,
             Stage2,
+            Stage2End,
             Stage3,
+            Stage3End,
             Stage4,
+            Stage4End,
             Result
         }
 
-        [Header("DebugTEXT")]
-        [SerializeField]
-        private TMP_Text resultDebugText;
+        // [Header("DebugTEXT")]
+        // [SerializeField]
+        // private TMP_Text resultDebugText;
 
         [SerializeField]
         private EmotionJewelResult emotionJewelResult;
@@ -75,20 +79,43 @@ namespace YJH.EmotionJewel
             SetActivePhase(Phase.Stage1);
         }
 
+        public void OnStage1End()
+        {
+            StartCoroutine(HandleStageTransition(Phase.Stage1, Phase.Stage1End, "TutorialEnd1", 0));
+        }
+
         public void OnStage2()
         {
-            StartCoroutine(HandleStageTransition(Phase.Stage1, Phase.Stage2, "TutorialEnd1", 0));
+            StartCoroutine(HandleStageTransition(Phase.Stage1End, Phase.Stage2, "TutorialEnd1", 0));
         }
+
+         public void OnStage2End()
+        {
+            StartCoroutine(HandleStageTransition(Phase.Stage2, Phase.Stage2End, "TutorialEnd1", 0));
+        }
+
 
         public void OnStage3()
         {
-            StartCoroutine(HandleStageTransition(Phase.Stage2, Phase.Stage3, "TutorialEnd2", 1));
+            StartCoroutine(HandleStageTransition(Phase.Stage2End, Phase.Stage3, "TutorialEnd2", 1));
         }
+
+         public void OnStage3End()
+        {
+            StartCoroutine(HandleStageTransition(Phase.Stage3, Phase.Stage3End, "TutorialEnd1", 0));
+        }
+
 
         public void OnStage4()
         {
-            StartCoroutine(HandleStageTransition(Phase.Stage3, Phase.Stage4, "TutorialEnd3", 2));
+            StartCoroutine(HandleStageTransition(Phase.Stage3End, Phase.Stage4, "TutorialEnd3", 2));
         }
+
+         public void OnStage4End()
+        {
+            StartCoroutine(HandleStageTransition(Phase.Stage4, Phase.Stage4End, "TutorialEnd1", 0));
+        }
+
 
         public void OnResult()
         {

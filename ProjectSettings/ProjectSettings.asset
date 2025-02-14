@@ -167,7 +167,7 @@ PlayerSettings:
     VisionOS: com.GMWStudio.VisionProBase
   buildNumber:
     Standalone: 0
-    VisionOS: 21
+    VisionOS: 22
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
