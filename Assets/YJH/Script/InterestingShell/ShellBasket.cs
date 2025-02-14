@@ -12,6 +12,8 @@ namespace YJH
         [SerializeField] private GameObject[] Shells;
         [SerializeField] private MainContentManager mainManager;
 
+       [Header("PopUpObject")]
+        [SerializeField] private GameObject GuideTextObj;
 
         private void Start()
         {
@@ -45,6 +47,7 @@ namespace YJH
             // 일반 Shell
             else if (other.gameObject.CompareTag("Shell"))
             {
+                if(GuideTextObj.activeInHierarchy)GuideTextObj.SetActive(false);
                 ShellInfo shell = other.GetComponent<ShellInfo>();
                 if (shell != null && !shell.IsCollected)
                 {

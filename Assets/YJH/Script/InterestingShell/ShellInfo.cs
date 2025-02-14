@@ -28,8 +28,6 @@ public class ShellInfo : MonoBehaviour
     private BoxCollider ManipulationBoxCollider;
 
 
-
-
     [Header("Data")]
     [SerializeField]
     private string wordText;
